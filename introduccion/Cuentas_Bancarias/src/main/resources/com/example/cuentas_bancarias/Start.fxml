@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.StartCtrller">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
+         <image>
+            <Image url="@Imagen/bckgGeneral.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="28.0" layoutY="166.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fx:id="abriCuentaBtt" fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="18.0" onMouseClicked="#onNuevaCuentaAction" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image></ImageView>
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abrir una nueva &#10;cuenta">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="242.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="17.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image>
+            </ImageView>
+            <Text fill="#e1e1e1" layoutX="69.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ver un listado de las&#10;cuentas disponibles">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="318.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image>
+            </ImageView>
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Obtener los datos de &#10;una cuenta ">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="392.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image>
+            </ImageView>
+            <Text fill="#e1e1e1" layoutX="47.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realizar un ingreso en &#10;una cuenta. ">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="28.0" layoutY="467.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image>
+            </ImageView>
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retirar efectivo de &#10;una cuenta. ">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="7.0" layoutY="12.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/logo.png" />
+         </image>
+      </ImageView>
+      <Text fill="#8b49ac" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BankPal" wrappingWidth="134.66259765625">
+         <font>
+            <Font name="Gill Sans Nova Cond Ultra Bold" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Text fill="#e1e1e1" layoutX="30.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido, que desea&#10;          ?">
+         <font>
+            <Font name="Berlin Sans FB" size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#b17eff" layoutX="32.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hacer" underline="true">
+         <font>
+            <Font name="Berlin Sans FB" size="32.0" />
+         </font>
+      </Text>
+      <Pane layoutX="29.0" layoutY="541.0" prefHeight="64.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+               <image>
+                  <Image url="@Imagen/cursorArr.png" />
+               </image>
+            </ImageView>
+            <Text fill="#e1e1e1" layoutX="48.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar el saldo &#10;actual de una cuenta.">
+               <font>
+                  <Font name="Berlin Sans FB" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="59.0" fitWidth="42.0" layoutX="307.0" layoutY="12.0" onMouseClicked="#onExitAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/exitIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
