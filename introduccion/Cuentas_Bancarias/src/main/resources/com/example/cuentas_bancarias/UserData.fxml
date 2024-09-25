@@ -32,16 +32,6 @@
             <DropShadow />
          </effect>
       </Text>
-      <Text fill="#e1e1e1" layoutX="128.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cuenta:">
-         <font>
-            <Font name="Berlin Sans FB" size="32.0" />
-         </font>
-      </Text>
-      <Text fill="#b17eff" layoutX="28.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva" underline="true">
-         <font>
-            <Font name="Berlin Sans FB" size="32.0" />
-         </font>
-      </Text>
       <Pane fx:id="paneAhorro" layoutX="29.0" layoutY="296.0" prefHeight="266.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
          <effect>
             <DropShadow />
@@ -65,40 +55,40 @@
             <TextField fx:id="tipoInteresRemuTF" layoutX="19.0" layoutY="126.0" prefHeight="26.0" prefWidth="270.0" promptText="Tipo de interés de remuneración" />
          </children>
       </Pane>
-      <ImageView fitHeight="59.0" fitWidth="42.0" layoutX="307.0" layoutY="12.0" onMouseClicked="#onExitAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="41.0" layoutX="308.0" layoutY="12.0" onMouseClicked="#onExitAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagen/exitIcon.png" />
          </image>
       </ImageView>
-      <Label layoutX="29.0" layoutY="103.0" text="Nombre:" textFill="#fafafa">
+      <Label layoutX="24.0" layoutY="58.0" text="Nombre:" textFill="#fafafa">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="29.0" layoutY="137.0" text="Saldo inicial:" textFill="#fafafa">
+      <Label layoutX="24.0" layoutY="160.0" text="Saldo inicial:" textFill="#fafafa">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="29.0" layoutY="167.0" text="Número de cuenta (IBAN):" textFill="#fafafa">
+      <Label layoutX="25.0" layoutY="193.0" text="Número de cuenta (IBAN):" textFill="#fafafa">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="31.0" layoutY="239.0" text="Tipo de cuenta:" textFill="#fafafa">
+      <Label layoutX="24.0" layoutY="254.0" text="Tipo de cuenta:" textFill="#fafafa">
          <font>
-            <Font name="Berlin Sans FB" size="24.0" />
+            <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <ComboBox fx:id="tipoCuentaCB" layoutX="190.0" layoutY="241.0" onAction="#onTipoCuentaAction" prefHeight="26.0" prefWidth="143.0" promptText="tipo de cuenta" />
-      <TextField fx:id="numCuentaTF" layoutX="31.0" layoutY="200.0" prefHeight="26.0" prefWidth="301.0" promptText="Número de cuenta" />
+      <ComboBox fx:id="tipoCuentaCB" layoutX="181.0" layoutY="254.0" onAction="#onTipoCuentaAction" prefHeight="26.0" prefWidth="158.0" promptText="tipo de cuenta" />
+      <TextField fx:id="numCuentaTF" layoutX="24.0" layoutY="219.0" prefHeight="26.0" prefWidth="314.0" promptText="Número de cuenta" />
       <ImageView fx:id="volverIconImg" fitHeight="29.0" fitWidth="47.0" layoutX="14.0" layoutY="590.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onVolverAction" pickOnBounds="true">
          <image>
             <Image url="@Imagen/cursorArr.png" />
          </image>
       </ImageView>
-      <TextField fx:id="nombreCuentaTF" layoutX="128.0" layoutY="103.0" prefHeight="26.0" prefWidth="202.0" promptText="Nombre" />
-      <TextField fx:id="saldoInicialTF" layoutX="160.0" layoutY="137.0" prefHeight="26.0" prefWidth="172.0" promptText="Saldo Inicial" />
+      <TextField fx:id="nombreCuentaTF" layoutX="116.0" layoutY="59.0" prefHeight="26.0" prefWidth="223.0" promptText="Nombre" />
+      <TextField fx:id="saldoInicialTF" layoutX="150.0" layoutY="160.0" prefHeight="26.0" prefWidth="187.0" promptText="Saldo Inicial" />
       <Pane fx:id="paneCCPersonal" layoutX="29.0" layoutY="297.0" prefHeight="266.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
          <effect>
             <DropShadow />
@@ -127,12 +117,12 @@
             <DropShadow />
          </effect>
          <children>
-            <Text fill="#b17eff" layoutX="139.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de empresa" underline="true">
+            <Text fill="#b17eff" layoutX="147.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de empresa" underline="true">
                <font>
                   <Font name="Berlin Sans FB" size="32.0" />
                </font>
             </Text>
-            <Text fill="#e1e1e1" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
+            <Text fill="#e1e1e1" layoutX="8.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
                <font>
                   <Font name="Berlin Sans FB" size="32.0" />
                </font>
@@ -162,5 +152,17 @@
             <Font name="Britannic Bold" size="25.0" />
          </font>
       </Button>
+      <Label layoutX="24.0" layoutY="92.0" text="Apellidos:" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="apellidosTF" layoutX="124.0" layoutY="93.0" prefHeight="26.0" prefWidth="214.0" promptText="apellidos" />
+      <Label layoutX="24.0" layoutY="127.0" text="DNI:" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dniTF" layoutX="78.0" layoutY="127.0" prefHeight="26.0" prefWidth="258.0" promptText="DNI" />
    </children>
 </AnchorPane>

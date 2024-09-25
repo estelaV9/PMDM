@@ -18,6 +18,6 @@ public class StartCtrller {
 
     @FXML
     void onNuevaCuentaAction(MouseEvent event) {
-        StaticCode.cambiarVistaImg("UserData.fxml", this, abriCuentaBtt, "User Information");
+        StaticCode.cambiarVistaImg("UserData.fxml", abriCuentaBtt, "User Information");
     } // IR A LA VISTA DE INFORMACION DE USUARIO
 }

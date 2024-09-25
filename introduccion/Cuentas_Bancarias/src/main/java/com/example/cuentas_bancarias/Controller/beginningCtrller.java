@@ -17,6 +17,6 @@ public class beginningCtrller {
     private Button startAppBtt;
     @FXML
     void onStartAppAction(ActionEvent event) {
-        StaticCode.cambiarVistaBtt("Start.fxml", this, startAppBtt, "Start Application");
+        StaticCode.cambiarVistaBtt("Start.fxml", startAppBtt, "Start Application");
     } // IR A LA PAGINA PRINCIPAL DE LA APLICACION
 }

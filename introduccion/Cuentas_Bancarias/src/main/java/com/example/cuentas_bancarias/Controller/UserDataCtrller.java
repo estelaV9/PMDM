@@ -1,6 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Main;
+import com.example.cuentas_bancarias.Model.Persona;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserDataCtrller implements Initializable {
+    @FXML
+    private TextField dniTF;
+    @FXML
+    private TextField apellidosTF;
     @FXML
     private TextField comisionFijaDescTF;
     @FXML
@@ -57,7 +62,7 @@ public class UserDataCtrller implements Initializable {
 
     @FXML
     void onVolverAction(MouseEvent event) {
-        StaticCode.cambiarVistaImg("Start.fxml", this, volverIconImg, "Start Application");
+        StaticCode.cambiarVistaImg("Start.fxml", volverIconImg, "Start Application");
     } // VOLVER AL MENU DE INICIO
 
     @FXML
@@ -87,14 +92,16 @@ public class UserDataCtrller implements Initializable {
     @FXML
     void onAñadirAction(ActionEvent event) {
         if(nombreCuentaTF.getText().isEmpty() || saldoInicialTF.getText().isEmpty() || numCuentaTF.getText().isEmpty() ||
-                tipoCuentaCB.getValue() == null){
-            System.out.println("shrek");
+                tipoCuentaCB.getValue() == null || dniTF.getText().isEmpty() || apellidosTF.getText().isEmpty()){
+            StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
         } else {
             String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
+            Persona persona = new Persona(nombreCuentaTF.getText(), apellidosTF.getText(), dniTF.getText());
             switch (tipoCuenta) {
                 case "Cuenta de ahorro":
                     if(tipoInteresRemuTF.getText().isEmpty()){
-                        System.out.println("rellene los datos");
+                        // GENERAR ALERTA
+                        StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
                         System.out.println("bien ahorro");
                     }
@@ -102,7 +109,7 @@ public class UserDataCtrller implements Initializable {
 
                 case "Cuenta corriente personal":
                     if(comisionManteTF.getText().isEmpty()){
-                        System.out.println("rellene los datos");
+                        StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
                         System.out.println("bien personal");
                     }
@@ -110,7 +117,7 @@ public class UserDataCtrller implements Initializable {
 
                 case "Cuenta corriente de empresa":
                     if(maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()){
-                        System.out.println("rellene los datos");
+                        StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
                         System.out.println("bien empresa");
                     }
