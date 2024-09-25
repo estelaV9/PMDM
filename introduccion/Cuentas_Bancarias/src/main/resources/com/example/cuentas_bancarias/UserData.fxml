@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -89,7 +90,7 @@
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
       </Label>
-      <ComboBox fx:id="tipoCuentaCB" layoutX="190.0" layoutY="241.0" prefHeight="26.0" prefWidth="143.0" />
+      <ComboBox fx:id="tipoCuentaCB" layoutX="190.0" layoutY="241.0" onAction="#onTipoCuentaAction" prefHeight="26.0" prefWidth="143.0" promptText="tipo de cuenta" />
       <TextField fx:id="numCuentaTF" layoutX="31.0" layoutY="200.0" prefHeight="26.0" prefWidth="301.0" promptText="Número de cuenta" />
       <ImageView fx:id="volverIconImg" fitHeight="29.0" fitWidth="47.0" layoutX="14.0" layoutY="590.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onVolverAction" pickOnBounds="true">
          <image>
@@ -126,12 +127,12 @@
             <DropShadow />
          </effect>
          <children>
-            <Text fill="#b17eff" layoutX="139.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de empresa" underline="true">
+            <Text fill="#b17eff" layoutX="139.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de empresa" underline="true">
                <font>
                   <Font name="Berlin Sans FB" size="32.0" />
                </font>
             </Text>
-            <Text fill="#e1e1e1" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
                <font>
                   <Font name="Berlin Sans FB" size="32.0" />
                </font>
@@ -156,5 +157,10 @@
             <TextField fx:id="comisionFijaDescTF" layoutX="9.0" layoutY="225.0" prefHeight="26.0" prefWidth="296.0" promptText="Comisión fija por cada descubierto" />
          </children>
       </Pane>
+      <Button fx:id="añadirBtt" layoutX="102.0" layoutY="581.0" mnemonicParsing="false" onAction="#onAñadirAction" prefHeight="27.0" prefWidth="166.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="AÑADIR">
+         <font>
+            <Font name="Britannic Bold" size="25.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

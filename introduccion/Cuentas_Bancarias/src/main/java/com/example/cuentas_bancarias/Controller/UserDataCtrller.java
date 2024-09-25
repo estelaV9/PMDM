@@ -2,11 +2,13 @@ package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Main;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -19,55 +21,103 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserDataCtrller implements Initializable {
-
     @FXML
     private TextField comisionFijaDescTF;
-
     @FXML
     private TextField comisionManteTF;
-
     @FXML
     private TextField maxDescuPermiTF;
-
     @FXML
     private TextField nombreCuentaTF;
-
     @FXML
     private TextField numCuentaTF;
-
     @FXML
     private Pane paneAhorro;
-
     @FXML
     private Pane paneCCEmpresa;
-
     @FXML
     private Pane paneCCPersonal;
-
     @FXML
     private TextField saldoInicialTF;
-
     @FXML
     private TextField tipoInteresDescTF;
-
     @FXML
     private TextField tipoInteresRemuTF;
-
     @FXML
     private ImageView volverIconImg;
-
     @FXML
     private ComboBox<String> tipoCuentaCB;
+    @FXML
+    private Button añadirBtt;
 
     @FXML
     void onExitAction(MouseEvent event) {
         StaticCode.exitApp();
-    }
+    } // SALIR DE LA APLICACION
 
     @FXML
     void onVolverAction(MouseEvent event) {
         StaticCode.cambiarVistaImg("Start.fxml", this, volverIconImg, "Start Application");
     } // VOLVER AL MENU DE INICIO
+
+    @FXML
+    void onTipoCuentaAction(ActionEvent event) {
+        String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
+        switch (tipoCuenta) {
+            case "Cuenta de ahorro":
+                paneCCPersonal.setVisible(false);
+                paneCCEmpresa.setVisible(false);
+                paneAhorro.setVisible(true);
+                break;
+
+            case "Cuenta corriente personal":
+                paneCCPersonal.setVisible(true);
+                paneCCEmpresa.setVisible(false);
+                paneAhorro.setVisible(false);
+                break;
+
+            case "Cuenta corriente de empresa":
+                paneCCPersonal.setVisible(false);
+                paneCCEmpresa.setVisible(true);
+                paneAhorro.setVisible(false);
+                break;
+        }// SEGUN EL TIPO DE CUENTA QUE ELIJA SE APARECERA UN TIPO DE PANEL
+    }
+
+    @FXML
+    void onAñadirAction(ActionEvent event) {
+        if(nombreCuentaTF.getText().isEmpty() || saldoInicialTF.getText().isEmpty() || numCuentaTF.getText().isEmpty() ||
+                tipoCuentaCB.getValue() == null){
+            System.out.println("shrek");
+        } else {
+            String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
+            switch (tipoCuenta) {
+                case "Cuenta de ahorro":
+                    if(tipoInteresRemuTF.getText().isEmpty()){
+                        System.out.println("rellene los datos");
+                    } else {
+                        System.out.println("bien ahorro");
+                    }
+                    break;
+
+                case "Cuenta corriente personal":
+                    if(comisionManteTF.getText().isEmpty()){
+                        System.out.println("rellene los datos");
+                    } else {
+                        System.out.println("bien personal");
+                    }
+                    break;
+
+                case "Cuenta corriente de empresa":
+                    if(maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()){
+                        System.out.println("rellene los datos");
+                    } else {
+                        System.out.println("bien empresa");
+                    }
+                    break;
+            }
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,8 +125,9 @@ public class UserDataCtrller implements Initializable {
                 "Cuenta de ahorro",
                 "Cuenta corriente personal",
                 "Cuenta corriente de empresa"
-        );
+        ); // AÑADIR LOS VALORES DEL COMBOBOX
 
+        // ESCONDER LOS PANELES
         paneAhorro.setVisible(false);
         paneCCEmpresa.setVisible(false);
         paneCCPersonal.setVisible(false);
