@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.UserDataCtrller">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
+         <image>
+            <Image url="@Imagen/bckgGeneral.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="7.0" layoutY="12.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/logo.png" />
+         </image>
+      </ImageView>
+      <Text fill="#8b49ac" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BankPal" wrappingWidth="134.66259765625">
+         <font>
+            <Font name="Gill Sans Nova Cond Ultra Bold" size="36.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Text fill="#e1e1e1" layoutX="128.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cuenta:">
+         <font>
+            <Font name="Berlin Sans FB" size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#b17eff" layoutX="28.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nueva" underline="true">
+         <font>
+            <Font name="Berlin Sans FB" size="32.0" />
+         </font>
+      </Text>
+      <Pane fx:id="paneAhorro" layoutX="29.0" layoutY="296.0" prefHeight="266.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="#b17eff" layoutX="161.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ahorro" underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="#e1e1e1" layoutX="56.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta " underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Label layoutX="18.0" layoutY="64.0" text="Tipo de interés de &#10;remuneración:" textFill="#fafafa">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tipoInteresRemuTF" layoutX="19.0" layoutY="126.0" prefHeight="26.0" prefWidth="270.0" promptText="Tipo de interés de remuneración" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="59.0" fitWidth="42.0" layoutX="307.0" layoutY="12.0" onMouseClicked="#onExitAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/exitIcon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="29.0" layoutY="103.0" text="Nombre:" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="137.0" text="Saldo inicial:" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="167.0" text="Número de cuenta (IBAN):" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="239.0" text="Tipo de cuenta:" textFill="#fafafa">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="tipoCuentaCB" layoutX="190.0" layoutY="241.0" prefHeight="26.0" prefWidth="143.0" />
+      <TextField fx:id="numCuentaTF" layoutX="31.0" layoutY="200.0" prefHeight="26.0" prefWidth="301.0" promptText="Número de cuenta" />
+      <ImageView fx:id="volverIconImg" fitHeight="29.0" fitWidth="47.0" layoutX="14.0" layoutY="590.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onVolverAction" pickOnBounds="true">
+         <image>
+            <Image url="@Imagen/cursorArr.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nombreCuentaTF" layoutX="128.0" layoutY="103.0" prefHeight="26.0" prefWidth="202.0" promptText="Nombre" />
+      <TextField fx:id="saldoInicialTF" layoutX="160.0" layoutY="137.0" prefHeight="26.0" prefWidth="172.0" promptText="Saldo Inicial" />
+      <Pane fx:id="paneCCPersonal" layoutX="29.0" layoutY="297.0" prefHeight="266.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="#b17eff" layoutX="177.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="personal" underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Label layoutX="19.0" layoutY="85.0" text="Comisión de &#10;mantenimiento:" textFill="#fafafa">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="comisionManteTF" layoutX="19.0" layoutY="152.0" prefHeight="26.0" prefWidth="270.0" promptText="Comisión de mantenimiento" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneCCEmpresa" layoutX="24.0" layoutY="297.0" prefHeight="266.0" prefWidth="314.0" style="-fx-background-color: #56269c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="#b17eff" layoutX="139.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de empresa" underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="#e1e1e1" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuenta corriente " underline="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="32.0" />
+               </font>
+            </Text>
+            <Label layoutX="9.0" layoutY="87.0" text="Máximo descubierto permitido:&#10;" textFill="#fafafa">
+               <font>
+                  <Font name="Berlin Sans FB" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="maxDescuPermiTF" layoutX="8.0" layoutY="113.0" prefHeight="26.0" prefWidth="296.0" promptText="Máximo descubierto permitido" />
+            <Label layoutX="9.0" layoutY="142.0" text="Tipo de interés descubierto:&#10;" textFill="#fafafa">
+               <font>
+                  <Font name="Berlin Sans FB" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tipoInteresDescTF" layoutX="9.0" layoutY="168.0" prefHeight="26.0" prefWidth="296.0" promptText="Tipo de interés por descubierto" />
+            <Label layoutX="8.0" layoutY="199.0" text="Comisión fija por descubierto:" textFill="#fafafa">
+               <font>
+                  <Font name="Berlin Sans FB" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="comisionFijaDescTF" layoutX="9.0" layoutY="225.0" prefHeight="26.0" prefWidth="296.0" promptText="Comisión fija por cada descubierto" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
