@@ -1,6 +1,7 @@
 package com.example.cuentas_bancarias.Model;
 
 import com.example.cuentas_bancarias.Interface.Imprimible;
+import com.example.cuentas_bancarias.Utilities.StaticCode;
 
 public class CuentaBancaria implements Imprimible {
     private Persona titularCuenta;
@@ -35,5 +36,10 @@ public class CuentaBancaria implements Imprimible {
 
     public void setNumCuenta(String numCuenta) {
         this.numCuenta = numCuenta;
+    }
+
+    @Override
+    public void devolverInfoString(String IBAN, String tipoCuenta) {
+
     }
 }

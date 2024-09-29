@@ -36,7 +36,7 @@
             <DropShadow />
          </effect>
          <children>
-            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="17.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+            <ImageView fx:id="listadoCnBtt" fitHeight="29.0" fitWidth="47.0" layoutY="17.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onListarCuentasAction" pickOnBounds="true">
                <image>
                   <Image url="@Imagen/cursorArr.png" />
                </image>
@@ -53,7 +53,7 @@
             <DropShadow />
          </effect>
          <children>
-            <ImageView fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" pickOnBounds="true">
+            <ImageView fx:id="datosCnBtt" fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" onMouseClicked="#onDatosCnAction" pickOnBounds="true">
                <image>
                   <Image url="@Imagen/cursorArr.png" />
                </image>
@@ -70,7 +70,7 @@
             <DropShadow />
          </effect>
          <children>
-            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+            <ImageView fx:id="ingresoCnBtt" fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onRealizarIngresoAction" pickOnBounds="true">
                <image>
                   <Image url="@Imagen/cursorArr.png" />
                </image>
@@ -87,7 +87,7 @@
             <DropShadow />
          </effect>
          <children>
-            <ImageView fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" pickOnBounds="true">
+            <ImageView fx:id="retirarEfectivoBtt" fitHeight="29.0" fitWidth="47.0" layoutX="261.0" layoutY="17.0" onMouseClicked="#onRetirarEfectivoAction" pickOnBounds="true">
                <image>
                   <Image url="@Imagen/cursorArr.png" />
                </image>
@@ -127,7 +127,7 @@
             <DropShadow />
          </effect>
          <children>
-            <ImageView fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+            <ImageView fx:id="saldoActualBtt" fitHeight="29.0" fitWidth="47.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onSaldoActualAction" pickOnBounds="true">
                <image>
                   <Image url="@Imagen/cursorArr.png" />
                </image>

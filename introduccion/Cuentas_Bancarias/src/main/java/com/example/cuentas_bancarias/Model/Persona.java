@@ -1,8 +1,6 @@
 package com.example.cuentas_bancarias.Model;
 
-import com.example.cuentas_bancarias.Interface.Imprimible;
-
-public class Persona implements Imprimible {
+public class Persona {
     private String nombrePersona;
     private String apellidoPersona;
     private String dniPersona;

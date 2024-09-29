@@ -2,7 +2,7 @@ package com.example.cuentas_bancarias.Model;
 
 import java.util.ArrayList;
 
-public class CuentaCorrienteEmpresa extends CuentaCorriente{
+public class CuentaCorrienteEmpresa extends CuentaCorriente {
     private double tipoInteresDescubierto;
     private double maxDescubiertoPermitido;
     private double comisionFijaDescubierto;

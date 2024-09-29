@@ -23,6 +23,11 @@ public class Banco {
         return operacionExitosa;
     } // DEVUELVE TRUE O FALSE SI ALMACENAR LA CUENTA HA SIDO EXITOSA O NO
 
+    public static ArrayList listadoCuentas(){
+        return cuentasLista;
+    }
+
+
 
     /*
     o listadoCuentas: no recibe parámetro y devuelve un array donde cada elemento
