@@ -1,17 +1,11 @@
 package com.example.cuentas_bancarias.Controller;
 
-import com.example.cuentas_bancarias.Model.Banco;
-import com.example.cuentas_bancarias.Model.CuentaBancaria;
-import com.example.cuentas_bancarias.Model.Persona;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,7 +31,7 @@ public class ListAccountCtrller implements Initializable {
         /*** en el textArea no sirve cambiar el color de fondo con background (cambia el color del borde),
          * asique se pone control-inner-background para cambiar el color de fondo ***/
         contentPaneTxt.setStyle("-fx-control-inner-background: #56269c; -fx-text-fill: #FFFFFF; -fx-font-size: 17;");
-        String[] accountsList = Banco.listadoCuentas();
+        String[] accountsList = StaticCode.banco.listadoCuentas();
         for (String accountInfo : accountsList) {
             // SE USA APPEND PARA AGREGAR EL NUEVO TEXTO AL CONTENIDO ACTUAL.
             // YA QUE CON setText() REEMPLAZA EL CONTENIDO

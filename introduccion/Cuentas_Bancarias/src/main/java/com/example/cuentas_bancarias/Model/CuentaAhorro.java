@@ -13,19 +13,17 @@ public class CuentaAhorro extends CuentaBancaria implements Imprimible {
     public double getTipoInteres() {
         return tipoInteres;
     }
-
     public void setTipoInteres(double tipoInteres) {
         this.tipoInteres = tipoInteres;
     }
 
     @Override
     public String devolverInfoString() {
-        // SE LLAMA AL METODO DE LA CLASE ABSTRACTA Y SE AÑADE INFORMACION
+        // SE IMPLEMENTA EL METODO DE LA CLASE ABSTRACTA Y SE AÑADE INFORMACION
         return "Titular: " + getTitularCuenta().devolverInfoString() +  // INFO TITULAR
                 "\nSaldo actual: " + getSaldoActualCuenta() +  // SACDO ACTUAL
                 "\nNúmero de cuenta: " + getNumCuenta() +  // NUMERO DE CUENTA
                 "\nTipo de cuenta: Ahorro" +  // TIPO DE CUENTA
                 "\nInterés de remuneración: " + getTipoInteres();  // INTERES
-
     }
 }

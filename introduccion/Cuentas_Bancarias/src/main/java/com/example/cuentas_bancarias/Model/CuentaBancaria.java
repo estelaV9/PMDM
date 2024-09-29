@@ -17,35 +17,22 @@ public abstract class CuentaBancaria implements Imprimible {
     public Persona getTitularCuenta() {
         return titularCuenta;
     }
-
     public void setTitularCuenta(Persona titularCuenta) {
         this.titularCuenta = titularCuenta;
     }
-
     public double getSaldoActualCuenta() {
         return saldoActualCuenta;
     }
-
     public void setSaldoActualCuenta(double saldoActualCuenta) {
         this.saldoActualCuenta = saldoActualCuenta;
     }
-
-    public String getNumCuenta() {
-        return numCuenta;
-    }
-
+    public String getNumCuenta() {return numCuenta;}
     public void setNumCuenta(String numCuenta) {
         this.numCuenta = numCuenta;
     }
 
 
     @Override
-    public abstract String devolverInfoString(); // METODO ABSTRACTO PARA SER IMPLEMENTADO EN LAS DEMAS CLASES
-
-    /*@Override
-    public String devolverInfoString() {
-        return "Titular -> " + this.getTitularCuenta().devolverInfoString() + // SE LLAMA AL METODO DEVOLVER INFO DEL TITULAR
-                "\nSaldo actual de la cuenta: " + this.getSaldoActualCuenta() +
-                "\nNumero de cuenta: " + this.getNumCuenta();
-    }*/
+    public abstract String devolverInfoString(); // METODO ABSTRACTO PARA SER IMPLEMENTADO EN LAS DEMAS CLASES Y
+                                                 // DEVOLVER INFORMACION SOBRE LA CUENTA
 }

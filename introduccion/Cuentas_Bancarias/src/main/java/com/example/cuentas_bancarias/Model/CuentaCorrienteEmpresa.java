@@ -17,24 +17,31 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente {
     public double getTipoInteresDescubierto() {
         return tipoInteresDescubierto;
     }
-
     public void setTipoInteresDescubierto(double tipoInteresDescubierto) {
         this.tipoInteresDescubierto = tipoInteresDescubierto;
     }
-
     public double getMaxDescubiertoPermitido() {
         return maxDescubiertoPermitido;
     }
-
     public void setMaxDescubiertoPermitido(double maxDescubiertoPermitido) {
         this.maxDescubiertoPermitido = maxDescubiertoPermitido;
     }
-
     public double getComisionFijaDescubierto() {
         return comisionFijaDescubierto;
     }
-
     public void setComisionFijaDescubierto(double comisionFijaDescubierto) {
         this.comisionFijaDescubierto = comisionFijaDescubierto;
+    }
+
+    @Override
+    public String devolverInfoString() {
+        // SE IMPLEMENTA EL METODO DE LA CLASE ABSTRACTA Y SE AÑADE INFORMACION
+        return "Titular: " + getTitularCuenta().devolverInfoString() +  // INFO TITULAR
+                "\nSaldo actual: " + getSaldoActualCuenta() +  // SACDO ACTUAL
+                "\nNúmero de cuenta: " + getNumCuenta() +  // NUMERO DE CUENTA
+                "\nTipo de cuenta: Corriente de Empresa" +  // TIPO DE CUENTA
+                "\nMáximo descubierto permitido: " + this.maxDescubiertoPermitido +
+                "\nTipo de interés por descubierto " + this.tipoInteresDescubierto +
+                "\nComisión fija por cada descubierto: " + this.comisionFijaDescubierto;
     }
 }

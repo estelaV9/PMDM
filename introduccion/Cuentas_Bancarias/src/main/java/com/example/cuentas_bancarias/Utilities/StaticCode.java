@@ -2,9 +2,6 @@ package com.example.cuentas_bancarias.Utilities;
 
 import com.example.cuentas_bancarias.Main;
 import com.example.cuentas_bancarias.Model.Banco;
-import com.example.cuentas_bancarias.Model.CuentaAhorro;
-import com.example.cuentas_bancarias.Model.CuentaBancaria;
-import com.example.cuentas_bancarias.Model.Persona;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,13 +9,36 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 import javax.swing.*;
 import java.io.IOException;
-import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StaticCode {
-    public static Banco banco = new Banco(); // SE CREA ESTE OBJETO DE FORMA ESTATICA YA QUE SE UTILIZARA VARIAS VECES
+    public static Banco banco = new Banco(); // SE CREA ESTE OBJETO DE TIPO BANCO DE FORMA ESTATICA YA QUE SE UTILIZARA VARIAS VECES
+    public static ArrayList<String> nombres = new ArrayList<>(Arrays.asList(
+            "Banco Nacional",
+            "Compañía Eléctrica S.A.",
+            "Proveedor de Internet GlobalNet",
+            "Servicios Médicos SaludPlus",
+            "Asociación de Consumidores de Agua",
+            "Telefónica Móvil S.A.",
+            "Gimnasio Wellness Club",
+            "Proveedores de Gas Natural",
+            "Seguros VidaSegura",
+            "Empresa de Transporte MetroRápido",
+            "Servicios Financieros ABC",
+            "Editorial MundoLibros",
+            "Inmobiliaria CasasVerdes",
+            "Agencia de Viajes TravelPro",
+            "Universidad Internacional",
+            "Cines Cineplex",
+            "Compañía de Software SoftSolutions",
+            "Supermercados MercadoGrande",
+            "Taller Automotriz MotorFix",
+            "Clínica Veterinaria PetCare"
+    ));
+
     public static void exitApp() {
         int opcion = JOptionPane.showConfirmDialog(null,
                 "¿Está seguro de que desea salir?", "Confirmación", JOptionPane.YES_NO_OPTION);
@@ -77,10 +97,10 @@ public class StaticCode {
         alert.showAndWait();
     } // METODO ESTATICO PARA GENERA UNA ALERTA
 
-    public static void alertAbrirCuenta (boolean cuentaCreadaExito){
+    public static void alertAbrirCuenta (boolean cuentaCreadaExito, String tipoCuenta){
         if(cuentaCreadaExito){
             StaticCode.Alerts("CONFIRMATION", "Añadir cuenta.", "CONFIRMATION",
-                    "Se ha añadido correctamente una cuenta de ahorro.");
+                    "Se ha añadido correctamente una cuenta " + tipoCuenta + ".");
         } else {
             StaticCode.Alerts("ERROR", "Cuenta duplicada.", "¡ERROR!",
                     "La cuenta ya existe en el sistema."); // SI EL IBAN ESTA YA REGISTRADO, GENERA UN ERROR
