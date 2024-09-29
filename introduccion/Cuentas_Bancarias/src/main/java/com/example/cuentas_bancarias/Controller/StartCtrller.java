@@ -1,5 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
+import com.example.cuentas_bancarias.Model.Banco;
+import com.example.cuentas_bancarias.Model.CuentaBancaria;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
@@ -7,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 
 import javax.swing.*;
 import javax.swing.text.Utilities;
+import java.util.Arrays;
 
 public class StartCtrller {
     @FXML
@@ -28,7 +31,9 @@ public class StartCtrller {
     }
     @FXML
     void onListarCuentasAction(MouseEvent event) {
-
+        for (int i = 0; i < Banco.cuentasLista.size(); i++) {
+            System.out.println(Arrays.toString(Banco.listadoCuentas()));
+        }
     }
     @FXML
     void onRealizarIngresoAction(MouseEvent event) {

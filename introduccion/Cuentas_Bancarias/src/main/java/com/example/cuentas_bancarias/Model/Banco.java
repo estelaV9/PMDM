@@ -3,28 +3,44 @@ package com.example.cuentas_bancarias.Model;
 import java.util.ArrayList;
 
 public class Banco {
-    private static ArrayList<CuentaBancaria> cuentasLista;
+    public static ArrayList<CuentaBancaria> cuentasLista = new ArrayList<>();
 
     public Banco(ArrayList<CuentaBancaria> cuentasLista) {
         this.cuentasLista = cuentasLista;
     }
 
-    public static boolean abrirCuenta (CuentaBancaria cuentaBancaria){
+    public static boolean abrirCuenta(CuentaBancaria cuentaBancaria) {
         boolean operacionExitosa = true; // ATRIBUTO QUE INDICA SI LA OPERACION HA SIDO EXITOSA O NO
-        for(CuentaBancaria CB: cuentasLista){
-            if(CB.equals(cuentaBancaria)){
+
+        if (cuentasLista.isEmpty()) {
+            cuentasLista.add(cuentaBancaria); // SE AÑADE LA PRIMERA CUENTA
+            return true; // LA OPERACION FUE EXITOSA
+        } // SI LA LISTA ESTA VACIA, SE AÑADE DIRECTAMENTE
+
+        for (CuentaBancaria CB : cuentasLista) {
+            if (CB.getNumCuenta().equals(cuentaBancaria.getNumCuenta())) {
                 operacionExitosa = false;
                 break;
             } // SI EXISTE LA CUENTA, LA OPERACION NO HA SIDO EXITOSA
         }
-        if(!operacionExitosa){
+        if (operacionExitosa) {
             cuentasLista.add(cuentaBancaria);
         } // SI NO EXISTE LA CUENTA, SE AÑADE
+
         return operacionExitosa;
     } // DEVUELVE TRUE O FALSE SI ALMACENAR LA CUENTA HA SIDO EXITOSA O NO
 
-    public static ArrayList listadoCuentas(){
-        return cuentasLista;
+    public static String[] listadoCuentas() {
+        // SE CREA UN ARRAY DE STRINGS DEL MISMO TAMÑO QUE LA LISTA DE CUENTAS
+        String[] cuentasInfo = new String[cuentasLista.size()];
+
+        // SE RECORRE LA LISTA Y SE VA CONVIRTIENDO CADA CUENTA EN UNA CADENA
+        for (int i = 0; i < cuentasLista.size(); i++) {
+            CuentaBancaria cuenta = cuentasLista.get(i);
+            cuentasInfo[i] = cuenta.devolverInfoString();
+        }
+
+        return cuentasInfo;  // SE DEVUELVE EL ARRAY DE STRING
     }
 
 

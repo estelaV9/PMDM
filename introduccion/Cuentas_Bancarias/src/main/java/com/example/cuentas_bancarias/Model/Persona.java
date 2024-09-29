@@ -1,6 +1,8 @@
 package com.example.cuentas_bancarias.Model;
 
-public class Persona {
+import com.example.cuentas_bancarias.Interface.Imprimible;
+
+public class Persona implements Imprimible {
     private String nombrePersona;
     private String apellidoPersona;
     private String dniPersona;
@@ -36,5 +38,20 @@ public class Persona {
 
     public void setDniPersona(String dniPersona) {
         this.dniPersona = dniPersona;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombrePersona='" + nombrePersona + '\'' +
+                ", apellidoPersona='" + apellidoPersona + '\'' +
+                ", dniPersona='" + dniPersona + '\'' +
+                '}';
+    }
+
+    @Override
+    public String devolverInfoString() {
+        return "Nombre: " + this.getNombrePersona() + " " + this.getApellidoPersona() +
+                ". DNI: " + this.getDniPersona();
     }
 }
