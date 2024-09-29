@@ -30,8 +30,8 @@ public class StartCtrller {
     } // IR A LA PAGINA DE LISTAR CUENTAS
     @FXML
     void onRealizarIngresoAction(MouseEvent event) {
-
-    }
+        StaticCode.cambiarVistaImg("DepositMoney.fxml", ingresoCnBtt, "Deposit Money");
+    } // IR A LA PAGINA DE REALIZAR INGRESO
     @FXML
     void onRetirarEfectivoAction(MouseEvent event) {
 
