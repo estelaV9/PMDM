@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.ListAccountCtrller">
    <children>
-      <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
+      <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true" styleClass="Style.css">
          <image>
             <Image url="@Imagen/bckgGeneral.png" />
          </image>
       </ImageView>
-      <Pane fx:id="accountPane" layoutX="26.0" layoutY="124.0" prefHeight="439.0" prefWidth="308.0" style="-fx-background-color: #56269c;">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
       <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="7.0" layoutY="12.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagen/logo.png" />
@@ -53,5 +48,10 @@
             <Image url="@Imagen/cursorArr.png" />
          </image>
       </ImageView>
+      <TextArea fx:id="contentPaneTxt" editable="false" layoutX="29.0" layoutY="125.0" prefHeight="439.0" prefWidth="308.0" style="-fx-background-color: #461d80; -fx-font-family: Berlin Sans FB; -fx-font-size: 15;">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextArea>
    </children>
 </AnchorPane>

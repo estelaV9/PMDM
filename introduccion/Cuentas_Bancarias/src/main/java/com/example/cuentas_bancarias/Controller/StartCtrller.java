@@ -32,11 +32,8 @@ public class StartCtrller {
     }
     @FXML
     void onListarCuentasAction(MouseEvent event) {
-        String[] cuentas = Banco.listadoCuentas();
-        for (String cuentaInfo : cuentas) {
-            System.out.println(cuentaInfo);
-        }
-    }
+        StaticCode.cambiarVistaImg("ListAccount.fxml", listadoCnBtt, "List Of Accounts");
+    } // IR A LA PAGINA DE LISTAR CUENTAS
     @FXML
     void onRealizarIngresoAction(MouseEvent event) {
 
