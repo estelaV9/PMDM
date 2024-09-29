@@ -75,15 +75,28 @@ public class Banco {
         return  existeCuenta;
     } // METODO PARA EL INGRESO DE UNA CANTIDAD EN LA CUENTA
 
-    /*
-    o ingresoCuenta: recibe un iban por parámetro y una cantidad e ingresa la
-    cantidad en la cuenta. Devuelve true o false indicando si la operación se realizó
-    con éxito.
-    o retiradaCuenta: recibe un iban por parámetro y una cantidad y trata de retirar
-    la cantidad de la cuenta. Devuelve true o false indicando si la operación se
-    realizó con éxito.
-    o obtenerSaldo: Recibe un iban por parámetro y devuelve el saldo de la cuenta si
-    existe. En caso contrario devuelve -1.
-    *
-    * */
+    public boolean retiradaCuenta (String IBAN, double cantRetirar){
+        boolean existeCuenta = false; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO
+        double cantTotal; // VARIABLE PARA GUARDAR LA CANTIDAD TOTAL DE LA CUENTA (actual - cantRetirar)
+        for(CuentaBancaria cuentaBancaria: this.cuentasLista){
+            if(cuentaBancaria.getNumCuenta().equals(IBAN)){
+                existeCuenta = true;
+                cantTotal = cuentaBancaria.getSaldoActualCuenta() - cantRetirar;
+                cuentaBancaria.setSaldoActualCuenta(cantTotal);
+                break;
+            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
+        } // FOR PARA RECORRE LA CUENTA
+        return  existeCuenta;
+    } // METODO PARA RETIRAR UNA CANTIDAD DE UNA CUENTA
+
+    public double obtenerSaldo (String IBAN){
+        double existeCuenta = -1; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO. SI NO EXISTE DEVUELVE -1
+        for(CuentaBancaria cuentaBancaria: this.cuentasLista){
+            if(cuentaBancaria.getNumCuenta().equals(IBAN)){
+                existeCuenta = 0;
+                return cuentaBancaria.getSaldoActualCuenta();
+            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
+        } // FOR PARA RECORRE LA CUENTA
+        return  existeCuenta;
+    } // METODO PARA OBTENER EL SALDO DE UNA CUENTA
 }
