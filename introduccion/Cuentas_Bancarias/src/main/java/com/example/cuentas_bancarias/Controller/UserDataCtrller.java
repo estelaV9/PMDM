@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class UserDataCtrller implements Initializable {
@@ -47,6 +48,7 @@ public class UserDataCtrller implements Initializable {
     private ComboBox<String> tipoCuentaCB;
     @FXML
     private Button añadirBtt;
+    ArrayList<String> nombreEntidades = new ArrayList<>();
 
     @FXML
     void onExitAction(MouseEvent event) {
@@ -110,7 +112,7 @@ public class UserDataCtrller implements Initializable {
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE PERSONAL (uso de polimorfismo)
                         cuentaBancaria = new CuentaCorrientePersonal(persona, Double.parseDouble(saldoInicialTF.getText()),
-                                numCuentaTF.getText(), StaticCode.nombres, Double.parseDouble(comisionManteTF.getText()));
+                                numCuentaTF.getText(), nombreEntidades, Double.parseDouble(comisionManteTF.getText()));
                         StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria), "corriente personal");
                     }
                     break;
@@ -121,7 +123,7 @@ public class UserDataCtrller implements Initializable {
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE DE EMPRESA (uso de polimorfismo)
                         cuentaBancaria = new CuentaCorrienteEmpresa(persona, Double.parseDouble(saldoInicialTF.getText()),
-                                numCuentaTF.getText(), StaticCode.nombres, Double.parseDouble(maxDescuPermiTF.getText()),
+                                numCuentaTF.getText(), nombreEntidades, Double.parseDouble(maxDescuPermiTF.getText()),
                                 Double.parseDouble(tipoInteresDescTF.getText()), Double.parseDouble(comisionFijaDescTF.getText()));
                         StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria), "corriente de empresa");
                     }
@@ -142,5 +144,18 @@ public class UserDataCtrller implements Initializable {
         paneAhorro.setVisible(false);
         paneCCEmpresa.setVisible(false);
         paneCCPersonal.setVisible(false);
+
+        // CUANDO SE INICIA SE AÑADEN LOS VALORES DE LA LISTA DE ENTIDADES
+        nombreEntidades.add("Banco Nacional");
+        nombreEntidades.add("Compañía Eléctrica S.A.");
+        nombreEntidades.add("Proveedor de Internet GlobalNet");
+        nombreEntidades.add("Servicios Médicos SaludPlus");
+        nombreEntidades.add("Asociación de Consumidores de Agua");
+        nombreEntidades.add("Telefónica Móvil S.A.");
+        nombreEntidades.add("Proveedores de Gas Natural");
+        nombreEntidades.add("Servicios Financieros ABC");
+        nombreEntidades.add("Agencia de Viajes TravelPro");
+        nombreEntidades.add("Cines Cineplex");
+        nombreEntidades.add("Supermercados MercadoGrande");
     }
 }

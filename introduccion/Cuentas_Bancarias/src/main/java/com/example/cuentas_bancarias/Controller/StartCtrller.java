@@ -22,8 +22,8 @@ public class StartCtrller {
 
     @FXML
     void onDatosCnAction(MouseEvent event) {
-
-    }
+        StaticCode.cambiarVistaImg("AccountInfo.fxml", datosCnBtt, "Account Information");
+    } // IR A LA PAGINA DE OBTENER DATOS DE UNA CUENTA
     @FXML
     void onListarCuentasAction(MouseEvent event) {
         StaticCode.cambiarVistaImg("ListAccount.fxml", listadoCnBtt, "List Of Accounts");

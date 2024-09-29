@@ -16,28 +16,6 @@ import java.util.Arrays;
 
 public class StaticCode {
     public static Banco banco = new Banco(); // SE CREA ESTE OBJETO DE TIPO BANCO DE FORMA ESTATICA YA QUE SE UTILIZARA VARIAS VECES
-    public static ArrayList<String> nombres = new ArrayList<>(Arrays.asList(
-            "Banco Nacional",
-            "Compañía Eléctrica S.A.",
-            "Proveedor de Internet GlobalNet",
-            "Servicios Médicos SaludPlus",
-            "Asociación de Consumidores de Agua",
-            "Telefónica Móvil S.A.",
-            "Gimnasio Wellness Club",
-            "Proveedores de Gas Natural",
-            "Seguros VidaSegura",
-            "Empresa de Transporte MetroRápido",
-            "Servicios Financieros ABC",
-            "Editorial MundoLibros",
-            "Inmobiliaria CasasVerdes",
-            "Agencia de Viajes TravelPro",
-            "Universidad Internacional",
-            "Cines Cineplex",
-            "Compañía de Software SoftSolutions",
-            "Supermercados MercadoGrande",
-            "Taller Automotriz MotorFix",
-            "Clínica Veterinaria PetCare"
-    ));
 
     public static void exitApp() {
         int opcion = JOptionPane.showConfirmDialog(null,
