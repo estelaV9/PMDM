@@ -1,6 +1,9 @@
 package com.example.cuentas_bancarias.Utilities;
 
 import com.example.cuentas_bancarias.Main;
+import com.example.cuentas_bancarias.Model.Banco;
+import com.example.cuentas_bancarias.Model.CuentaBancaria;
+import com.example.cuentas_bancarias.Model.Persona;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -70,4 +73,17 @@ public class StaticCode {
         alert.setContentText(contentText);
         alert.showAndWait();
     } // METODO ESTATICO PARA GENERA UNA ALERTA
+
+
+    public static void añadirCuenta(Persona persona, double saldo, String numCuenta, String tipoCuenta){
+        CuentaBancaria cuentaBancaria = new CuentaBancaria(persona, saldo, numCuenta); // CREAR UN OBJETO DE LA CUENTA BANCARIA
+
+        if(Banco.abrirCuenta(cuentaBancaria)){
+            StaticCode.Alerts("CONFIRMATION", "Añadir cuenta.", "CONFIRMATION",
+                    "Se ha añadido correctamente una cuenta " + tipoCuenta + ".");
+        } else {
+            StaticCode.Alerts("ERROR", "Cuenta duplicada.", "¡ERROR!",
+                    "La cuenta ya existe en el sistema."); // SI EL IBAN ESTA YA REGISTRADO, GENERA UN ERROR
+        } // LLAMAR AL METODO ABRIR CUENTA PARA AÑADIRLA Y GENERAR ALERTAS
+    }
 }

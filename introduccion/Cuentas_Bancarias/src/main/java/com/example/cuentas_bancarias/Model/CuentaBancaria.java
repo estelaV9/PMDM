@@ -43,6 +43,6 @@ public class CuentaBancaria implements Imprimible {
     public String devolverInfoString() {
         return "Titular -> " + this.getTitularCuenta().devolverInfoString() + // SE LLAMA AL METODO DEVOLVER INFO DEL TITULAR
                 "\nSaldo actual de la cuenta: " + this.getSaldoActualCuenta() +
-                "\nNumero de cuenta: " + this.getNumCuenta() + "\n\n";
+                "\nNumero de cuenta: " + this.getNumCuenta();
     }
 }

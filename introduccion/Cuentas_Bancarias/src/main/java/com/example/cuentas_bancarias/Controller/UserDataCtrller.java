@@ -105,11 +105,7 @@ public class UserDataCtrller implements Initializable {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",
                                 "Por favor, rellene todos los datos antes de continuar."); // GENERAR ALERTA
                     } else {
-                        CuentaBancaria cuentaBancaria = new CuentaBancaria(persona, Double.parseDouble(saldoInicialTF.getText()),
-                                numCuentaTF.getText()); // CREAR UN OBJETO DE LA CUENTA BANCARIA
-                        Banco.abrirCuenta(cuentaBancaria); // LLAMAR AL METODO ABRIR CUENTA PARA AÑADIRLA
-                        StaticCode.Alerts("CONFIRMATION", "Añadir cuenta.", "CONFIRMATION",
-                                "Se ha añadido correctamente una cuenta de tipo ahorro."); // GENERAR ALERTA
+                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "de ahorro");
                     }
                     break;
 
@@ -117,7 +113,7 @@ public class UserDataCtrller implements Initializable {
                     if (comisionManteTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
-                        System.out.println("bien personal");
+                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "corriente personal");
                     }
                     break;
 
@@ -125,7 +121,7 @@ public class UserDataCtrller implements Initializable {
                     if (maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
-                        System.out.println("bien empresa");
+                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "corriente de empresa");
                     }
                     break;
             }
