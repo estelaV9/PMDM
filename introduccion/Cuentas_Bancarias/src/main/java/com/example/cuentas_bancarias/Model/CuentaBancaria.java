@@ -3,7 +3,7 @@ package com.example.cuentas_bancarias.Model;
 import com.example.cuentas_bancarias.Interface.Imprimible;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
 
-public class CuentaBancaria implements Imprimible {
+public abstract class CuentaBancaria implements Imprimible {
     private Persona titularCuenta;
     private double saldoActualCuenta;
     private String numCuenta;
@@ -40,9 +40,12 @@ public class CuentaBancaria implements Imprimible {
 
 
     @Override
+    public abstract String devolverInfoString(); // METODO ABSTRACTO PARA SER IMPLEMENTADO EN LAS DEMAS CLASES
+
+    /*@Override
     public String devolverInfoString() {
         return "Titular -> " + this.getTitularCuenta().devolverInfoString() + // SE LLAMA AL METODO DEVOLVER INFO DEL TITULAR
                 "\nSaldo actual de la cuenta: " + this.getSaldoActualCuenta() +
                 "\nNumero de cuenta: " + this.getNumCuenta();
-    }
+    }*/
 }

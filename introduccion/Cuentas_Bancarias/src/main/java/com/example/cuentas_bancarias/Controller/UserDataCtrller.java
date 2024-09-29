@@ -1,9 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Main;
-import com.example.cuentas_bancarias.Model.Banco;
-import com.example.cuentas_bancarias.Model.CuentaBancaria;
-import com.example.cuentas_bancarias.Model.Persona;
+import com.example.cuentas_bancarias.Model.*;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -99,13 +97,17 @@ public class UserDataCtrller implements Initializable {
         } else {
             String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
             Persona persona = new Persona(nombreCuentaTF.getText(), apellidosTF.getText(), dniTF.getText());
+            CuentaBancaria cuentaBancaria;
             switch (tipoCuenta) {
                 case "Cuenta de ahorro":
                     if (tipoInteresRemuTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",
                                 "Por favor, rellene todos los datos antes de continuar."); // GENERAR ALERTA
                     } else {
-                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "de ahorro");
+                        // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA AHORRO (uso de polimorfismo)
+                        cuentaBancaria = new CuentaAhorro(persona, Double.parseDouble(saldoInicialTF.getText()),
+                                numCuentaTF.getText(), Double.parseDouble(tipoInteresRemuTF.getText()));
+                        StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria));
                     }
                     break;
 
@@ -113,7 +115,10 @@ public class UserDataCtrller implements Initializable {
                     if (comisionManteTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
-                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "corriente personal");
+                        // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE PERSONAL (uso de polimorfismo)
+                        cuentaBancaria = new CuentaCorrientePersonal(persona, Double.parseDouble(saldoInicialTF.getText()),
+                                numCuentaTF.getText(), Double.parseDouble(comisionManteTF.getText()));
+                        StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria));
                     }
                     break;
 
@@ -121,7 +126,10 @@ public class UserDataCtrller implements Initializable {
                     if (maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else {
-                        StaticCode.añadirCuenta(persona, Double.parseDouble(saldoInicialTF.getText()), numCuentaTF.getText(), "corriente de empresa");
+                        // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE DE EMPRESA (uso de polimorfismo)
+                        cuentaBancaria = new CuentaCorrienteEmpresa(persona, Double.parseDouble(saldoInicialTF.getText()),
+                                numCuentaTF.getText(), Double.parseDouble(comisionManteTF.getText()));
+                        StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria));
                     }
                     break;
             }

@@ -2,7 +2,7 @@ package com.example.cuentas_bancarias.Model;
 
 import java.util.ArrayList;
 
-public class CuentaCorriente extends CuentaBancaria{
+public abstract class CuentaCorriente extends CuentaBancaria{
     private ArrayList<String> entidadesAutorizadas;
 
     public CuentaCorriente(Persona titularCuenta, double saldoActualCuenta, String numCuenta, ArrayList<String> entidadesAutorizadas) {
@@ -16,5 +16,10 @@ public class CuentaCorriente extends CuentaBancaria{
 
     public void setEntidadesAutorizadas(ArrayList<String> entidadesAutorizadas) {
         this.entidadesAutorizadas = entidadesAutorizadas;
+    }
+
+    @Override
+    public String devolverInfoString() {
+        return null;
     }
 }
