@@ -61,7 +61,19 @@ public class Banco {
     } // INFORMACION CUENTAS QUE DEVUELVE INFORMACION DE LA CUENTA PASADA POR PARAMETRO
 
 
-
+    public boolean ingresoCuenta(String IBAN, double cantIngreso){
+        boolean existeCuenta = false; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO
+        double cantTotal; // VARIABLE PARA GUARDAR LA CANTIDAD TOTAL DE LA CUENTA (actual + ingresoNuevo)
+        for(CuentaBancaria cuentaBancaria: this.cuentasLista){
+            if(cuentaBancaria.getNumCuenta().equals(IBAN)){
+                existeCuenta = true;
+                cantTotal = cuentaBancaria.getSaldoActualCuenta() + cantIngreso;
+                cuentaBancaria.setSaldoActualCuenta(cantTotal);
+                break;
+            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
+        } // FOR PARA RECORRE LA CUENTA
+        return  existeCuenta;
+    } // METODO PARA EL INGRESO DE UNA CANTIDAD EN LA CUENTA
 
     /*
     o ingresoCuenta: recibe un iban por parámetro y una cantidad e ingresa la
