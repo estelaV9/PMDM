@@ -38,8 +38,10 @@ public class StartCtrller {
     } // IR A LA PAGINA DE RETIRAR DINERO
     @FXML
     void onSaldoActualAction(MouseEvent event) {
+        StaticCode.cambiarVistaImg("CheckBalance.fxml", saldoActualBtt, "Check Balance");
+    } // IR A LA PAGINA DE OBTENER SALDO
 
-    }    @FXML
+    @FXML
     void onExitAction(MouseEvent event) {
         StaticCode.exitApp();
     } // SALIR DE LA APLICACIÓN
