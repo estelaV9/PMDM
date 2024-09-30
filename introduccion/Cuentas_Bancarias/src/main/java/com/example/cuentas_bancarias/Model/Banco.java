@@ -81,13 +81,11 @@ public class Banco {
     } // METODO PARA RETIRAR UNA CANTIDAD DE UNA CUENTA
 
     public double obtenerSaldo(String IBAN) {
-        double existeCuenta = -1; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO. SI NO EXISTE DEVUELVE -1
         for (CuentaBancaria cuentaBancaria : this.cuentasLista) {
             if (cuentaBancaria.getNumCuenta().equals(IBAN)) {
-                existeCuenta = 0;
-                return cuentaBancaria.getSaldoActualCuenta();
-            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
-        } // FOR PARA RECORRE LA CUENTA
-        return existeCuenta;
+                return cuentaBancaria.getSaldoActualCuenta(); // RETORNA EL SALDO ACTUAL
+            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL METODO
+        } // FOR PARA RECORRER LA LISTA DE CUENTAS
+        return -1; // SI LA CUENTA NO EXISTE DEVOLVERA -1
     } // METODO PARA OBTENER EL SALDO DE UNA CUENTA
 }
