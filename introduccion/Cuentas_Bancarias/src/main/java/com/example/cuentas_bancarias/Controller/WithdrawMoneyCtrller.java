@@ -26,13 +26,14 @@ public class WithdrawMoneyCtrller {
     @FXML
     void onRetirarAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty() || cantRetirarTF.getText().isEmpty()){
+            // SI EL CAMPO DE IBAN ESTA VACIO O LA CANTIDAD A INGRESAR LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
         } else if (!Validator.contieneNumeros(cantRetirarTF.getText())){
-            // COMPROBAR QUE EL CAMPO CANTRETIRAR NO CONTENGAN CADENAS
+            // SE LLAMA AL METODO PARA VALIDAR LA CANTIDAD A RETIRAR, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "El campo de cantidad para retirar no debe contener letras.");
         } else if (!Validator.isValidIban(numIbanTF.getText())) {
-            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
@@ -43,17 +44,20 @@ public class WithdrawMoneyCtrller {
                 textConfirmTxt.setFill(Color.RED);// SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA
                 textConfirmTxt.setText("Retirada de cantidad NO realizado correctamente");
             } // DEPENDIENDO DE LO QUE DEVUELVA EL METODO, SI TRUE O FALSE, SE MOSTRARA UN MENSAJE DE ERROR O DE CONFIRMACION
-        } // SI EL CAMPO DE IBAN ESTA VACIO O LA CANTIDAD A INGRESAR LANZA UNA ALERTA
-    }
+        }
+    } // METODO PARA RETIRAR UNA CANTIDAD DE UNA CUENTA
 
     @FXML
     void onExitAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO PARA SALIR DE LA APLICACION
         StaticCode.exitApp();
     } // SALIR DE LA APLICACIÓN
 
     @FXML
     void onVolverAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO CAMBIAR VISTA POR IMAGEN PARA VOLVER A LA PAGINA PRINCIPAL
+        // SE INSERTA LOS PARAMETROS: NOMBRE DEL FXML AL QUE SE QUIERE IR, UN IMAGENVIEW Y
+        // EL TITULO QUE VA A TENER ESE STAGE
         StaticCode.cambiarVistaImg("Start.fxml", volverBtt, "Start Application");
     } // IR A LA PAGINA PRINCIPAL DE LA APLICACION
-
 }
