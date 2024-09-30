@@ -32,7 +32,6 @@ public class AccountInfoCtrller implements Initializable {
                     "Por favor, rellene todos los datos antes de continuar.");
         } else if (!Validator.isValidIban(numIbanTF.getText())) {
             // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERA
-            // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS CON SUS PARAMETROS
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
@@ -40,7 +39,7 @@ public class AccountInfoCtrller implements Initializable {
             // PARA ELLO SE LLAMARA AL METODO DE BANCO DONDE RETORNE LA INFORMACION Y SE SETTEARA LO QUE RETORNE
             contentPaneTxt.setText(StaticCode.banco.informacionCuenta(numIbanTF.getText()));
         }
-    }
+    } // METODO PARA BUSCAR CUENTA POR IBAN
 
     @FXML
     void onExitAction(MouseEvent event) {
