@@ -3,7 +3,7 @@ package com.example.cuentas_bancarias.Model;
 import com.example.cuentas_bancarias.Interface.Imprimible;
 
 public class CuentaAhorro extends CuentaBancaria implements Imprimible {
-    private double tipoInteres;
+    private double tipoInteres; // SE GUARDA EL TIPO DE INTERES
 
     public CuentaAhorro(Persona titularCuenta, double saldoActualCuenta, String numCuenta, double tipoInteres) {
         super(titularCuenta, saldoActualCuenta, numCuenta);

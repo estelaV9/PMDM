@@ -1,12 +1,13 @@
 package com.example.cuentas_bancarias.Model;
 
 import com.example.cuentas_bancarias.Interface.Imprimible;
-import com.example.cuentas_bancarias.Utilities.StaticCode;
 
 public abstract class CuentaBancaria implements Imprimible {
-    private Persona titularCuenta;
-    private double saldoActualCuenta;
-    private String numCuenta;
+    /** Nota: Se utiliza 'protected' para permitir que las subclases accedan directamente a este atributo,
+     * facilitando así la herencia y el manejo de información. **/
+    protected Persona titularCuenta; // OBJETO DE TIPO PERSONA PARA GUARDAR LA INFORMACION DEL TITULAR DE LA CUENTA
+    protected double saldoActualCuenta; // SE GUARDA EL SALDO ACTUAL DE LA CUENTA
+    protected String numCuenta; // SE GUARDA EL NUMERO DE IBAN DE LA CUENTA
 
     public CuentaBancaria(Persona titularCuenta, double saldoActualCuenta, String numCuenta) {
         this.titularCuenta = titularCuenta;

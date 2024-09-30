@@ -3,9 +3,9 @@ package com.example.cuentas_bancarias.Model;
 import com.example.cuentas_bancarias.Interface.Imprimible;
 
 public class Persona implements Imprimible {
-    private String nombrePersona;
-    private String apellidoPersona;
-    private String dniPersona;
+    private String nombrePersona; // SE GUARDA EL NOMBRE DEL TITULAR
+    private String apellidoPersona; // SE GUARDA EL APELLIDO DEL TITULAR
+    private String dniPersona; // SE GUARDA EL DNI DEL TITULAR
 
     public Persona (){
 
@@ -41,17 +41,8 @@ public class Persona implements Imprimible {
     }
 
     @Override
-    public String toString() {
-        return "Persona{" +
-                "nombrePersona='" + nombrePersona + '\'' +
-                ", apellidoPersona='" + apellidoPersona + '\'' +
-                ", dniPersona='" + dniPersona + '\'' +
-                '}';
-    }
-
-    @Override
     public String devolverInfoString() {
         return "Nombre: " + this.getNombrePersona() + " " + this.getApellidoPersona() +
                 ". DNI: " + this.getDniPersona();
-    }
+    } // METODO QUE DEVULVE LA INFORMACION DEL TITULAR
 }

@@ -3,9 +3,9 @@ package com.example.cuentas_bancarias.Model;
 import java.util.ArrayList;
 
 public class CuentaCorrienteEmpresa extends CuentaCorriente {
-    private double tipoInteresDescubierto;
-    private double maxDescubiertoPermitido;
-    private double comisionFijaDescubierto;
+    private double tipoInteresDescubierto; // SE GUARDA EL TIPO DE INTERES POR DESCUBIERTO
+    private double maxDescubiertoPermitido; // SE GUARDA EL MAXIMO DESCUBIERTO PERMITIDO
+    private double comisionFijaDescubierto; // SE GUARDA LA COMISION FIJA POR DESCUBIERTO
 
     public CuentaCorrienteEmpresa(Persona titularCuenta, double saldoActualCuenta, String numCuenta, ArrayList<String> entidadesAutorizadas, double tipoInteresDescubierto, double maxDescubiertoPermitido, double comisionFijaDescubierto) {
         super(titularCuenta, saldoActualCuenta, numCuenta, entidadesAutorizadas);
