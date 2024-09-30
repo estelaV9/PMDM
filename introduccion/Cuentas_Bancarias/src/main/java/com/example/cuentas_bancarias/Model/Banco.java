@@ -80,9 +80,14 @@ public class Banco {
         double cantTotal; // VARIABLE PARA GUARDAR LA CANTIDAD TOTAL DE LA CUENTA (actual - cantRetirar)
         for(CuentaBancaria cuentaBancaria: this.cuentasLista){
             if(cuentaBancaria.getNumCuenta().equals(IBAN)){
-                existeCuenta = true;
-                cantTotal = cuentaBancaria.getSaldoActualCuenta() - cantRetirar;
-                cuentaBancaria.setSaldoActualCuenta(cantTotal);
+                if ((cuentaBancaria.getSaldoActualCuenta() - cantRetirar) <0) {
+                    // SI LA CANTIDAD A RETIRAR ES MAYOR A LA CANTIDAD QUE TENGA EN LA CUENTA, ENTONCES SE SALE DEL BUCLE (en modo false)
+                    break;
+                } else if (!(cantRetirar < 0)) {
+                    existeCuenta = true;
+                    cantTotal = cuentaBancaria.getSaldoActualCuenta() - cantRetirar;
+                    cuentaBancaria.setSaldoActualCuenta(cantTotal);
+                } // SI LA CANTIDAD A RETIRAR NO ES NEGATIVA ENTONCES SE EJECUTARA CORRECTAMENTE
                 break;
             } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
         } // FOR PARA RECORRE LA CUENTA

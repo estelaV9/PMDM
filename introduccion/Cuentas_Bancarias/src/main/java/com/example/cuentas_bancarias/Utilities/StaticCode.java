@@ -1,6 +1,6 @@
 package com.example.cuentas_bancarias.Utilities;
 
-import com.example.cuentas_bancarias.Main;
+import com.example.cuentas_bancarias.App;
 import com.example.cuentas_bancarias.Model.Banco;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class StaticCode {
     public static Banco banco = new Banco(); // SE CREA ESTE OBJETO DE TIPO BANCO DE FORMA ESTATICA YA QUE SE UTILIZARA VARIAS VECES
@@ -29,7 +27,7 @@ public class StaticCode {
         try {
             // CARGAR EL ARCHIVO FXML
             FXMLLoader fxmlLoader = new
-                    FXMLLoader(Main.class.getResource(nameFxml));
+                    FXMLLoader(App.class.getResource(nameFxml));
             Parent root = fxmlLoader.load();
             // OBTENER CONTROLLER
             Object controller = fxmlLoader.getController();
@@ -50,7 +48,7 @@ public class StaticCode {
         try {
             // CARGAR EL ARCHIVO FXML
             FXMLLoader fxmlLoader = new
-                    FXMLLoader(Main.class.getResource(nameFxml));
+                    FXMLLoader(App.class.getResource(nameFxml));
             Parent root = fxmlLoader.load();
             // OBTENER CONTROLLER
             Object controller = fxmlLoader.getController();

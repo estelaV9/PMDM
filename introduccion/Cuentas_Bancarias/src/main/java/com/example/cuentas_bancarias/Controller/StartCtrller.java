@@ -34,8 +34,8 @@ public class StartCtrller {
     } // IR A LA PAGINA DE REALIZAR INGRESO
     @FXML
     void onRetirarEfectivoAction(MouseEvent event) {
-
-    }
+        StaticCode.cambiarVistaImg("WithdrawMoney.fxml", retirarEfectivoBtt, "Withdraw Money");
+    } // IR A LA PAGINA DE RETIRAR DINERO
     @FXML
     void onSaldoActualAction(MouseEvent event) {
 
