@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 
 public class DepositMoneyCtrller {
     @FXML
-    private Button buscarBtt;
+    private Button ingresarBtt;
     @FXML
     private TextField cantIngresoTF;
     @FXML
@@ -24,35 +24,41 @@ public class DepositMoneyCtrller {
     private ImageView volverBtt;
 
     @FXML
-    void onBuscarCuentaAction(ActionEvent event) {
+    void onIngresarAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty() || cantIngresoTF.getText().isEmpty()){
+            // SI EL CAMPO DE IBAN Y LA CANTIDAD DE INGRESO ESTA VACIO LANZA UNA ALERTA
+            // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
         } else if (!Validator.contieneNumeros(cantIngresoTF.getText())){
-            // COMPROBAR QUE EL CAMPO CANTINGRESO NO CONTENGAN CADENAS
+            // SE LLAMA AL METODO PARA VALIDAR LA CANTIDAD, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "El campo de cantidad de ingreso no debe contener letras.");
         } else if (!Validator.isValidIban(numIbanTF.getText())) {
-            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
             if(StaticCode.banco.ingresoCuenta(numIbanTF.getText(), Double.parseDouble(cantIngresoTF.getText()))){
                 textConfirmTxt.setFill(Color.GREEN); // SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA
-                textConfirmTxt.setText("Ingreso de cantidad realizado correctamente");
+                textConfirmTxt.setText("Ingreso de cantidad realizado correctamente"); // SE MUESTRA EL MENSAJE
             } else {
                 textConfirmTxt.setFill(Color.RED);// SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA
-                textConfirmTxt.setText("Ingreso de cantidad NO realizado correctamente");
+                textConfirmTxt.setText("Ingreso de cantidad NO realizado correctamente"); // SE MUESTRA EL MENSAJE
             } // DEPENDIENDO DE LO QUE DEVUELVA EL METODO, SI TRUE O FALSE, SE MOSTRARA UN MENSAJE DE ERROR O DE CONFIRMACION
-        } // SI EL CAMPO DE IBAN ESTA VACIO O LA CANTIDAD A INGRESAR LANZA UNA ALERTA
-    }
+        }
+    } // METODO PARA INGRESAR UNA CANTIDAD A UNA CUENTA
 
     @FXML
     void onExitAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO PARA SALIR DE LA APLICACION
         StaticCode.exitApp();
     } // SALIR DE LA APLICACIÓN
 
     @FXML
     void onVolverAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO CAMBIAR VISTA POR IMAGEN PARA VOLVER A LA PAGINA PRINCIPAL
+        // SE INSERTA LOS PARAMETROS: NOMBRE DEL FXML AL QUE SE QUIERE IR, UN IMAGENVIEW Y
+        // EL TITULO QUE VA A TENER ESE STAGE
         StaticCode.cambiarVistaImg("Start.fxml", volverBtt, "Start Application");
     } // IR A LA PAGINA PRINCIPAL DE LA APLICACION
 }

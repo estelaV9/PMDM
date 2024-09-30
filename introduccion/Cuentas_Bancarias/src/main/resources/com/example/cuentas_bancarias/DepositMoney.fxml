@@ -55,7 +55,7 @@
             <Image url="@Imagen/cursorArr.png" />
          </image>
       </ImageView>
-      <Button fx:id="buscarBtt" layoutX="89.0" layoutY="378.0" mnemonicParsing="false" onAction="#onBuscarCuentaAction" prefHeight="53.0" prefWidth="182.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="INGRESAR">
+      <Button fx:id="ingresarBtt" layoutX="89.0" layoutY="378.0" mnemonicParsing="false" onAction="#onIngresarAction" prefHeight="53.0" prefWidth="182.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="INGRESAR">
          <font>
             <Font name="Britannic Bold" size="26.0" />
          </font>
