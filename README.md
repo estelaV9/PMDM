@@ -15,3 +15,13 @@ Repositorio para el módulo de Programación Móviles y Dispositivos Móviles.
     </td>        
  </tr>
 </table>
+
+## Tema 2: Introducción a Kotlin
+- <a href="https://github.com/estelaV9/PMDM/blob/master/Tema2_Kotlin/IntroduccionKotlin.md">Resumen</a> de la introducción a Kotlin.
+
+---
+<div align="center">
+  <h2>¡Disfruta de los ejercicios del módulo!</h2>
+</div>
+
+>_IES Ribera de Castilla 24/25._
