@@ -47,17 +47,17 @@ public class Banco {
 
 
     public boolean ingresoCuenta(String IBAN, double cantIngreso) {
-        boolean existeCuenta = false; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO
+        /** no se valida que el ingreso sea menor que 0 ya que no se puede ingresar una cantidad negativa en el saldo
+         * ni se puede retirar mas dinero del que se posee **/
         double cantTotal; // VARIABLE PARA GUARDAR LA CANTIDAD TOTAL DE LA CUENTA (actual + ingresoNuevo)
         for (CuentaBancaria cuentaBancaria : this.cuentasLista) {
             if (cuentaBancaria.getNumCuenta().equals(IBAN)) {
-                existeCuenta = true;
-                cantTotal = cuentaBancaria.getSaldoActualCuenta() + cantIngreso;
-                cuentaBancaria.setSaldoActualCuenta(cantTotal);
-                break;
-            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
-        } // FOR PARA RECORRE LA CUENTA
-        return existeCuenta;
+                cantTotal = cuentaBancaria.getSaldoActualCuenta() + cantIngreso; // SE SUMA LA CANTIDAD ACTUAL + EL AÑADIDO INGRESADO
+                cuentaBancaria.setSaldoActualCuenta(cantTotal); // SE SETTEA EL VALOR DE LA CUENTA
+                return true; // DEVUELVE TRUE (la operacion fue exitosa) Y SALE DEL METODO
+            } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL METODO
+        } // FOR PARA RECORRE LA LISTA DE CUENTAS
+        return false; // SI NO ENCONTRO NINGUNA CUENTA, DEVUELVE FALSE (la operacion NO fue exitosa)
     } // METODO PARA EL INGRESO DE UNA CANTIDAD EN LA CUENTA
 
     public boolean retiradaCuenta(String IBAN, double cantRetirar) {
