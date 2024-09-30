@@ -1,6 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Utilities.StaticCode;
+import com.example.cuentas_bancarias.Validator.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -27,6 +28,14 @@ public class WithdrawMoneyCtrller {
     void onRetirarAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty() || cantRetirarTF.getText().isEmpty()){
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+        } else if (!Validator.contieneNumeros(cantRetirarTF.getText())){
+            // COMPROBAR QUE EL CAMPO CANTRETIRAR NO CONTENGAN CADENAS
+            StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                    "El campo de cantidad para retirar no debe contener letras.");
+        } else if (!Validator.isValidIban(numIbanTF.getText())) {
+            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
+                    "El IBAN proporcionado NO es válido.");
         } else {
             if(StaticCode.banco.retiradaCuenta(numIbanTF.getText(), Double.parseDouble(cantRetirarTF.getText()))){
                 textConfirmTxt.setFill(Color.GREEN); // SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA

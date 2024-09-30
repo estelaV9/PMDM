@@ -1,6 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Utilities.StaticCode;
+import com.example.cuentas_bancarias.Validator.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,6 +28,10 @@ public class AccountInfoCtrller implements Initializable {
     void onBuscarCuentaAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty()){
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+        } else if (!Validator.isValidIban(numIbanTF.getText())) {
+            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
+                    "El IBAN proporcionado NO es válido.");
         } else {
             // SETTEAR LA INFORMACION EN EL TEXT AREA DE LA INFORMACION DE LA CUENTA PROPORCIONADA
             contentPaneTxt.setText(StaticCode.banco.informacionCuenta(numIbanTF.getText()));

@@ -1,6 +1,7 @@
 package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Utilities.StaticCode;
+import com.example.cuentas_bancarias.Validator.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,6 +27,14 @@ public class DepositMoneyCtrller {
     void onBuscarCuentaAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty() || cantIngresoTF.getText().isEmpty()){
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+        } else if (!Validator.contieneNumeros(cantIngresoTF.getText())){
+            // COMPROBAR QUE EL CAMPO CANTINGRESO NO CONTENGAN CADENAS
+            StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                    "El campo de cantidad de ingreso no debe contener letras.");
+        } else if (!Validator.isValidIban(numIbanTF.getText())) {
+            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
+                    "El IBAN proporcionado NO es válido.");
         } else {
             if(StaticCode.banco.ingresoCuenta(numIbanTF.getText(), Double.parseDouble(cantIngresoTF.getText()))){
                 textConfirmTxt.setFill(Color.GREEN); // SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA

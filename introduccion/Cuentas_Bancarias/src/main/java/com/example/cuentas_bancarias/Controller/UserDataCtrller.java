@@ -2,6 +2,7 @@ package com.example.cuentas_bancarias.Controller;
 
 import com.example.cuentas_bancarias.Model.*;
 import com.example.cuentas_bancarias.Utilities.StaticCode;
+import com.example.cuentas_bancarias.Validator.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.VLineTo;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -89,7 +92,23 @@ public class UserDataCtrller implements Initializable {
         if (nombreCuentaTF.getText().isEmpty() || saldoInicialTF.getText().isEmpty() || numCuentaTF.getText().isEmpty() ||
                 tipoCuentaCB.getValue() == null || dniTF.getText().isEmpty() || apellidosTF.getText().isEmpty()) {
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
-        } else {
+        } else if (Validator.noContieneNumeros(nombreCuentaTF.getText()) || Validator.noContieneNumeros(apellidosTF.getText())) {
+            // COMPROBAR QUE LOS CAMPOS DE CADENA NO CONTENGAN NUMEROS
+            StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                    "Los campos de nombre y apellido no deben contener numeros.");
+        } else if (!Validator.contieneNumeros(saldoInicialTF.getText())){
+            // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+            StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                    "El campo de saldo inicial no debe contener letras.");
+        } else if (!Validator.validarDNI(dniTF.getText())) {
+            // COMPROBAR QUE EL DNI ESTE BIEN ESCRITO
+            StaticCode.Alerts("ERROR", "DNI no válido.", "¡ERROR!",
+                    "El DNI proporcionado NO es válido.");
+        } else if (!Validator.isValidIban(numCuentaTF.getText())) {
+            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
+                    "El IBAN proporcionado NO es válido.");
+        } else{
             String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
             Persona persona = new Persona(nombreCuentaTF.getText(), apellidosTF.getText(), dniTF.getText());
             CuentaBancaria cuentaBancaria;
@@ -98,6 +117,10 @@ public class UserDataCtrller implements Initializable {
                     if (tipoInteresRemuTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",
                                 "Por favor, rellene todos los datos antes de continuar."); // GENERAR ALERTA
+                    } else if (!Validator.contieneNumeros(tipoInteresRemuTF.getText())) {
+                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                                "El campo de tipo de interes de remuneración no debe contener letras.");
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA AHORRO (uso de polimorfismo)
                         cuentaBancaria = new CuentaAhorro(persona, Double.parseDouble(saldoInicialTF.getText()),
@@ -109,6 +132,10 @@ public class UserDataCtrller implements Initializable {
                 case "Cuenta corriente personal":
                     if (comisionManteTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+                    } else if (!Validator.contieneNumeros(comisionManteTF.getText())) {
+                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                                "El campo de comisión de mantenimiento no debe contener letras.");
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE PERSONAL (uso de polimorfismo)
                         cuentaBancaria = new CuentaCorrientePersonal(persona, Double.parseDouble(saldoInicialTF.getText()),
@@ -120,6 +147,11 @@ public class UserDataCtrller implements Initializable {
                 case "Cuenta corriente de empresa":
                     if (maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()) {
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+                    } else if (!Validator.contieneNumeros(maxDescuPermiTF.getText()) || !Validator.contieneNumeros(tipoInteresDescTF.getText()) ||
+                        !Validator.contieneNumeros(comisionFijaDescTF.getText())) {
+                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
+                                "Todos los campos a rellenar de Cuenta Corriente de empresa no debe contener letras.");
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE DE EMPRESA (uso de polimorfismo)
                         cuentaBancaria = new CuentaCorrienteEmpresa(persona, Double.parseDouble(saldoInicialTF.getText()),

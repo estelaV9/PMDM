@@ -11,7 +11,7 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("beginning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("UserData.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("$BankPal Application");
         // AÑADIR IMAGEN EN EL STAGE DEL LOGO DE LA APLICACION
