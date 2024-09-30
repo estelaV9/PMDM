@@ -61,22 +61,23 @@ public class Banco {
     } // METODO PARA EL INGRESO DE UNA CANTIDAD EN LA CUENTA
 
     public boolean retiradaCuenta(String IBAN, double cantRetirar) {
-        boolean existeCuenta = false; // VARIABLE PARA SABER SI EXISTE UNA CUENTA O NO
+        /** no se valida que el ingreso sea menor que 0 ya que no se puede ingresar una cantidad negativa en el saldo
+         * ni se puede retirar mas dinero del que se posee **/
         double cantTotal; // VARIABLE PARA GUARDAR LA CANTIDAD TOTAL DE LA CUENTA (actual - cantRetirar)
         for (CuentaBancaria cuentaBancaria : this.cuentasLista) {
             if (cuentaBancaria.getNumCuenta().equals(IBAN)) {
+                // SI LA CANTIDAD A RETIRAR ES MAYOR A LA CANTIDAD QUE TENGA EN LA CUENTA,
+                // ENTONCES SE SALE DEL METODO
                 if ((cuentaBancaria.getSaldoActualCuenta() - cantRetirar) < 0) {
-                    // SI LA CANTIDAD A RETIRAR ES MAYOR A LA CANTIDAD QUE TENGA EN LA CUENTA, ENTONCES SE SALE DEL BUCLE (en modo false)
-                    break;
+                    return false; // SI EL SALDO ES INSUFICIENTE DEVUELVE FALSE
                 } else if (!(cantRetirar < 0)) {
-                    existeCuenta = true;
-                    cantTotal = cuentaBancaria.getSaldoActualCuenta() - cantRetirar;
-                    cuentaBancaria.setSaldoActualCuenta(cantTotal);
+                    cantTotal = cuentaBancaria.getSaldoActualCuenta() - cantRetirar; // CALCULA EL NUEVO SALDO
+                    cuentaBancaria.setSaldoActualCuenta(cantTotal); // ACTUALIZA EL NUEVO SALDO
+                    return true; // RETORNA true YA QUE LA OPERACION FUE EXITOSA Y SALE DEL METODO
                 } // SI LA CANTIDAD A RETIRAR NO ES NEGATIVA ENTONCES SE EJECUTARA CORRECTAMENTE
-                break;
             } // SI EXISTE LA CUENTA ENTONCES SE SETTEA EL VALOR DEL SALDO Y SE SALE DEL BUCLE
-        } // FOR PARA RECORRE LA CUENTA
-        return existeCuenta;
+        } // FOR PARA RECORRER LA LISTA DE CUENTAS
+        return false; // SI NO SE HA ENCONTRADO EL IBAN, DEVOLVERA FALSE (la operacion NO fue exitosa)
     } // METODO PARA RETIRAR UNA CANTIDAD DE UNA CUENTA
 
     public double obtenerSaldo(String IBAN) {
