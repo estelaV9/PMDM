@@ -31,16 +31,16 @@ public class StaticCode {
             Parent root = fxmlLoader.load();
             // OBTENER CONTROLLER
             Object controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) button.getScene().getWindow();
-            stage.setTitle(title);
-            stage.setScene(scene);
+            Scene scene = new Scene(root); // CREAR UNA NUEVA ESCENA
+            Stage stage = (Stage) button.getScene().getWindow(); // OBTENER EL STAGE ACTUAL A PARTIR DEL BOTON QUE SE HA CLICADO
+            stage.setTitle(title); // TITULO DE LA VENTANA
+            stage.setScene(scene); // ESTABLECER LA NUEVA ESCENA AL STAGE ACTUAL
             // MOSTRAR VENTANA SI NO ESTA VISIBLE
             if (!stage.isShowing()) {
                 stage.show();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // SI HAY ERROR EN LA CARGA DEL FXML, SE LANZA LA EXCEPCION
         }
     } // MATODO ESTATICO PARA CAMBIAR DE VISTA CON UN ID DE UN BOTON
 
@@ -75,9 +75,11 @@ public class StaticCode {
 
     public static void alertAbrirCuenta (boolean cuentaCreadaExito, String tipoCuenta){
         if(cuentaCreadaExito){
+            // SI ESTA CORRECTO, SE MUESTRA UN ALERT DE CONFIRMACION
             StaticCode.Alerts("CONFIRMATION", "Añadir cuenta.", "CONFIRMATION",
                     "Se ha añadido correctamente una cuenta " + tipoCuenta + ".");
         } else {
+            // SI LA OPERACION HA FALLADO, SE MUESTRA UN ALERT DE ERROR
             StaticCode.Alerts("ERROR", "Cuenta duplicada.", "¡ERROR!",
                     "La cuenta ya existe en el sistema."); // SI EL IBAN ESTA YA REGISTRADO, GENERA UN ERROR
         } // LLAMAR AL METODO ABRIR CUENTA PARA AÑADIRLA Y GENERAR ALERTAS
