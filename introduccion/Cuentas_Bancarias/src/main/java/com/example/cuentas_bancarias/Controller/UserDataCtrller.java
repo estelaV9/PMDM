@@ -49,15 +49,19 @@ public class UserDataCtrller implements Initializable {
     private ComboBox<String> tipoCuentaCB;
     @FXML
     private Button añadirBtt;
-    ArrayList<String> nombreEntidades = new ArrayList<>();
+    ArrayList<String> nombreEntidades = new ArrayList<>(); // SE INICIALIZA EL ARRAYLIST QEE CONTENDRA LOS NOMBRES DE LAS ENTIDADES
 
     @FXML
     void onExitAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO PARA SALIR DE LA APLICACION
         StaticCode.exitApp();
     } // SALIR DE LA APLICACION
 
     @FXML
     void onVolverAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO CAMBIAR VISTA POR IMAGEN PARA VOLVER A LA PAGINA PRINCIPAL
+        // SE INSERTA LOS PARAMETROS: NOMBRE DEL FXML AL QUE SE QUIERE IR, UN IMAGENVIEW Y
+        // EL TITULO QUE VA A TENER ESE STAGE
         StaticCode.cambiarVistaImg("Start.fxml", volverIconImg, "Start Application");
     } // VOLVER AL MENU DE INICIO
 
@@ -83,71 +87,81 @@ public class UserDataCtrller implements Initializable {
                 paneAhorro.setVisible(false);
                 break;
         }// SEGUN EL TIPO DE CUENTA QUE ELIJA SE APARECERA UN TIPO DE PANEL
-    }
+    } // METODO PARA MOSTRAR UN PANEL CON LA OPCION ELEGIDA
 
     @FXML
     void onAñadirAction(ActionEvent event) {
         if (nombreCuentaTF.getText().isEmpty() || saldoInicialTF.getText().isEmpty() || numCuentaTF.getText().isEmpty() ||
                 tipoCuentaCB.getValue() == null || dniTF.getText().isEmpty() || apellidosTF.getText().isEmpty()) {
+            // SI HAY VALORES NULOS SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
         } else if (Validator.noContieneNumeros(nombreCuentaTF.getText()) || Validator.noContieneNumeros(apellidosTF.getText())) {
-            // COMPROBAR QUE LOS CAMPOS DE CADENA NO CONTENGAN NUMEROS
+            // SE LLAMA AL METODO PARA VALIDAR EL NOMBRE Y APELLIDO PARA QUE NO CONTENGA NUMEROS, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "Los campos de nombre y apellido no deben contener numeros.");
         } else if (!Validator.contieneNumeros(saldoInicialTF.getText())){
-            // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+            // SE LLAMA AL METODO PARA VALIDAR EL SALDO PARA QUE NO CONTENGAN LETRAS, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "El campo de saldo inicial no debe contener letras.");
         } else if (!Validator.validarDNI(dniTF.getText())) {
-            // COMPROBAR QUE EL DNI ESTE BIEN ESCRITO
+            // SE LLAMA AL METODO PARA VALIDAR EL DNI, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "DNI no válido.", "¡ERROR!",
                     "El DNI proporcionado NO es válido.");
         } else if (!Validator.isValidIban(numCuentaTF.getText())) {
-            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else{
             String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
+            // SE CREA UN OBJETO DE TIPO PERSONA
             Persona persona = new Persona(nombreCuentaTF.getText(), apellidosTF.getText(), dniTF.getText());
-            CuentaBancaria cuentaBancaria;
+            CuentaBancaria cuentaBancaria; // SE DECLARA UN OBJETO DE TIPO CUENTA BANCARIA
             switch (tipoCuenta) {
                 case "Cuenta de ahorro":
                     if (tipoInteresRemuTF.getText().isEmpty()) {
+                        // SI TIPO DE INTERES ESTA VACIO, SE GENERARA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",
                                 "Por favor, rellene todos los datos antes de continuar."); // GENERAR ALERTA
                     } else if (!Validator.contieneNumeros(tipoInteresRemuTF.getText())) {
-                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        // SE LLAMA AL METODO PARA VALIDAR EL TIPO INTERES PARA QUE NO CONTENGA LETRAS,
+                        // SI NO ES CORRECTO LANZA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                                 "El campo de tipo de interes de remuneración no debe contener letras.");
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA AHORRO (uso de polimorfismo)
                         cuentaBancaria = new CuentaAhorro(persona, Double.parseDouble(saldoInicialTF.getText()),
                                 numCuentaTF.getText(), Double.parseDouble(tipoInteresRemuTF.getText()));
+                        // SE LLAMA AL METODO abrirCuenta Y SE AÑADE MOSTRANDO UNA ALERTA SI SE HA REALIZADO LA OPERACION CORRECTA
+                        // O INCORRECTAMENTE
                         StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria), "de ahorro");
                     }
                     break;
 
                 case "Cuenta corriente personal":
                     if (comisionManteTF.getText().isEmpty()) {
+                        // SI COMISION ESTA VACIO, SE GENERARA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else if (!Validator.contieneNumeros(comisionManteTF.getText())) {
-                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        // SE LLAMA AL METODO PARA VALIDAR LA COMISION NO CONTENGA LETRAS, SI NO ES CORRECTO LANZA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                                 "El campo de comisión de mantenimiento no debe contener letras.");
                     } else {
                         // CREAR UN OBJETO DE LA CUENTA BANCARIA DE TIPO CUENTA CORRIENTE PERSONAL (uso de polimorfismo)
                         cuentaBancaria = new CuentaCorrientePersonal(persona, Double.parseDouble(saldoInicialTF.getText()),
                                 numCuentaTF.getText(), nombreEntidades, Double.parseDouble(comisionManteTF.getText()));
+                        // SE LLAMA AL METODO abrirCuenta Y SE AÑADE MOSTRANDO UNA ALERTA SI SE HA REALIZADO LA OPERACION CORRECTA
+                        // O INCORRECTAMENTE
                         StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria), "corriente personal");
                     }
                     break;
 
                 case "Cuenta corriente de empresa":
                     if (maxDescuPermiTF.getText().isEmpty() || tipoInteresDescTF.getText().isEmpty() || comisionFijaDescTF.getText().isEmpty()) {
+                        // SI ALGUN CAMPO ESTA VACIO, SE GENERARA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
                     } else if (!Validator.contieneNumeros(maxDescuPermiTF.getText()) || !Validator.contieneNumeros(tipoInteresDescTF.getText()) ||
                         !Validator.contieneNumeros(comisionFijaDescTF.getText())) {
-                        // COMPROBAR QUE LOS CAMPOS NUMERICOS NO CONTENGAN CADENAS
+                        // SE LLAMA AL METODO PARA VALIDAR LOS CAMPOS QUE NO CONTENGAN LETRAS, SI NO ES CORRECTO LANZA UNA ALERTA
                         StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                                 "Todos los campos a rellenar de Cuenta Corriente de empresa no debe contener letras.");
                     } else {
@@ -155,12 +169,14 @@ public class UserDataCtrller implements Initializable {
                         cuentaBancaria = new CuentaCorrienteEmpresa(persona, Double.parseDouble(saldoInicialTF.getText()),
                                 numCuentaTF.getText(), nombreEntidades, Double.parseDouble(maxDescuPermiTF.getText()),
                                 Double.parseDouble(tipoInteresDescTF.getText()), Double.parseDouble(comisionFijaDescTF.getText()));
+                        // SE LLAMA AL METODO abrirCuenta Y SE AÑADE MOSTRANDO UNA ALERTA SI SE HA REALIZADO LA OPERACION CORRECTA
+                        // O INCORRECTAMENTE
                         StaticCode.alertAbrirCuenta(StaticCode.banco.abrirCuenta(cuentaBancaria), "corriente de empresa");
                     }
                     break;
             }
         }
-    }
+    } // METODO PARA AÑADIR CUENTAS
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
