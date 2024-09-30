@@ -26,29 +26,42 @@ public class AccountInfoCtrller implements Initializable {
     @FXML
     void onBuscarCuentaAction(ActionEvent event) {
         if(numIbanTF.getText().isEmpty()){
-            StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
+            // SI EL CAMPO DE IBAN ESTA VACIO LANZA UNA ALERTA
+            // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS
+            StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",
+                    "Por favor, rellene todos los datos antes de continuar.");
         } else if (!Validator.isValidIban(numIbanTF.getText())) {
-            // COMPROBAR QUE EL NUMERO DE IBAN ESTE BIEN
+            // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERA
+            // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS CON SUS PARAMETROS
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
-            // SETTEAR LA INFORMACION EN EL TEXT AREA DE LA INFORMACION DE LA CUENTA PROPORCIONADA
+            // SI ESTA CORRECTO, SE SETTEAR LA INFORMACION EN EL TEXTAREA DE LA INFORMACION DE LA CUENTA PROPORCIONADA
+            // PARA ELLO SE LLAMARA AL METODO DE BANCO DONDE RETORNE LA INFORMACION Y SE SETTEARA LO QUE RETORNE
             contentPaneTxt.setText(StaticCode.banco.informacionCuenta(numIbanTF.getText()));
-        } // SI EL CAMPO DE IBAN ESTA VACIO LANZA UNA ALERTA
+        }
     }
 
     @FXML
     void onExitAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO PARA SALIR DE LA APLICACION
         StaticCode.exitApp();
     } // SALIR DE LA APLICACIÓN
 
     @FXML
     void onVolverAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO CAMBIAR VISTA POR IMAGEN PARA VOLVER A LA PAGINA PRINCIPAL
+        // SE INSERTA LOS PARAMETROS: NOMBRE DEL FXML AL QUE SE QUIERE IR, UN IMAGENVIEW Y EL TITULO QUE VA A TENER ESE STAGE
         StaticCode.cambiarVistaImg("Start.fxml", volverBtt, "Start Application");
     } // IR A LA PAGINA PRINCIPAL DE LA APLICACION
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        contentPaneTxt.setStyle("-fx-control-inner-background: #56269c; -fx-text-fill: #FFFFFF; -fx-font-size: 17;");
-    } // AL INICIAR ESTA VISTA SE PONE EL FONDO DEL TEXTAREA EN MORADO, EL COLOR EN BLANCO, CON UN TAMAÑO DE 17
+        // SE LE AÑADE MANUALMENTE EL ESTILO DEL FONDO Y DEL TEXTO
+        /*** en el textArea no sirve cambiar el color de fondo con background (cambia el color del borde),
+         * asique se pone control-inner-background para cambiar el color de fondo ***/
+        contentPaneTxt.setStyle("-fx-control-inner-background: #56269c; -fx-text-fill: #FFFFFF; " +
+                "-fx-font-size: 17;  -fx-font-family: 'Berlin Sans FB';");
+    } // AL INICIAR ESTA VISTA, SE PONE EL FONDO DEL TEXTAREA EN MORADO, EL COLOR EN BLANCO,
+    // CON UN TAMAÑO DE 17 CON FUENTE Berlin Sans FB
 }
