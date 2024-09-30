@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-
 public class StartCtrller {
     @FXML
     private ImageView abriCuentaBtt;
@@ -20,6 +19,13 @@ public class StartCtrller {
     @FXML
     private ImageView saldoActualBtt;
 
+    /********** MENU ********
+     * En este controller se encuentra todas las opciones del menu para ir a su respectiva vista
+     * y hacer su respectiva operacion.
+     * En todas ellas se llama al metodo estatico para cambiar vista por imagen para ir a la pagina
+     * con esa opcion.
+     * En cada uno de estos metodos, se insertara los parametros: nombre del fxml al que se quiere ir, un imagenview
+     * y el titulo que va a tener el respectivo stage. */
     @FXML
     void onDatosCnAction(MouseEvent event) {
         StaticCode.cambiarVistaImg("AccountInfo.fxml", datosCnBtt, "Account Information");
@@ -42,12 +48,13 @@ public class StartCtrller {
     } // IR A LA PAGINA DE OBTENER SALDO
 
     @FXML
-    void onExitAction(MouseEvent event) {
-        StaticCode.exitApp();
-    } // SALIR DE LA APLICACIÓN
-
-    @FXML
     void onNuevaCuentaAction(MouseEvent event) {
         StaticCode.cambiarVistaImg("UserData.fxml", abriCuentaBtt, "User Information");
     } // IR A LA VISTA DE INFORMACION DE USUARIO
+
+    @FXML
+    void onExitAction(MouseEvent event) {
+        // SE LLAMA AL METODO ESTATICO PARA SALIR DE LA APLICACION
+        StaticCode.exitApp();
+    } // SALIR DE LA APLICACIÓN
 }
