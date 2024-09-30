@@ -1,6 +1,5 @@
 package com.example.cuentas_bancarias.Model;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Banco {

@@ -12,8 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.VLineTo;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
