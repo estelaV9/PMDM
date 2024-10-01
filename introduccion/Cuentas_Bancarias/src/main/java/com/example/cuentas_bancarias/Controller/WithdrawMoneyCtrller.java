@@ -30,6 +30,7 @@ public class WithdrawMoneyCtrller {
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
         } else if (!Validator.contieneNumeros(cantRetirarTF.getText())){
             // SE LLAMA AL METODO PARA VALIDAR LA CANTIDAD A RETIRAR, SI NO ES CORRECTO LANZA UNA ALERTA
+            /** como se valida que no contenga letras, directamente no deja poner el signo - para poner un saldo negativo **/
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "El campo de cantidad para retirar no debe contener letras.");
         } else if (!Validator.isValidIban(numIbanTF.getText())) {

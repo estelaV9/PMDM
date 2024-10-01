@@ -101,6 +101,7 @@ public class UserDataCtrller implements Initializable {
                     "Los campos de nombre y apellido no deben contener numeros.");
         } else if (!Validator.contieneNumeros(saldoInicialTF.getText())){
             // SE LLAMA AL METODO PARA VALIDAR EL SALDO PARA QUE NO CONTENGAN LETRAS, SI NO ES CORRECTO LANZA UNA ALERTA
+            /** como se valida que no contenga letras, directamente no deja poner el signo - para poner un saldo negativo **/
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
                     "El campo de saldo inicial no debe contener letras.");
         } else if (!Validator.validarDNI(dniTF.getText())) {
@@ -111,7 +112,7 @@ public class UserDataCtrller implements Initializable {
             // SE LLAMA AL METODO PARA VALIDAR EL IBAN, SI NO ES CORRECTO LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
-        } else{
+        } else {
             String tipoCuenta = tipoCuentaCB.getValue(); // GUARDA LA OPCION ELEGIDA
             // SE CREA UN OBJETO DE TIPO PERSONA
             Persona persona = new Persona(nombreCuentaTF.getText(), apellidosTF.getText(), dniTF.getText());
