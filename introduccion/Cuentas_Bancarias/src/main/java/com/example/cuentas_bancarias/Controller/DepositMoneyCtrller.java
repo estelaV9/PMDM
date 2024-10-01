@@ -25,6 +25,11 @@ public class DepositMoneyCtrller {
 
     @FXML
     void onIngresarAction(ActionEvent event) {
+        /** Se va a validar que:
+         * - Los campos a rellenar no esten vacios.
+         * - En el campo de cantidad de ingreso no contenga letras (tambien se controla que no tenga negativos ya que el signo '-' cuenta como letra
+         * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9
+         * - Si la operacion se ha realizado correctamente o con fallos saldra un texto **/
         if(numIbanTF.getText().isEmpty() || cantIngresoTF.getText().isEmpty()){
             // SI EL CAMPO DE IBAN Y LA CANTIDAD DE INGRESO ESTA VACIO LANZA UNA ALERTA
             // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS

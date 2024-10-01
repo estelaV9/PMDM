@@ -91,6 +91,13 @@ public class UserDataCtrller implements Initializable {
 
     @FXML
     void onAñadirAction(ActionEvent event) {
+         /** Se va a validar que:
+         * - Los campos a rellenar no esten vacios.
+         * - En los campos nombre y apellidos no contenga numeros
+         * - En el campo de saldo no contenga letras (tambien se controla que no tenga negativos ya que el signo '-' cuenta como letra
+         * - El dni se valida que tenga el siguiente formato: NNNNNNNNK, donde N sea un numero del 0 al 9 y K sea una letra
+         * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9 **/
+
         if (nombreCuentaTF.getText().isEmpty() || saldoInicialTF.getText().isEmpty() || numCuentaTF.getText().isEmpty() ||
                 tipoCuentaCB.getValue() == null || dniTF.getText().isEmpty() || apellidosTF.getText().isEmpty()) {
             // SI HAY VALORES NULOS SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS

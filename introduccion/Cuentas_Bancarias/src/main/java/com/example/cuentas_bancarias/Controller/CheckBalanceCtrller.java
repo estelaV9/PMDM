@@ -25,6 +25,10 @@ public class CheckBalanceCtrller implements Initializable {
 
     @FXML
     void onConsultarAction(ActionEvent event) {
+        /** Se va a validar que:
+         * - Los campos a rellenar no esten vacios.
+         * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9
+         * - Si existe o no existe una cuenta pronta un texto**/
         if(numIbanTF.getText().isEmpty()){
             // SI EL CAMPO DE IBAN ESTA VACIO LANZA UNA ALERTA
             // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS

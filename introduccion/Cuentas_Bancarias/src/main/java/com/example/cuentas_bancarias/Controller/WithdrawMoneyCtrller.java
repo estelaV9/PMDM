@@ -25,6 +25,11 @@ public class WithdrawMoneyCtrller {
 
     @FXML
     void onRetirarAction(ActionEvent event) {
+        /** Se va a validar que:
+         * - Los campos a rellenar no esten vacios.
+         * - En el campo de retirar cantidad no contenga letras (tambien se controla que no tenga negativos ya que el signo '-' cuenta como letra
+         * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9
+         * - Si el metodo de retirar dinero falla o se ejecuta correctamente se mostrara un mensaje en un color **/
         if(numIbanTF.getText().isEmpty() || cantRetirarTF.getText().isEmpty()){
             // SI EL CAMPO DE IBAN ESTA VACIO O LA CANTIDAD A INGRESAR LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
