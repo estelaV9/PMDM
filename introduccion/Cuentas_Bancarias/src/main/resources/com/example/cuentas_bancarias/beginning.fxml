@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" style="-fx-background-color: #071d2a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.beginningCtrller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="360.0" style="-fx-background-color: #071d2a;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.beginningCtrller">
    <children>
       <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
          <image>
@@ -20,7 +20,7 @@
             <Image url="@Imagen/debitCard.png" />
          </image>
       </ImageView>
-      <Button fx:id="startAppBtt" layoutX="28.0" layoutY="500.0" mnemonicParsing="false" onAction="#onStartAppAction" prefHeight="36.0" prefWidth="303.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="START">
+      <Button fx:id="startAppBtt" layoutX="28.0" layoutY="500.0" mnemonicParsing="false" onAction="#onStartAppAction" prefHeight="36.0" prefWidth="303.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="START">
          <font>
             <Font name="Britannic Bold" size="40.0" />
          </font>

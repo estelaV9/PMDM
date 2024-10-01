@@ -56,7 +56,7 @@
                 <Image url="@Imagen/cursorArr.png" />
             </image>
         </ImageView>
-        <Button fx:id="consultarBtt" layoutX="91.0" layoutY="248.0" mnemonicParsing="false" onAction="#onConsultarAction" prefHeight="53.0" prefWidth="182.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="CONSULTAR">
+        <Button fx:id="consultarBtt" layoutX="91.0" layoutY="248.0" mnemonicParsing="false" onAction="#onConsultarAction" prefHeight="53.0" prefWidth="182.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="CONSULTAR">
             <font>
                 <Font name="Britannic Bold" size="26.0" />
             </font>

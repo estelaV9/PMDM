@@ -61,7 +61,7 @@
             <DropShadow />
          </effect>
       </TextArea>
-      <Button fx:id="buscarBtt" layoutX="107.0" layoutY="269.0" mnemonicParsing="false" onAction="#onBuscarCuentaAction" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="BUSCAR">
+      <Button fx:id="buscarBtt" layoutX="107.0" layoutY="269.0" mnemonicParsing="false" onAction="#onBuscarCuentaAction" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="BUSCAR">
          <font>
             <Font name="Britannic Bold" size="18.0" />
          </font>

@@ -147,7 +147,7 @@
             <TextField fx:id="comisionFijaDescTF" layoutX="9.0" layoutY="225.0" prefHeight="26.0" prefWidth="296.0" promptText="Comisión fija por cada descubierto" />
          </children>
       </Pane>
-      <Button fx:id="añadirBtt" layoutX="102.0" layoutY="581.0" mnemonicParsing="false" onAction="#onAñadirAction" prefHeight="27.0" prefWidth="166.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2;" text="AÑADIR">
+      <Button fx:id="añadirBtt" layoutX="102.0" layoutY="581.0" mnemonicParsing="false" onAction="#onAñadirAction" prefHeight="27.0" prefWidth="166.0" style="-fx-background-color: #56269c; -fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="AÑADIR">
          <font>
             <Font name="Britannic Bold" size="25.0" />
          </font>
