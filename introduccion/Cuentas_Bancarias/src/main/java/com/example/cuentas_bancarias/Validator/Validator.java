@@ -24,15 +24,15 @@ public class Validator {
         return texto.matches("\\d+");
     } // VALIDACION PARA QUE LOS CAMPOS NO CONTENGAN CADENAS
 
-    public static boolean validarDNI (String dni) {
-        if(dni.length() != 9){
+    public static boolean validarDNI(String dni) {
+        if (dni.length() != 9) {
             // SI EL DNI NO TIENE 9 DIGITOS, DEVUELVE FALSE
             return false;
-        } else if (!dni.substring(0,8).matches("\\d+")) {
+        } else if (!dni.substring(0, 8).matches("\\d+")) {
             // SUBSTRAE LOS PRIMEROS 8 DIGITOS Y VERIFICA QUE ESA CADENA SUBSTRAIDA SOLO CONTENGA NUMEROS
             // SI ESTO NO SE CUMPLE, DEVOLVERA FALSE
             return false;
-        } else if (!dni.substring(8).matches("[A-Za-z]")){
+        } else if (!dni.substring(8).matches("[A-Za-z]")) {
             // SUBSTRAE EL ULTIMO DIGITO Y VERIFICA QUE TENGA CUALQUIER LETRA (A-Z o a-z)
             // SI ESTO NO SE CUMPLE, DEVOLVERA FALSE
             return false;
@@ -41,15 +41,15 @@ public class Validator {
         }
     } // METODO PARA VALIDAR QUE EL DNI ESTE BIEN
 
-    public static boolean isValidIban (String iban){
+    public static boolean isValidIban(String iban) {
         // ES + 22N (digitos del 0 al 9)
-        if (iban.length() != 24){
+        if (iban.length() != 24) {
             // SI EL IBAN NO TIENE 24 DIGITOS, DEVUELVE FALSE
             return false;
-        } else if (!iban.substring(0,2).matches("ES")){
+        } else if (!iban.substring(0, 2).matches("ES")) {
             // SI LOS DOS PRIMEROS DIGITOS NO SON 'ES', DEVOLVERA FALSE
             return false;
-        } else if (!iban.substring(2, 24).matches("\\d+")){
+        } else if (!iban.substring(2, 24).matches("\\d+")) {
             // SI LOS 20 SIGUIENTES DIGITOS NO SON NUMERICOS, DEVOLVERA FALSE
             return false;
         } else {

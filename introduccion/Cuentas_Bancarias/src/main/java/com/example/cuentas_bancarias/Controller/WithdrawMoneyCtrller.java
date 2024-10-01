@@ -30,10 +30,10 @@ public class WithdrawMoneyCtrller {
          * - En el campo de retirar cantidad no contenga letras (tambien se controla que no tenga negativos ya que el signo '-' cuenta como letra
          * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9
          * - Si el metodo de retirar dinero falla o se ejecuta correctamente se mostrara un mensaje en un color **/
-        if(numIbanTF.getText().isEmpty() || cantRetirarTF.getText().isEmpty()){
+        if (numIbanTF.getText().isEmpty() || cantRetirarTF.getText().isEmpty()) {
             // SI EL CAMPO DE IBAN ESTA VACIO O LA CANTIDAD A INGRESAR LANZA UNA ALERTA
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!", "Por favor, rellene todos los datos antes de continuar.");
-        } else if (!Validator.contieneNumeros(cantRetirarTF.getText())){
+        } else if (!Validator.contieneNumeros(cantRetirarTF.getText())) {
             // SE LLAMA AL METODO PARA VALIDAR LA CANTIDAD A RETIRAR, SI NO ES CORRECTO LANZA UNA ALERTA
             /** como se valida que no contenga letras, directamente no deja poner el signo - para poner un saldo negativo **/
             StaticCode.Alerts("ERROR", "Campos erroneos.", "¡ERROR!",
@@ -43,7 +43,7 @@ public class WithdrawMoneyCtrller {
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
-            if(StaticCode.banco.retiradaCuenta(numIbanTF.getText(), Double.parseDouble(cantRetirarTF.getText()))){
+            if (StaticCode.banco.retiradaCuenta(numIbanTF.getText(), Double.parseDouble(cantRetirarTF.getText()))) {
                 textConfirmTxt.setFill(Color.GREEN); // SE SETTEA DIRECTAMENTE EL COLOR EN VEZ DE USAR EL STYLE YA QUE NO FUNCIONA
                 textConfirmTxt.setText("Retirada de cantidad realizado correctamente");
             } else {

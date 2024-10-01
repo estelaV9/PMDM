@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,7 +30,7 @@ public class CheckBalanceCtrller implements Initializable {
          * - Los campos a rellenar no esten vacios.
          * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9
          * - Si existe o no existe una cuenta pronta un texto**/
-        if(numIbanTF.getText().isEmpty()){
+        if (numIbanTF.getText().isEmpty()) {
             // SI EL CAMPO DE IBAN ESTA VACIO LANZA UNA ALERTA
             // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS
             StaticCode.Alerts("ERROR", "Campos vacíos.",
@@ -39,7 +40,7 @@ public class CheckBalanceCtrller implements Initializable {
             StaticCode.Alerts("ERROR", "IBAN no válido.", "¡ERROR!",
                     "El IBAN proporcionado NO es válido.");
         } else {
-            if(StaticCode.banco.obtenerSaldo(numIbanTF.getText()) == -1){
+            if (StaticCode.banco.obtenerSaldo(numIbanTF.getText()) == -1) {
                 contentPaneTxt.setText("Esa cuenta no existe.\nPruebe con otro IBAM");
             } else {
                 // SI LA OPERACION FUE EXITOSA, SE SETTEA EL SALDO ACTUAL DE LA CUENTA CON ESE IBAN

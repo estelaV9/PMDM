@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,7 +29,7 @@ public class AccountInfoCtrller implements Initializable {
         /** Se va a validar que:
          * - Los campos a rellenar no esten vacios.
          * - El numero de IBAN tenga un formato de ESNNNNNNNNNNNNNNNNNNNNNN donde N sean 22 numeros del 0 al 9 **/
-        if(numIbanTF.getText().isEmpty()){
+        if (numIbanTF.getText().isEmpty()) {
             // SI EL CAMPO DE IBAN ESTA VACIO LANZA UNA ALERTA
             // SE LLAMA AL METODO ESTATICO PARA GENERAR ALERTAS Y SE PASAN LOS RESPECTIVOS PARAMETROS
             StaticCode.Alerts("ERROR", "Campos vacíos.", "¡ERROR!",

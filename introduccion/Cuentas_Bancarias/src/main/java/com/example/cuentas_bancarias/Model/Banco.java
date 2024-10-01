@@ -37,7 +37,7 @@ public class Banco {
     public String informacionCuenta(String IBAN) {
         for (CuentaBancaria cuentaBancaria : this.cuentasLista) {
             if (cuentaBancaria.getNumCuenta().equals(IBAN)) {
-                 return cuentaBancaria.devolverInfoString(); // RETORNA LA INFO Y SALE DEL METODO
+                return cuentaBancaria.devolverInfoString(); // RETORNA LA INFO Y SALE DEL METODO
             } // SI EXISTE UNA CUENTA CON ESE IBAN, DEVOLVERA LA INFO DE ESA CUENTA Y SALDRA
         } // RECORREMOS LA LISTA DE CUENTAS
         // SI NO ENCUENTRA NINGUNA CUENTA CON ESE IBAN RETORNARA DIRECTAMENTE NULL
