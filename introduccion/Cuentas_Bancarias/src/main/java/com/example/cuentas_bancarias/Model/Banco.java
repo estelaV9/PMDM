@@ -41,7 +41,8 @@ public class Banco {
             } // SI EXISTE UNA CUENTA CON ESE IBAN, DEVOLVERA LA INFO DE ESA CUENTA Y SALDRA
         } // RECORREMOS LA LISTA DE CUENTAS
         // SI NO ENCUENTRA NINGUNA CUENTA CON ESE IBAN RETORNARA DIRECTAMENTE NULL
-        return "null";
+        /** (para no hacer un if en la clase accountInfo en vez de null pongo directamente el mensaje) **/
+        return "No existe esa cuenta.\nPor favor, prueba con otro numero de\nIBAN";
     } // INFORMACION CUENTAS QUE DEVUELVE INFORMACION DE LA CUENTA PASADA POR PARAMETRO
 
 
