@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.UserDataCtrller">
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.UserDataCtrller">
    <children>
       <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
          <image>
@@ -81,7 +81,7 @@
          </font>
       </Label>
       <ComboBox fx:id="tipoCuentaCB" layoutX="181.0" layoutY="254.0" onAction="#onTipoCuentaAction" prefHeight="26.0" prefWidth="158.0" promptText="tipo de cuenta" />
-      <TextField fx:id="numCuentaTF" layoutX="24.0" layoutY="219.0" prefHeight="26.0" prefWidth="314.0" promptText="Número de cuenta" />
+      <TextField fx:id="numCuentaTF" layoutX="24.0" layoutY="219.0" prefHeight="26.0" prefWidth="314.0" promptText="ESNNNNNNNNNNNNNNNNNNNNNN" />
       <ImageView fx:id="volverIconImg" fitHeight="29.0" fitWidth="47.0" layoutX="14.0" layoutY="590.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onVolverAction" pickOnBounds="true">
          <image>
             <Image url="@Imagen/cursorArr.png" />
@@ -163,6 +163,6 @@
             <Font name="Berlin Sans FB" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="dniTF" layoutX="78.0" layoutY="127.0" prefHeight="26.0" prefWidth="258.0" promptText="DNI" />
+      <TextField fx:id="dniTF" layoutX="78.0" layoutY="127.0" prefHeight="26.0" prefWidth="258.0" promptText="00000000N" />
    </children>
 </AnchorPane>

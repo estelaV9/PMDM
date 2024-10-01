@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.CheckBalanceCtrller">
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.CheckBalanceCtrller">
     <children>
         <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
             <image>
@@ -50,7 +50,7 @@
                 <Font name="Berlin Sans FB" size="27.0" />
             </font>
         </Text>
-        <TextField fx:id="numIbanTF" layoutX="31.0" layoutY="183.0" prefHeight="42.0" prefWidth="298.0" promptText="IBAN de la cuenta que desee retirar." />
+        <TextField fx:id="numIbanTF" layoutX="31.0" layoutY="183.0" prefHeight="42.0" prefWidth="298.0" promptText="ESNNNNNNNNNNNNNNNNNNNNNN" />
         <ImageView fx:id="volverBtt" fitHeight="29.0" fitWidth="47.0" layoutX="14.0" layoutY="587.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#onVolverAction" pickOnBounds="true">
             <image>
                 <Image url="@Imagen/cursorArr.png" />
