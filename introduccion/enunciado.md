@@ -48,8 +48,27 @@ existe. En caso contrario devuelve -1. </br>
 
 ## $BankPal
 <p align="center">
-  <img src="https://github.com/estelaV9/estelaV9/blob/main/bankPal.png" width="580" alt="BankPal Application" style="align:center;">
+  <img src="https://github.com/estelaV9/estelaV9/blob/main/Image/bankPal.png" width="480" alt="BankPal Application" style="align:center;">
 </p> 
+
+Beginning                               | Menu                                    |      Accounts List                           |  Account Information                    
+:------------------------------------------:|:-------------------------------------------:|:-----------------------------------------:|:--------------------------------------------:|
+ <img src="projectFiles/beginning.png" width="200"> | <img src="projectFiles/menu.png" width="200"> | <img src="projectFiles/AccountsList.png" width="200">| <img src="projectFiles/AccountInfo.png" width="200">|
+
+Insert Account  |
+:-------------------------------------------:|
+<img src="projectFiles/insertAccount.png" width="200"> <img src="projectFiles/cuentaAhorro.png" width="200"> <img src="projectFiles/CCPersonal.png" width="200"> <img src="projectFiles/CCEmpresa.png" width="200">|   
+
+ 
+ Deposit Money                       | Withdraw Money                  | Check Balance
+:-----------------------------------------------:|:-------------------------------------:|:-------------------------------------:|
+<img src="projectFiles/DepositMoney.png" width="200">| <img src="projectFiles/WithdrawMoney.png" width="200">| <img src="projectFiles/ChreckBalance.png" width="200">|
+
+<br>
+
+
+
+
 
 ---
 <div align="center">
