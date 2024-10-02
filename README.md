@@ -7,7 +7,7 @@ Repositorio para el módulo de Programación Móviles y Dispositivos Móviles.
   <tr>
     <td width="30%">
      <a href="https://github.com/estelaV9/PMDM/tree/master/introduccion" target="_blank">
-        <img src="https://github.com/estelaV9/estelaV9/blob/main/bankPal.png" width="300" alt="$BankPal Application">
+        <img src="https://github.com/estelaV9/estelaV9/blob/main/Image/bankPal.png" width="300" alt="$BankPal Application">
       </a>
     </td>
     <td width="70%">
