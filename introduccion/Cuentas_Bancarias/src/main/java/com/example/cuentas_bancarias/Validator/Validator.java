@@ -42,14 +42,14 @@ public class Validator {
     } // METODO PARA VALIDAR QUE EL DNI ESTE BIEN
 
     public static boolean isValidIban(String iban) {
-        // ES + 22N (digitos del 0 al 9)
-        if (iban.length() != 24) {
-            // SI EL IBAN NO TIENE 24 DIGITOS, DEVUELVE FALSE
+        // ES + 20N (digitos del 0 al 9)
+        if (iban.length() != 22) {
+            // SI EL IBAN NO TIENE 22 DIGITOS, DEVUELVE FALSE
             return false;
         } else if (!iban.substring(0, 2).matches("ES")) {
             // SI LOS DOS PRIMEROS DIGITOS NO SON 'ES', DEVOLVERA FALSE
             return false;
-        } else if (!iban.substring(2, 24).matches("\\d+")) {
+        } else if (!iban.substring(2, 22).matches("\\d+")) {
             // SI LOS 20 SIGUIENTES DIGITOS NO SON NUMERICOS, DEVOLVERA FALSE
             return false;
         } else {
