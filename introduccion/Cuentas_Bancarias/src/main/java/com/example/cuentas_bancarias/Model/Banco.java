@@ -6,20 +6,20 @@ public class Banco {
     private ArrayList<CuentaBancaria> cuentasLista; // ARRAY DE TIPO CUENTA BANCARIA PARA GUARDAR LAS CUENTAS
 
     public Banco() {
-        this.cuentasLista = new ArrayList<>();
+        this.cuentasLista = new ArrayList<>(); //inicializa la lista de cuentas
     } // CONSTRUCTOR SIN PARAMETROS PARA CREAR UN OBJETO DE TIPO BANCO DONDE SE CREE EL ARRAYLIST
 
     public boolean abrirCuenta(CuentaBancaria cuentaBancaria) {
         // SE USA DIRECTAMENTE EL RETURN FALSE Y TRUE PARA EVITAR UNA VARIABLE TIPO BOOLEAN ADICIONAL
         for (CuentaBancaria CB : this.cuentasLista) {
             if (CB.getNumCuenta().equals(cuentaBancaria.getNumCuenta())) {
-                return false; // DEVUELVE FALSE Y SALE DEL METODO
+                return false; // la cuenta ya existe
             } // SE COMPRUEBA SI LA CUENTA EXISTE
-        } // RECORREMOS LAS LISTAS EXISTENTES
+        } // RECORREMOS LAS LISTAS EXISTENTES PARA VERIFICAR SI LA CUENTA YA EXISTE
 
         // SI NO SE ENCONTRO NINGUNA CUENTA CON EL MISMO NUMERO, SE AÑADE A LA LISTA
         this.cuentasLista.add(cuentaBancaria); // SI NO EXISTE LA CUENTA, SE AÑADE
-        return true; // LA OPERACION FUE EXITOSA
+        return true; // cuenta abierta exitosamente
     } // DEVUELVE TRUE O FALSE SI ALMACENAR LA CUENTA HA SIDO EXITOSA O NO
 
     public String[] listadoCuentas() {
@@ -31,7 +31,7 @@ public class Banco {
             CuentaBancaria cuenta = this.cuentasLista.get(i);
             cuentasInfo[i] = cuenta.devolverInfoString();
         }
-        return cuentasInfo;  // SE DEVUELVE EL ARRAY DE STRING
+        return cuentasInfo;  // SE DEVUELVE EL ARRAY DE STRING DE CUENTAS
     } // LISTADO DE CUENTAS QUE DEVUELVE UN ARRAY DE CADENAS DE LA INFORMACION DE LAS CUENTAS
 
     public String informacionCuenta(String IBAN) {
@@ -41,8 +41,7 @@ public class Banco {
             } // SI EXISTE UNA CUENTA CON ESE IBAN, DEVOLVERA LA INFO DE ESA CUENTA Y SALDRA
         } // RECORREMOS LA LISTA DE CUENTAS
         // SI NO ENCUENTRA NINGUNA CUENTA CON ESE IBAN RETORNARA DIRECTAMENTE NULL
-        /** (para no hacer un if en la clase accountInfo en vez de null pongo directamente el mensaje) **/
-        return "No existe esa cuenta.\nPor favor, prueba con otro numero de\nIBAN";
+        return null;
     } // INFORMACION CUENTAS QUE DEVUELVE INFORMACION DE LA CUENTA PASADA POR PARAMETRO
 
 
