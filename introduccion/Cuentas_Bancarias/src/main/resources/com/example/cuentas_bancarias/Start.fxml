@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -103,6 +104,9 @@
          <image>
             <Image url="@Imagen/logo.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
       </ImageView>
       <Text fill="#8b49ac" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BankPal" wrappingWidth="134.66259765625">
          <font>
@@ -143,6 +147,9 @@
          <image>
             <Image url="@Imagen/exitIcon.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
       </ImageView>
    </children>
 </AnchorPane>

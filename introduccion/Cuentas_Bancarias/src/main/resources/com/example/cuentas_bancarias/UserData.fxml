@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.UserDataCtrller">
+<AnchorPane prefHeight="640.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cuentas_bancarias.Controller.UserDataCtrller">
    <children>
       <ImageView fitHeight="640.0" fitWidth="360.0" pickOnBounds="true">
          <image>
@@ -23,6 +24,9 @@
          <image>
             <Image url="@Imagen/logo.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
       </ImageView>
       <Text fill="#8b49ac" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BankPal" wrappingWidth="134.66259765625">
          <font>
@@ -59,6 +63,9 @@
          <image>
             <Image url="@Imagen/exitIcon.png" />
          </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
       </ImageView>
       <Label layoutX="24.0" layoutY="58.0" text="Nombre:" textFill="#fafafa">
          <font>
