@@ -41,7 +41,12 @@ public class AccountInfoCtrller implements Initializable {
         } else {
             // SI ESTA CORRECTO, SE SETTEAR LA INFORMACION EN EL TEXTAREA DE LA INFORMACION DE LA CUENTA PROPORCIONADA
             // PARA ELLO SE LLAMARA AL METODO DE BANCO DONDE RETORNE LA INFORMACION Y SE SETTEARA LO QUE RETORNE
-            contentPaneTxt.setText(StaticCode.banco.informacionCuenta(numIbanTF.getText()));
+            if(StaticCode.banco.informacionCuenta(numIbanTF.getText()) == null){
+                contentPaneTxt.setText("No existe esa cuenta.\nPor favor, prueba con otro numero de\nIBAN.");
+            } else {
+                contentPaneTxt.setText(StaticCode.banco.informacionCuenta(numIbanTF.getText()));
+            }
+
         }
     } // METODO PARA BUSCAR CUENTA POR IBAN
 
