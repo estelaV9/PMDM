@@ -11,7 +11,7 @@ Repositorio para el módulo de Programación Móviles y Dispositivos Móviles.
       </a>
     </td>
     <td width="70%">
-        Desarrollar una aplicación Java que permita gestionar varios tipos de cuentas bancarias.
+        Desarrollar una aplicación Java que permita gestionar varios tipos de cuentas bancarias, con su respectivo <a href="https://github.com/estelaV9/PMDM/blob/master/introduccion/EstelaDeVega_InformeExplicativoEjercicio.pdf">informe explicativo</a> de como se ha estructurado el proyecto.
     </td>        
  </tr>
 </table>
