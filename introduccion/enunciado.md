@@ -46,6 +46,11 @@ realizó con éxito.
 6) **obtenerSaldo**: Recibe un iban por parámetro y devuelve el saldo de la cuenta si 
 existe. En caso contrario devuelve -1. </br>
 
+## Informe explicativo
+Se añade un pequeño <a href="https://github.com/estelaV9/PMDM/blob/master/introduccion/EstelaDeVega_InformeExplicativoEjercicio.pdf">informe explicativo</a> de como se ha realizado el ejercicio:
+- La implantación de la estructura de POO.
+- La utilizacion de la herencia y el polimorfismo.
+
 ## $BankPal
 <p align="center">
   <img src="https://github.com/estelaV9/estelaV9/blob/main/Image/bankPal.png" width="480" alt="BankPal Application" style="align:center;">
