@@ -1,0 +1,2 @@
+Ejercicio 4.- Realizar un algoritmo que lea un número de teclado y diga cuantos
+dígitos pares contiene y cuantos impares.
