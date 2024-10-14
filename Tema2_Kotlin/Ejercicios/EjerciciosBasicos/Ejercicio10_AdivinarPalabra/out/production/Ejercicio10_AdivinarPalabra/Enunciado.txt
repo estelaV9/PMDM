@@ -1,0 +1,3 @@
+Ejercicio 10.- Adivina la palabra. Diseñe un programa
+que permita adivinar una palabra almacenada en un array.
+(Similar al ahorcado)
