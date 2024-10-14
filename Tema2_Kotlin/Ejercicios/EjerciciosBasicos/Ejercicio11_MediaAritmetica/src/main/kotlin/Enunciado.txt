@@ -1,0 +1,5 @@
+Ejercicio 11.- Almacenar en una matriz M una serie de datos
+numéricos y escribir:
+    - El resultado de restar a M[i,j] la media aritmética
+de la media aritmética de la fila i
+    - La media aritmética de la columna j.
