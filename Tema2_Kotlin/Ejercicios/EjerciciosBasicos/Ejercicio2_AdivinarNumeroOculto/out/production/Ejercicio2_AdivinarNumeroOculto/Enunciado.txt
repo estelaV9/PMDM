@@ -1,0 +1,32 @@
+Ejercicio 2: Deseamos implementar un juego en Kotlin que permita al usuario
+adivinar un número oculto (que será aleatorio).  El funcionamiento será el
+siguiente:
+     El programa mostrará un pequeño menú en pantalla con las siguientes
+    opciones (1. Configurar, 2. Jugar, 3. Salir).
+        o Si el usuario selecciona el la primera opción, se le solicitará por teclado
+        el número de intentos permitidos (numInt) y el número
+        máximo  (numMax) generado.
+
+        o Si el usuario selecciona la opción 2,  el programa generará un número
+        aleatorio entre 0 y numMax que será el número a adivinar
+        (numOculto). A partir de este momento, se le solicitarán al usuario
+        números hasta adivinar el número oculto.
+
+             Si el usuario adivina el número, se mostrará un mensaje "Has
+            ganado!. Has necesitado X intentos".
+
+             Si se consume el número de intentos sin adivinar el número, se
+            mostrará el mensaje "Perdiste!. Intentos consumidos".
+
+             En cada intento, si el usuario no adivina el número se le
+            proporcionará una pista, por ejemplo, "El número oculto es
+            menor".
+
+             En ambos casos, la siguiente acción será mostrar el menú.
+
+             Si el usuario selecciona Jugar sin configurar previamente el
+            número de intentos y el número máximo generado, se tomarán
+            como valores por defecto: numInt=5 y numMax=10.
+
+        o Si el usuario pulsa la opción 3, el programa finaliza.
+     Ayuda: Función Random
