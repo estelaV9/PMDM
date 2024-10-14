@@ -1,0 +1,10 @@
+Ejercicio 5 (Números mágicos).
+
+El número 17 tiene una curiosa propiedad: si lo elevamos al cubo
+da 4.913 y si sumamos las cifras del resultado nos da el mismo
+número 4+9+1+3=17. Lo mismo sucede con el 18.
+
+Diseñar programa en Kotlin que encuentre todos los números mágicos
+entre 1 y 1000.
+
+Deberá diseñar una función que diga si un número es mágico o no.
