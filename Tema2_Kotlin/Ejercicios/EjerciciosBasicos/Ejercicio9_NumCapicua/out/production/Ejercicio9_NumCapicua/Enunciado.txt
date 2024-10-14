@@ -1,0 +1,6 @@
+Ejercicio 9.- Realizar un programa que lea un número
+y diga si es o no capicúa, introducir los dígitos (0 a 9)
+en un array de enteros.
+
+Defina una función que indique si el número es capicúa,
+debe retornar un booleano.
