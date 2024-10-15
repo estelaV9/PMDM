@@ -1,5 +1,6 @@
 # Tema 2: Introducción a Kotlin
->[!NOTE] Índice
+> [!NOTE]
+> ## Índice
 > 1. Inicios en Kotlin.
 > 2. Tour en Kotlin.
 > 3. Arrays.
