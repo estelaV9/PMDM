@@ -1,4 +1,13 @@
 EJERCICIO 1: realizar el siguiente ejercicio de CODELAB
 https://developer.android.com/codelabs/basic-android-kotlin-training-classes-and-inheritance?hl=es-419#0
 
+Las clases que implementarás son las siguientes:
+Dwelling: Una clase base que representa un alojamiento no específico que
+    contiene información común para todas las viviendas
+SquareCabin: Una cabaña cuadrada de madera con una superficie
+    de planta cuadrada
+RoundHut: Una caseta redonda hecha de paja con una superficie de
+    planta circular; el elemento superior de RoundTower
+RoundTower: Una torre redonda hecha de piedra con una superficie
+    de planta circular y varios pisos
 
