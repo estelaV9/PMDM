@@ -12,4 +12,9 @@ abstract class Dwelling (private var residents: Int){
     // SERA UN PARAMETRO QUE SE PASE AL CONSTRUCTOR DE LA CLASE
     // SE USA DE TIPO PRIVATE PARA SOLO ACCEDER A ELLA DESDE LA PROPIA CLASE
     // (Dado que la cantidad de personas que viven en una vivienda suele ser información privada)
+
+    fun hasRoom (): Boolean{
+        // HAY ESPACIO SI LA CAPACIDAD ES MAYOR QUE LOS RESIDENTES, RETORNA TRUE O FALSE
+        return residents < capacity
+    } // FUNCION PARA DETERMINAR SI HAY ESPACIO PARA OTRO HABITANTE EN LA VIVIENDA
 }
