@@ -1,5 +1,8 @@
 package org.example
 
+import Persona
+import Trabajador
+
 // DEFINICION DE LA CLASE
 // ASIGNAS DIRECTAMENTE LOS ATRIBUTOS DE LA CLASE Vehiculo Y ESO CREA EL CONSTRUCTOR PRINCIPAL
 class Vehiculo(var marcar:String, var modelo:String, var matricula:String) {
