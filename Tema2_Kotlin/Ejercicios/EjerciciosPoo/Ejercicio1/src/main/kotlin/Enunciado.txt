@@ -2,12 +2,24 @@ EJERCICIO 1: realizar el siguiente ejercicio de CODELAB
 https://developer.android.com/codelabs/basic-android-kotlin-training-classes-and-inheritance?hl=es-419#0
 
 Las clases que implementarás son las siguientes:
-Dwelling: Una clase base que representa un alojamiento no específico que
+- Dwelling: Una clase base que representa un alojamiento no específico que
     contiene información común para todas las viviendas
-SquareCabin: Una cabaña cuadrada de madera con una superficie
+- SquareCabin: Una cabaña cuadrada de madera con una superficie
     de planta cuadrada
-RoundHut: Una caseta redonda hecha de paja con una superficie de
+- RoundHut: Una caseta redonda hecha de paja con una superficie de
     planta circular; el elemento superior de RoundTower
-RoundTower: Una torre redonda hecha de piedra con una superficie
+- RoundTower: Una torre redonda hecha de piedra con una superficie
     de planta circular y varios pisos
+
+7. Resumen
+En este codelab aprendiste a hacer lo siguiente:
+- Crear una jerarquía de clases, que es un árbol de clases en las que los elementos secundarios heredan la funcionalidad de las clases superiores (las propiedades y funciones se heredan mediante subclases)
+- Crear una clase abstract en la que las subclases implementen algunas de sus funciones (por lo tanto, no se puede crear una instancia de una clase abstract)
+- Crear subclases de una clase abstract
+- Usar la palabra clave override a fin de anular las propiedades y funciones en las subclases
+- Usar la palabra clave super para hacer referencia a funciones y propiedades en la clase superior
+- Crear una clase open que pueda ser una subclase
+- Crear una propiedad private de modo que solo se pueda usar dentro de la clase
+- Usar la construcción with a efectos de realizar varias llamadas en la misma instancia de objeto
+- Importar funciones desde la biblioteca kotlin.math
 
