@@ -25,7 +25,7 @@ fun main() {
     var t1: Trabajador = Trabajador() // OBJETO VACIO
     var p4: Persona = Trabajador(2000.toDouble(), 83223322) // OBJETO POLIMORFISMO
 
-    // println(p4.devolver_Info())
+    println(p4.devolver_Info()) // DEVUELVE INFO DE LA CLASE HIJA
 
     /* t.
      var p3:Persona=Persona("12422124R","luis",983454543)

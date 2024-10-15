@@ -1,4 +1,4 @@
-/** SE PONE CON OPEN PORQUE VOY A DAR LA POSIBILIDAD QUE HEREDE */
+/** SE PONE CON OPEN PORQUE VOY A DAR LA POSIBILIDAD DE QUE LA CLASE SEA HEREDADA */
 open class Persona(var telefono: Long = 983999999) {
     var nombre: String = ""
         get() {
@@ -13,7 +13,7 @@ open class Persona(var telefono: Long = 983999999) {
                 field = value
         }
 
-    lateinit var dni: String
+    lateinit var dni: String  // PROPIEDAD 'dni' QUE SE INICIALIZA MAS TARDE
 
     constructor(dni: String) : this() { // SE PUEDE REFERENCIAR A UN CONSTRUCTOR VACIO PORQUE EL VALOR POR DEFECTO YA TIENE UN VALOR
         this.dni = dni
