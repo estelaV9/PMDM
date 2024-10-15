@@ -26,6 +26,9 @@ fun main() {
         println("Capacity: ${capacity}")
         println("Material: ${buildingMaterial}")
         println("Has room? ${hasRoom()}")
+        getRoom()
+        println("Has room? ${hasRoom()}")
+        getRoom()
         println("Floor area: ${floorArea()}")
     }
 

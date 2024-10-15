@@ -19,4 +19,13 @@ abstract class Dwelling (private var residents: Int){
     } // FUNCION PARA DETERMINAR SI HAY ESPACIO PARA OTRO HABITANTE EN LA VIVIENDA
 
     abstract fun floorArea(): Double // MUESTRA LA SUPERFICIE CALCULADA POR PLANTA
+
+    fun getRoom() {
+        if (capacity > residents) {
+            residents++ // INCREMENTAR RESIDENTES
+            println("You got a room!")
+        } else {
+            println("Sorry, at capacity and no rooms left.")
+        } // SOLO AGREGAR HABITANTE SI HAY CAPACIDAD RESTANTE
+    } // FUNCION PARA AGREGAR LA CAPACIDAD PARA QUE OTRA PERSONA OBTENGA UNA HABITACION
 }
