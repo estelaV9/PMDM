@@ -2,6 +2,7 @@ package org.example
 
 import org.example.Model.Dwelling
 import org.example.Model.RoundHut
+import org.example.Model.RoundTower
 import org.example.Model.SquareCabin
 
 fun main() {
@@ -32,6 +33,16 @@ fun main() {
     // IMPRIMIR INFORMACION
     with(roundHut) {
         println("\nRound Hut\n=========")
+        println("Material: ${buildingMaterial}")
+        println("Capacity: ${capacity}")
+        println("Has room? ${hasRoom()}")
+    }
+
+    /*********** CREAR UNA INSTANCIA DE RoundTower ************/
+    val roundTower = RoundTower(4)
+    // IMPRIMIR INFORMACION
+    with(roundTower) {
+        println("\nRound Tower\n==========")
         println("Material: ${buildingMaterial}")
         println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
