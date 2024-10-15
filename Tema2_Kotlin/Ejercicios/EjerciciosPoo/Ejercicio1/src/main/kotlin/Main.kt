@@ -1,13 +1,14 @@
 package org.example
 
 import org.example.Model.Dwelling
+import org.example.Model.RoundHut
 import org.example.Model.SquareCabin
 
 fun main() {
     // NO SE PUEDE CREAR UNA INSTANCIA DE Dwelling YA QUE ES UNA CLASE ABSTRACTA
     // val dwelling = Dwelling()
 
-    // CREAR INSTANCIA DE SquareCabin
+    /*********** CREAR UNA INSTANCIA DE SquareCabin ************/
     // DENTRO DE LA INSTANCIA SE AGREGARAN LAS SENTENCIAS DE LA CLASE ABSTRACTA
     // (Agrega sentencias de impresión para el material de construcción, la capacidad y la función hasRoom().)
     val squareCabin = SquareCabin(6)
@@ -23,6 +24,16 @@ fun main() {
         println("\nSquare Cabin\n============")
         println("Capacity: ${capacity}")
         println("Material: ${buildingMaterial}")
+        println("Has room? ${hasRoom()}")
+    }
+
+    /*********** CREAR UNA INSTANCIA DE RoundHut ************/
+    val roundHut = RoundHut(3)
+    // IMPRIMIR INFORMACION
+    with(roundHut) {
+        println("\nRound Hut\n=========")
+        println("Material: ${buildingMaterial}")
+        println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
     }
 }
