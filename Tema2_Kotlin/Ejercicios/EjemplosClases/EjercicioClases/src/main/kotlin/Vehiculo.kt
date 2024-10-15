@@ -1,6 +1,7 @@
 package org.example
 
 // DEFINICION DE LA CLASE
+// ASIGNAS DIRECTAMENTE LOS ATRIBUTOS DE LA CLASE Vehiculo Y ESO CREA EL CONSTRUCTOR PRINCIPAL
 class Vehiculo(var marcar:String, var modelo:String, var matricula:String) {
 
     lateinit var motor:String // LA PROPIEDAD MOTOR SE INICIALIZA MAS TARDE
