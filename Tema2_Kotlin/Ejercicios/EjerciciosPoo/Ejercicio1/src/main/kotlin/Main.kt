@@ -41,6 +41,7 @@ fun main() {
         println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
         println("Floor area: ${floorArea()}")
+        println("Carpet Length: ${calculateMaxCarpetLength()}")
     }
 
     /*********** CREAR UNA INSTANCIA DE RoundTower ************/
@@ -52,5 +53,6 @@ fun main() {
         println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
         println("Floor area: ${floorArea()}")
+        println("Carpet Length: ${calculateMaxCarpetLength()}")
     }
 }
