@@ -1,5 +1,6 @@
 package org.example
 
+import Circulo
 import Persona
 import Trabajador
 
@@ -34,4 +35,11 @@ fun main() {
     /* p.telefono
     p.nombre="luis"
     println(p.nombre)*/
+
+
+    /*********** CLASE ABSTRACTA *********/
+    var circulo: Circulo = Circulo((5).toDouble())
+
+    circulo.dibujar()
+    println(circulo.area)
 }
