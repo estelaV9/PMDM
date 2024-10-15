@@ -17,4 +17,6 @@ abstract class Dwelling (private var residents: Int){
         // HAY ESPACIO SI LA CAPACIDAD ES MAYOR QUE LOS RESIDENTES, RETORNA TRUE O FALSE
         return residents < capacity
     } // FUNCION PARA DETERMINAR SI HAY ESPACIO PARA OTRO HABITANTE EN LA VIVIENDA
+
+    abstract fun floorArea(): Double // MUESTRA LA SUPERFICIE CALCULADA POR PLANTA
 }

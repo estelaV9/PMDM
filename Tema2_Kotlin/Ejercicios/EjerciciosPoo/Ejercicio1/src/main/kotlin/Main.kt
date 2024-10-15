@@ -12,7 +12,7 @@ fun main() {
     /*********** CREAR UNA INSTANCIA DE SquareCabin ************/
     // DENTRO DE LA INSTANCIA SE AGREGARAN LAS SENTENCIAS DE LA CLASE ABSTRACTA
     // (Agrega sentencias de impresión para el material de construcción, la capacidad y la función hasRoom().)
-    val squareCabin = SquareCabin(6)
+    val squareCabin = SquareCabin(6, 50.0)
     println("\nSquare Cabin\n============")
     println("Capacity: ${squareCabin.capacity}")
     println("Material: ${squareCabin.buildingMaterial}")
@@ -26,25 +26,28 @@ fun main() {
         println("Capacity: ${capacity}")
         println("Material: ${buildingMaterial}")
         println("Has room? ${hasRoom()}")
+        println("Floor area: ${floorArea()}")
     }
 
     /*********** CREAR UNA INSTANCIA DE RoundHut ************/
-    val roundHut = RoundHut(3)
+    val roundHut = RoundHut(3, 10.0)
     // IMPRIMIR INFORMACION
     with(roundHut) {
         println("\nRound Hut\n=========")
         println("Material: ${buildingMaterial}")
         println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
+        println("Floor area: ${floorArea()}")
     }
 
     /*********** CREAR UNA INSTANCIA DE RoundTower ************/
-    val roundTower = RoundTower(4)
+    val roundTower = RoundTower(4, 15.5)
     // IMPRIMIR INFORMACION
     with(roundTower) {
         println("\nRound Tower\n==========")
         println("Material: ${buildingMaterial}")
         println("Capacity: ${capacity}")
         println("Has room? ${hasRoom()}")
+        println("Floor area: ${floorArea()}")
     }
 }
