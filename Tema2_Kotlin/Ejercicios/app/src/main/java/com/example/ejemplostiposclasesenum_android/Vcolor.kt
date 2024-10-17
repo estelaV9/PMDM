@@ -5,8 +5,12 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 
 // CLASE TIPO ENUM
-enum class Vcolor {
-    ROJO, AZUL, VERDE, NEGRO; // COLORES DISPONIBLES
+enum class Vcolor (num_color:Int, nombre_color:String){
+    /** nota: puede contener propiedades, si se definen en el constructor principal sera necesario
+     * inicializar cada valor del enum. Los objetos tendran esas nuevas propiedades
+     * Rojo(1,"Red")**/
+    ROJO(1, "RED"), AZUL(2, "BLUE"),
+    VERDE(3, "GREEN"), NEGRO(4, "BLACK"); // COLORES DISPONIBLES
 
     @RequiresApi(Build.VERSION_CODES.O) // REQUIERE UNA VERSION MINIMA DE API
     fun retornar_Color(): Color {
