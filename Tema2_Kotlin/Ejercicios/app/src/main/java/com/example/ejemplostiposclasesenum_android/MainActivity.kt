@@ -44,5 +44,43 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }))
+
+        /***************************** SEGUNDA FORMA *******************************/
+        /* //Creamos un setOnCheckedChangeListener que nos pedirá el radioGroup que hemos guardado
+        //Anteriormente y checkedId que es variable definida por android studio
+        radiogroup.setOnCheckedChangeListener{radioGroup,checkedId ->
+            //Coges el id del panel principal que quieres cambiar de color, Esta asi en el xml--> android:id="@+id/main"
+            val mainLayout = findViewById<ConstraintLayout>(R.id.main)
+
+            when (checkedId) {
+                R.id.RbRojo -> {
+                    val colorRojo:Int = Vcolor.ROJO.retornarColor()
+                    mainLayout.setBackgroundColor(colorRojo)
+                }
+                R.id.RbAzul -> {
+                    val colorAzul:Int = Vcolor.AZUL.retornarColor()
+                    mainLayout.setBackgroundColor(colorAzul)
+                }
+                R.id.RbVerde -> {
+                    val colorVerde:Int = Vcolor.VERDE.retornarColor()
+                    mainLayout.setBackgroundColor(colorVerde)
+                }
+                R.id.RbNegro -> {
+                    val colorNegro:Int = Vcolor.NEGRO.retornarColor()
+                    mainLayout.setBackgroundColor(colorNegro)
+                }
+
+            }
+        }
+
+        // CAMBIAR LA FUNCION PARA QUE DEVUELVA DIRECTAMENTE UN VALOR PREDEFINIDO
+        fun retornarColor(): Int {
+            return when(this) {
+                ROJO->Color.RED
+                AZUL->Color.BLUE
+                VERDE->Color.GREEN
+                NEGRO->Color.BLACK
+            }
+        } */
     }
 }
