@@ -5,7 +5,8 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 
 // CLASE TIPO ENUM
-enum class Vcolor (num_color:Int, nombre_color:String){
+// SE USA VAR PORQUE SON PROPIEDADES, SI NO SE USA SON PARAMETROS
+enum class Vcolor(var num_color: Int, var nombre_color: String) {
     /** nota: puede contener propiedades, si se definen en el constructor principal sera necesario
      * inicializar cada valor del enum. Los objetos tendran esas nuevas propiedades
      * Rojo(1,"Red")**/
