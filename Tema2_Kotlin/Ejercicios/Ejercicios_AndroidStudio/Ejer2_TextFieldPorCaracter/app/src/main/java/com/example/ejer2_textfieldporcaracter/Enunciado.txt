@@ -1,0 +1,4 @@
+Ejercicio2: Realizar un programa Android que según se van introduciendo
+caracteres en un campo de texto se vaya mostrando en un TextField tantos _
+como caracteres tiene la cadena que se va introduciendo, hacer
+uso de la función de extensión definida en la anterior diapositiva
