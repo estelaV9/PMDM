@@ -1,0 +1,14 @@
+Ejercicio 3:Tenemos que hacer una aplicación que permita gestionar un cuestionario.
+
+Para ello es necesario definir una clase que represente las preguntas.
+
+Entre sus miembros habrá que definir lo siguientes:
+– Propiedad que permita almacenar la pregunta (String)
+– Una propiedad que defina el tipo de dificultad de la pregunta (fácil, media, difícil)
+– Una propiedad que nos permita almacenar la respuesta, en este caso las preguntas pueden ser de 3 tipos:
+     ▪ Preguntas para completar con una cadena
+     ▪ Preguntas de tipo test con 4 posibles respuestas (a,b,c,d)
+     ▪ Preguntas de verdadero o falso
+     ▪ Preguntas con una respuesta numérica (matemática)
+ – Una función que nos devuelva si la respuesta dada por el usuario
+    (necesita como parámetro la respuesta introducida) es correcta o no.
