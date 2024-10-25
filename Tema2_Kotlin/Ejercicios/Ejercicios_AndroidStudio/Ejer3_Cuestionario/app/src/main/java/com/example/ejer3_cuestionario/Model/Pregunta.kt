@@ -1,24 +1,19 @@
 package com.example.ejer3_cuestionario.Model
 
-class Pregunta(pregunta: String) {
+class Pregunta(
+    var pregunta: String,
+    var dificultad: TipoDificultad,
+    var respuesta: Any // SE PONE ANY PARA QUE ACEPTE CUALQUIER DATO (int, bool..)
+) {
 
     enum class TipoDificultad {
         FACIL, MEDIA, ALTA
     }
 
-    var pregunta: String = ""
-    lateinit var dificultad: TipoDificultad
-    var respuesta: String = ""
 
-    constructor(pregunta: String, dificultad: TipoDificultad, respuesta: String)
-            : this(pregunta) {
-        this.pregunta = pregunta
-        this.dificultad = dificultad
-        this.respuesta = respuesta
-    }
-
-
-    fun corregirRespuesta (respuesta: String): Boolean {
+    fun <T> corregirRespuesta(respuesta: T): Boolean {
         return respuesta == this.respuesta
     }
+
+
 }
