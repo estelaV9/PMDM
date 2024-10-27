@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ejer5_FiltrarFunciones</string>
+    <string name="filtrar_primos">Filtrar_Primos</string>
+    <string name="filtrar_magicos">Filtrar_magicos</string>
+    <string name="filtrar_capicuas">Filtrar_capicuas</string>
+    <string name="filtra">FILTRA</string>
 </resources>
