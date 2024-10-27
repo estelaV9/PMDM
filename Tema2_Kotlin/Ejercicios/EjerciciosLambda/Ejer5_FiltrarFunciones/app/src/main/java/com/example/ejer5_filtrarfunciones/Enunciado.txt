@@ -1,0 +1,13 @@
+Ejercicio 5.- Diseñe una aplicación Android que ponga a prueba esto. El
+diseño de la interfaz gráfica deberá ser similar a la que aparece a continuación:
+
+   |----------------------------|
+   |    SE_MUESTRA_ARRAY        |
+   |    o Filtra_primos         |
+   |    o Filtra_magicos        |
+   |    o Filtra_capicuas       |
+   |                            |
+   |         FILTRAR            |
+   |                            |
+   | SE_MUESTRA_ARRAY_FILTRADO  |
+   |____________________________|
