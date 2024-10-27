@@ -61,6 +61,15 @@ class MainActivity : AppCompatActivity() {
             }
         } // CUANDO SE PULSA EL BOTON FILTRAR
 
+        /* nota: se puede hacer asi:
+        * filtrar.setOnClickListener {
+            when (grupoRadioB.checkedRadioButtonId) {
+                R.id.radioButton -> listaSalida.text = filtArray(lista, esPrimo).toString()
+                R.id.radioButton2 -> listaSalida.text = filtArray(lista, esMagico).toString()
+                R.id.radioButton3 -> listaSalida.text = filtArray(lista, esCapicua).toString()
+            }
+        }*/
+
     }
 
     fun filtrarNumerosPrimos (arrayEnteros: List<Int>): List<Int>{
