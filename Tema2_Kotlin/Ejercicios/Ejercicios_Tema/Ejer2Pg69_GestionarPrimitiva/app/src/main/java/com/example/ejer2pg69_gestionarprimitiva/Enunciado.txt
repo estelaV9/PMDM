@@ -4,3 +4,4 @@ Que estructura utilizarías? -> Utilizaria un Set para guardar los numeros unico
 para acceder a esos numeros.
 
  ▪ Probar la función filter
+La funcion filter es una coleccion que contiene elementos que cumplen una condicion
