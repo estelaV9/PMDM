@@ -1,0 +1,2 @@
+Definir un pequeño programa en Kotlin que permita inicializar un examen (Lista de
+preguntas), permite resolverle y obtener la puntuación.
