@@ -3,6 +3,7 @@ package com.example.ejer5_filtrarfunciones
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -29,15 +30,20 @@ class MainActivity : AppCompatActivity() {
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         val numerosTF = findViewById<TextView>(R.id.seMuestraArray)
         val filtrarTF = findViewById<TextView>(R.id.seMuestraArrayFiltrado)
-
+        val filtrarButton = findViewById<Button>(R.id.button)
+        var idRadioBttSeleccionado = 0
 
         numerosTF.text = arrayEnteros.toString() // SETEAR EL ARRAY EN EL TEXTFIELD
 
         // PARA DETECTAR CUANDO SE PULSA UN RADIOBUTTON SE UTILIZA EL METODO setOnCheckedChangeListener
         // EN EL RADIOGROUP CON LOS PARAMETROS DE UN RADIOBUTTON NULO Y UN INT QUE SERA EL ID
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            // SWITCH DE LOS ID DE LOS RADIOBUTTONS
-            when (checkedId) {
+            idRadioBttSeleccionado = checkedId // SE GUARDA EL ID DEL RADIOBUTTON SELECCIONADO
+        }
+
+        filtrarButton.setOnClickListener {
+            // SWITCH DEL ID DEL RADIOBUTTON SELECCIONADO
+            when (idRadioBttSeleccionado) {
                 R.id.primosRd -> { // FILTRAR NUMEROS PRIMOS
                     filtrarTF.text =
                         filtrarNumerosPrimos(arrayEnteros.toList()).toString() // LLAMAR A LA FUNCION DE FILTRAR NUMEROS PRIMOS
@@ -53,7 +59,8 @@ class MainActivity : AppCompatActivity() {
                         filtrarNumerosCapicuas(arrayEnteros.toList()).toString() // LLAMAR A LA FUNCION DE FILTRAR NUMEROS CAPICUAS
                 }
             }
-        }
+        } // CUANDO SE PULSA EL BOTON FILTRAR
+
     }
 
     fun filtrarNumerosPrimos (arrayEnteros: List<Int>): List<Int>{
