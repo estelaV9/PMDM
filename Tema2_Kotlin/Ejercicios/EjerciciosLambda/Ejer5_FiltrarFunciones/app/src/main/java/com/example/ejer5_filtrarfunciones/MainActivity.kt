@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
             // SWITCH DE LOS ID DE LOS RADIOBUTTONS
             when (checkedId) {
                 R.id.primosRd -> { // FILTRAR NUMEROS PRIMOS
-                    /*filtrarTF.text =
+                    filtrarTF.text =
                         filtrarNumerosPrimos(arrayEnteros.toList()).toString() // LLAMAR A LA FUNCION DE FILTRAR NUMEROS PRIMOS
-                */}
+                }
 
                 R.id.magicosRd -> { // FILTRAR NUMEROS MAGICOS
                     filtrarTF.text =
@@ -56,9 +56,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*fun filtrarNumerosPrimos (arrayEnteros: List<Int>): Array<Int>{
+    fun filtrarNumerosPrimos (arrayEnteros: List<Int>): List<Int>{
+        val arrayNumerosPrimos:MutableList<Int> = mutableListOf() // ARRAY PARA AÑADIR LOS NUMEROS PRIMOS
+        for (i in arrayEnteros) {
+            var isPrimo = true // ATRIBUTO PARA SABER SI EL NUMERO ES PRIMO O NO, SE ASUME QUE AL PRINCIPIO ES PRIMO
 
-    }*/
+            for (j in 2..Math.sqrt(i.toDouble()).toInt()) {
+                if(i % j == 0) {
+                    isPrimo = false
+                    break // NO ES PRIMO, SALE DEL BUCLE
+                } // SI I ES DIVISIBLE ENTRE J ENTONCES NO ES PRIMO
+            } // SE RECORRE DESDE 2 HASTA LA RAIZ CUADRADA DE I PARA SABER SI TIENE DIVISORES
+
+            if(isPrimo) {
+                arrayNumerosPrimos.add(i)
+            } // SI EL NUMERO ES PRIMO SE AÑADE AL ARRAY
+        } // SE RECORRE EL ARRAY DE ENTEROS
+
+        return arrayNumerosPrimos.toList() // SE RETORNA LA LISTA CON LOS NUMEROS PRIMOS
+    }
 
     fun filtrarNumerosMagicos (arrayEnteros: List<Int>): List<Int>{
         // LOS NUMEROS MAGICOS SON AQUELLOS QUE AL ELEVAR EL NUMERO AL CUBO, SUMANDO LOS DIGITOS
