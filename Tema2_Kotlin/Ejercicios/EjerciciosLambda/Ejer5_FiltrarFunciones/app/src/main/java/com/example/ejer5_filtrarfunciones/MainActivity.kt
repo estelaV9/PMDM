@@ -49,7 +49,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.capicuasRd -> { // FILTRAR NUMEROS CAPICUAS
-                    //filtrarNumerosCapicuas(arrayEnteros.toList()) // LLAMAR A LA FUNCION DE FILTRAR NUMEROS CAPICUAS
+                    filtrarTF.text =
+                        filtrarNumerosCapicuas(arrayEnteros.toList()).toString() // LLAMAR A LA FUNCION DE FILTRAR NUMEROS CAPICUAS
                 }
             }
         }
@@ -84,7 +85,23 @@ class MainActivity : AppCompatActivity() {
         return arrayNumerosMagicos.toList() // RETORNA EL ARRAY CON LOS NUMEROS MAGICOS
     } // METODO PARA FILTRAR LOS NUMEROS MAGICOS
 
-    /*fun filtrarNumerosCapicuas (arrayEnteros: List<Int>): Array<Int>{
+    fun filtrarNumerosCapicuas (arrayEnteros: List<Int>): List<Int>{
+        var numAux:Int // ATRIBUTO AUXILIAR PARA HACER LAS OPERACIONES
+        val arrayNumeroCapicua:MutableList<Int> = mutableListOf() // ARRAY PARA GUARDAR LOS NUMEROS CAPICUAS
+        for(i in arrayEnteros){
+            numAux = i // NUMERO AUXILIAR SE LE ASIGNA EL VALOR DE I
+            var cadenaDigitos = "" // CADENA PARA GUARDAR LOS DIGITOS AL REVES
 
-    }*/
+            while (numAux > 0) {
+                cadenaDigitos += numAux % 10 // SE CONCATENA LOS DIGITOS
+                numAux /= 10 // SE DIVIDE ENTRE 10
+            } // MIENTRAS TENGA DIGITOS SEGUIRA EN EL BUCLE
+
+            if(cadenaDigitos == i.toString()){
+                arrayNumeroCapicua.add(i)
+            } // SI LOS DIGITOS AL REVES ES IGUAL A I ENTONCES SE AÑADE AL ARRAY
+        } // RECORRER EL ARRAY DE ENTEROS
+
+        return arrayNumeroCapicua.toList() // SE RETORNA LA LISTA
+    } // METODO PARA FILTRAR NUMEROS CAPICUAS
 }
