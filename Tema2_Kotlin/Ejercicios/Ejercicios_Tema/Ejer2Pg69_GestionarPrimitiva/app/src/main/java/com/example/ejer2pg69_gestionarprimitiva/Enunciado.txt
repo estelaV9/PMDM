@@ -1,3 +1,3 @@
-Definir un programa en Android que permita generar los nº de la lotería primitiva. Que
-estructura utilizarías?
+Definir un programa en Android que permita generar los nº de la lotería
+primitiva. Que estructura utilizarías?
  ▪ Probar la función filter
