@@ -11,7 +11,7 @@
         android:id="@+id/seMuestraArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SE_MUESTRA_ARRAY"
+        android:text="@string/se_muestra_array"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,10 +19,10 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <TextView
-        android:id="@+id/seMuestraArray2"
+        android:id="@+id/seMuestraArrayFiltrado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SE_MUESTRA_ARRAY_FILTRADO"
+        android:text="@string/se_muestra_array_filtrado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,19 +42,19 @@
         app:layout_constraintVertical_bias="0.119">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/primosRd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/filtrar_primos" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/magicosRd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/filtrar_magicos" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/capicuasRd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/filtrar_capicuas" />

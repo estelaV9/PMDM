@@ -4,4 +4,6 @@
     <string name="filtrar_magicos">Filtrar_magicos</string>
     <string name="filtrar_capicuas">Filtrar_capicuas</string>
     <string name="filtra">FILTRA</string>
+    <string name="se_muestra_array">SE_MUESTRA_ARRAY</string>
+    <string name="se_muestra_array_filtrado">SE_MUESTRA_ARRAY_FILTRADO</string>
 </resources>
