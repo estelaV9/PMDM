@@ -8,10 +8,21 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/numeroReintegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numeros_reintegro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generarBtt" />
+
+    <TextView
         android:id="@+id/numeroPrimitivaTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NUMEROS_PRIMITIVA"
+        android:text="@string/numeros_primitiva"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -23,7 +34,7 @@
         android:id="@+id/generarBtt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GENERAR NUMEROS"
+        android:text="@string/generar_numeros"
         app:layout_constraintTop_toTopOf="@+id/numeroPrimitivaTV"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

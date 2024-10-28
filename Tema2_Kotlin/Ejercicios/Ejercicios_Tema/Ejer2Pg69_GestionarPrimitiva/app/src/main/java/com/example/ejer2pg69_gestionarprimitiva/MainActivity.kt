@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.time.TestTimeSource
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,10 +21,19 @@ class MainActivity : AppCompatActivity() {
 
         val textView = findViewById<TextView>(R.id.numeroPrimitivaTV)
         val generarBtt = findViewById<Button>(R.id.generarBtt)
+        val numIngetroTV = findViewById<TextView>(R.id.numeroReintegro)
+        var numeroRandomReintegro = 0 // VARIABLE PARA GUARDAR EL NUMERO DE REINTEGRO
 
         generarBtt.setOnClickListener {
+            if(contador == numRandomSinRepetidos.size - 1){
+                numeroRandomReintegro = (1..9).random()
+            } // SI EL CONTADOR LLEGA A 6 SE GENERARA UN NUMERO ALEATORIO DEL 1 AL 9
+            numIngetroTV.text = "El número de reintegro es : $numeroRandomReintegro" // SE MUESTRA EL REINTEGRO
+
+            // SI HAY MAS NUMEROS EN LA LISTA LOS SEGUIRA MOSTRANDO
             if (contador < numRandomSinRepetidos.size) {
-                textView.text = numRandomSinRepetidos[contador].toString() // MOSTRAMOS EL NUMERO ACTUAL                contador++
+                textView.text = numRandomSinRepetidos[contador].toString() // MOSTRAMOS EL NUMERO ACTUAL
+                contador++
             } else {
                 textView.text = "Ya no hay más números." // Mensaje si se acaban los números
             } // MOSTRARA EL NUMERO DENTRO DEL RANDO DE LA LISTA, CUANDO SE PASE MOSTRARA UN MENSAJE

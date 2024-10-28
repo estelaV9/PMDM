@@ -2,6 +2,3 @@ Definir un programa en Android que permita generar los nº de la lotería
 primitiva.
 Que estructura utilizarías? -> Utilizaria un Set para guardar los numeros unicos y luego un List
 para acceder a esos numeros.
-
- ▪ Probar la función filter
-La funcion filter es una coleccion que contiene elementos que cumplen una condicion
