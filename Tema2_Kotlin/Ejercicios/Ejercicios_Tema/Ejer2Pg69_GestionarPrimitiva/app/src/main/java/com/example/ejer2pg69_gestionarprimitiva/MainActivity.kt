@@ -17,17 +17,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var contador = 0 // CONTADOR PARA SABER LAS VECES QUE HA PULSADO EL BOTON
-        val numRandomSinRepetidos = generarNumerosPrimitiva().toList() // LISTA CON LOS NUMEROS SIN DUPLICAR
 
         val textView = findViewById<TextView>(R.id.numeroPrimitivaTV)
         val generarBtt = findViewById<Button>(R.id.generarBtt)
         val numIngetroTV = findViewById<TextView>(R.id.numeroReintegro)
-        var numeroRandomReintegro = 0 // VARIABLE PARA GUARDAR EL NUMERO DE REINTEGRO
 
         generarBtt.setOnClickListener {
-            if(contador == numRandomSinRepetidos.size - 1){
-                numeroRandomReintegro = (1..9).random()
-            } // SI EL CONTADOR LLEGA A 6 SE GENERARA UN NUMERO ALEATORIO DEL 1 AL 9
+            // CADA VEZ QUE SE HAGA CLICK AL BOTON SE GENERAN NUEVOS NUMEROS DE LA PRIMITIVA Y EL NUMERO DEL REINTEGRO
+            val numRandomSinRepetidos = generarNumerosPrimitiva().toList() // LISTA CON LOS NUMEROS SIN DUPLICAR
+            var numeroRandomReintegro = (1..9).random() // VARIABLE PARA GUARDAR EL NUMERO DE REINTEGRO
+
+            // MOSTRAR DIRECTAMENTE LOS 6 NUMEROS Y EL REINTEGRO CUANDO SE PULSE EL BOTON
+            textView.text = numRandomSinRepetidos.joinToString()
+            numIngetroTV.text = "El número de reintegro es : $numeroRandomReintegro" // SE MUESTRA EL REINTEGRO
+
+            /* IR MOSTRANDO DE NUMERO A NUMERO
+            // GENERAR NUMERO ALEATORIO DEL 1 AL 9 PARA EL REINTEGRO
             numIngetroTV.text = "El número de reintegro es : $numeroRandomReintegro" // SE MUESTRA EL REINTEGRO
 
             // SI HAY MAS NUMEROS EN LA LISTA LOS SEGUIRA MOSTRANDO
@@ -36,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 contador++
             } else {
                 textView.text = "Ya no hay más números." // Mensaje si se acaban los números
-            } // MOSTRARA EL NUMERO DENTRO DEL RANDO DE LA LISTA, CUANDO SE PASE MOSTRARA UN MENSAJE
+            } // MOSTRARA EL NUMERO DENTRO DEL RANDO DE LA LISTA, CUANDO SE PASE MOSTRARA UN MENSAJE*/
         } // CUANDO PULSE EL BOTON MOSTRARA EL NUMERO
     }
 
