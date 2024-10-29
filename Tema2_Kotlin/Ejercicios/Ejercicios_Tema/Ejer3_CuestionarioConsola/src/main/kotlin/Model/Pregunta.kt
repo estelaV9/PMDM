@@ -12,6 +12,9 @@ class Pregunta<T> ( // CONSTRUCTOR PRIMARIO
     } // ENUM PARA EL TIPO DE DIFICULTAD
 
     /* enum class Test */
+    enum class Test {
+        A, B, C, D
+    }
 
     fun <T> corregirRespuesta(respuestaIntroducida: T): Boolean {
         return respuestaIntroducida == this.respuesta // SI ES IGUAL A LA RESPUESTA, DEVUELVE TRUE
