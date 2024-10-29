@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.ejemplospoo.despues_cambio_texto
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +20,16 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.caracteresEdit)
         val textField = findViewById<TextView>(R.id.textField)
 
+        // USO DE LA FUNCION DE EXTENCION
+        editText.despues_cambio_texto {
+            textField.text = caracteresIntroducidos(it)
+            /* OTRA FORMA
+            textField.text = "_*.repeat(cadena.length)*/
+        }
+
+        // CON LISTENER DIRECTAMENTE
         // Agrega un TextWatcher para detectar cambios en el texto del EditText
-        editText.addTextChangedListener(object : TextWatcher {
+        /*editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 // No se necesita implementación en este caso
             }
@@ -34,10 +43,11 @@ class MainActivity : AppCompatActivity() {
                 val guiones = caracteresIntroducidos(s.toString())
                 textField.text = guiones
             }
-        })
+        })*/
     }
 
-    fun <T> caracteresIntroducidos(caracteres: T): String {
+
+    fun caracteresIntroducidos(caracteres: String): String {
         val numCaracteres = caracteres.toString()
         var numGuiones = "";
         // SE USA UNTIL PARA EVITAR EL INDICE FUERA DEL RANGO
