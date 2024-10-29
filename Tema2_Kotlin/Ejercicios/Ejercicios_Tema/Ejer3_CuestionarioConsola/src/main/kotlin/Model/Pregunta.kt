@@ -1,14 +1,17 @@
 package Model
 
-class Pregunta( // CONSTRUCTOR PRIMARIO
+// CLASE GENERICA
+class Pregunta<T> ( // CONSTRUCTOR PRIMARIO
     var pregunta: String,
     var dificultad: TipoDificultad,
-    var respuesta: Any // SE PONE ANY PARA QUE ACEPTE CUALQUIER DATO (int, bool..)
+    var respuesta: T
 ) {
 
     enum class TipoDificultad {
         FACIL, MEDIA, ALTA
     } // ENUM PARA EL TIPO DE DIFICULTAD
+
+    /* enum class Test */
 
     fun <T> corregirRespuesta(respuestaIntroducida: T): Boolean {
         return respuestaIntroducida == this.respuesta // SI ES IGUAL A LA RESPUESTA, DEVUELVE TRUE
