@@ -1,4 +1,5 @@
 import Model.*
+import java.lang.foreign.VaList
 import java.util.Scanner
 
 fun main(args: Array<String>) {
@@ -7,6 +8,7 @@ fun main(args: Array<String>) {
     println("Bienvenido a BankPal!")
     try {
         val cuentas: MutableList<CuentaBancaria> = mutableListOf()
+        val banco = Banco()
         do {
             println("1-Abrir una nueva cuenta")
             println("2-Ver un listado de las cuentas disponibles")
@@ -21,6 +23,7 @@ fun main(args: Array<String>) {
 
             when (option) {
                 1 -> {
+                    var cuenta:CuentaBancaria? = null// ATRIBUTO PARA GUARDAR LA CUENTA
                     println("*********** NUEVA CUENTA ************")
                     println("Introduzca los datos personales")
                     print("Nombre: ")
@@ -46,15 +49,13 @@ fun main(args: Array<String>) {
                         1 -> {
                             println("Tipo de interes: ")
                             val tipoInteres = scanner.nextDouble()
-                            val cuentaAhorro:CuentaBancaria = CuentaAhorro(titular, saldoInicial, iban, tipoInteres)
-                            cuentas.add(cuentaAhorro)
+                            cuenta = CuentaAhorro(titular, saldoInicial, iban, tipoInteres)
                         }
 
                         2 -> {
                             println("Comision Mantenimiento: ")
                             val comisionMantenimiento = scanner.nextInt()
-                            val ccpersonal:CuentaBancaria = CCPersonal(titular, saldoInicial, iban, comisionMantenimiento)
-                            cuentas.add(ccpersonal)
+                            cuenta = CCPersonal(titular, saldoInicial, iban, comisionMantenimiento)
                         }
 
                         3 -> {
@@ -64,20 +65,26 @@ fun main(args: Array<String>) {
                             val tipoInteres = scanner.nextDouble()
                             println("ComisionFija: ")
                             val comisionFija = scanner.nextDouble()
-                            val ccEmpresa:CuentaBancaria =
+                            cuenta =
                                 CCEmpresa(titular, saldoInicial, iban, maxDescubierto, tipoInteres, comisionFija)
-                            cuentas.add(ccEmpresa)
                         }
-
                         else -> println("Numero no valido")
+                    }
+
+                    if (cuenta != null && banco.abrirCuenta(cuenta)) {
+                        println("Cuenta creada exitosamente.")
+                    } else if (cuenta != null) {
+                        println("La cuenta no pudo ser abierta. Ya existe un IBAN duplicado.")
+                    } else {
+                        println("No se creó ninguna cuenta.")
                     }
                 }
 
                 2 -> {
                     println("CUENTAS BANCARIAS")
-                   for (c in cuentas){
-                       println(c.devolverInfo())
-                       println()
+                    for (c in banco.listaCuentas) {
+                        println(c.devolverInfo())
+                        println()
                     }
                 }
 
