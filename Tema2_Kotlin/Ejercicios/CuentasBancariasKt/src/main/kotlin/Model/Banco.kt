@@ -1,16 +1,20 @@
 package Model
 
 class Banco {
-    private var listaCuentas:MutableList<CuentaBancaria> = mutableListOf()
+    private var _listaCuentas: MutableList<CuentaBancaria> = mutableListOf()
+
+    val listaCuentas: MutableList<CuentaBancaria>
+        get() = _listaCuentas
+
 
     // METODOS
-    fun abrirCuenta(cuenta:CuentaBancaria): Boolean{
-        for (cuentas in listaCuentas){
-            if(cuentas.iban == cuenta.iban){
+    fun abrirCuenta(cuenta: CuentaBancaria): Boolean {
+        for (cuentas in _listaCuentas) {
+            if (cuentas.iban == cuenta.iban) {
                 return false
             } // SI YA EXISTE ESA CUENTA, DEVEULVE FALSE
         }
-        listaCuentas.add(cuenta)
+        _listaCuentas.add(cuenta)
         return true
     } // FUNCION PARA ABRIR UNA CUENTA
 }
