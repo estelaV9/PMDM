@@ -1,6 +1,6 @@
 package Model
 
-open class CuentaAhorro(
+class CuentaAhorro(
     titular: Persona,
     saldo: Double,
     iban: String,
@@ -13,10 +13,9 @@ open class CuentaAhorro(
         this.iban = iban
     }
 
-
     override fun toString(): String {
         return """
-        Cuenta Corriente:
+        Cuenta Ahorro:
         -----------------
         Titular         : $titular
         Saldo           : $saldo
