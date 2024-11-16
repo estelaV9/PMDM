@@ -5,14 +5,9 @@ class CCEmpresa(
     saldo: Double,
     iban: String,
     private var maxDescubierto: Int,
-    private var tipoInteresDescubierto: Int
+    private var tipoInteresDescubierto: Double,
+    private var comisionPorDescubierto: Double
 ) : CuentaCorriente(titular, saldo, iban) {
-
-    init {
-        this.titular = titular
-        this.saldo = saldo
-        this.iban = iban
-    }
 
     override fun devolverInfo(): String {
         return """
@@ -22,8 +17,9 @@ class CCEmpresa(
         Saldo           : $saldo
         IBAN            : $iban
         Lista Entidades : ${listaEntidades.joinToString { ", " }}
-        Maximo Descubierto : $maxDescubierto
+        Maximo Descubierto : $maxDescubierto€
         Tipo Interes Descubierto : $tipoInteresDescubierto
+        Comision Por Descubierto : $comisionPorDescubierto€
     """.trimIndent()
     }
 }

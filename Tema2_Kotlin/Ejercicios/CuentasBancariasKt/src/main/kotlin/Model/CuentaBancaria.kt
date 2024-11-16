@@ -6,7 +6,6 @@ abstract class CuentaBancaria(
     protected var iban: String
 ) : Interface {
 
-
     override fun toString(): String {
         return "CuentaBancaria(titular=$titular, saldo=$saldo, iban='$iban')"
     }

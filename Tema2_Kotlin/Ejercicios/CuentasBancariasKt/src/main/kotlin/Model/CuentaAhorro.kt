@@ -7,12 +7,6 @@ class CuentaAhorro(
     private var tipoInteres: Double
 ) : CuentaBancaria(titular, saldo, iban) {
 
-    init {
-        this.titular = titular
-        this.saldo = saldo
-        this.iban = iban
-    }
-
     override fun devolverInfo(): String {
         return """
         Cuenta Ahorro:

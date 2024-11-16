@@ -10,9 +10,6 @@ open abstract class CuentaCorriente(
     protected var listaEntidades: Array<String>
 
     init {
-        this.titular = titular
-        this.saldo = saldo
-        this.iban = iban
         this.listaEntidades = arrayOf("Cafeteria", "Panaderia", "Entidad3", "Entidad4")
     }
 
