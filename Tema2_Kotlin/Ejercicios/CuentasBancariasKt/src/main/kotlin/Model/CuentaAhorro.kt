@@ -1,6 +1,6 @@
 package Model
 
-open class CuentaAhorro (
+open class CuentaAhorro(
     titular: Persona,
     saldo: Double,
     iban: String,
@@ -14,10 +14,14 @@ open class CuentaAhorro (
     }
 
 
-
     override fun toString(): String {
-        return "CuentaAhorro(tipoInteres=$tipoInteres)"
+        return """
+        Cuenta Corriente:
+        -----------------
+        Titular         : $titular
+        Saldo           : $saldo
+        IBAN            : $iban
+        Tipo Interes : $tipoInteres
+    """.trimIndent()
     }
-
-
 }
