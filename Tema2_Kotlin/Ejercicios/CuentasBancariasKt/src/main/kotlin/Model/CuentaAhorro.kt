@@ -13,7 +13,7 @@ class CuentaAhorro(
         this.iban = iban
     }
 
-    override fun toString(): String {
+    override fun devolverInfo(): String {
         return """
         Cuenta Ahorro:
         -----------------

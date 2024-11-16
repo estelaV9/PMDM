@@ -13,7 +13,7 @@ class CCPersonal(
         this.iban = iban
     }
 
-    override fun toString(): String {
+    override fun devolverInfo(): String {
         return """
         Cuenta Corriente Personal:
         -----------------

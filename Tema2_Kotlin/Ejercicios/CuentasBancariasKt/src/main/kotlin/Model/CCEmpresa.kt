@@ -14,14 +14,14 @@ class CCEmpresa(
         this.iban = iban
     }
 
-    override fun toString(): String {
+    override fun devolverInfo(): String {
         return """
         Cuenta Corriente de Empresa:
         -----------------
         Titular         : $titular
         Saldo           : $saldo
         IBAN            : $iban
-        Lista Entidades : ${listaEntidades.joinToString {", " }}
+        Lista Entidades : ${listaEntidades.joinToString { ", " }}
         Maximo Descubierto : $maxDescubierto
         Tipo Interes Descubierto : $tipoInteresDescubierto
     """.trimIndent()

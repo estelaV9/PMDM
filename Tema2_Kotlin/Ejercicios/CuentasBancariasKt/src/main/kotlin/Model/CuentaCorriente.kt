@@ -1,6 +1,6 @@
 package Model
 
-open class CuentaCorriente(
+open abstract class CuentaCorriente(
     titular: Persona,
     saldo: Double,
     iban: String,
