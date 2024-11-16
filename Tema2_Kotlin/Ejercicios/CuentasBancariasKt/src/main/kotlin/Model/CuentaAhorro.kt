@@ -11,7 +11,7 @@ class CuentaAhorro(
         return """
         Cuenta Ahorro:
         -----------------
-        Titular         : $titular
+        Titular         : ${titular.devolverInfo()}
         Saldo           : $saldo
         IBAN            : $iban
         Tipo Interes : $tipoInteres

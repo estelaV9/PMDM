@@ -11,10 +11,10 @@ class CCPersonal(
         return """
         Cuenta Corriente Personal:
         -----------------
-        Titular         : $titular
+        Titular         : ${titular.devolverInfo()}
         Saldo           : $saldo
         IBAN            : $iban
-        Lista Entidades : ${listaEntidades.joinToString {", " }}
+        Lista Entidades : ${listaEntidades.joinToString()}
         Comision de Mantenimiento : $comisionMantenimiento
     """.trimIndent()
     }

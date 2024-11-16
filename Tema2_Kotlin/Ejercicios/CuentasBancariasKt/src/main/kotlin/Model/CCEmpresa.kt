@@ -13,10 +13,10 @@ class CCEmpresa(
         return """
         Cuenta Corriente de Empresa:
         -----------------
-        Titular         : $titular
+        Titular         : ${titular.devolverInfo()}
         Saldo           : $saldo
         IBAN            : $iban
-        Lista Entidades : ${listaEntidades.joinToString { ", " }}
+        Lista Entidades : ${listaEntidades.joinToString()}
         Maximo Descubierto : $maxDescubierto€
         Tipo Interes Descubierto : $tipoInteresDescubierto
         Comision Por Descubierto : $comisionPorDescubierto€
