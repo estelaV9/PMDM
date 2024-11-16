@@ -1,3 +1,5 @@
+package Model
+
 abstract class Actividad(
     protected var nombre: String, // NOMBRE DE LA ACTIVIDAD A REALIZAR
     protected var completada: Boolean // SABER SI LA ACTIVIDAD SE HA COMPLETADO
@@ -14,6 +16,6 @@ abstract class Actividad(
     } // ESTABLECE A TRUE EL ATRIBUTO COMPLETADA
 
     fun mostrarDetalle():String{
-        return "Actividad: $nombre | Completada: $completada"
+        return "Model.Actividad: $nombre | Completada: $completada"
     } // GENERA UN STRING CON LOS VALORES DE LOS ATRIBUTOS
 }
