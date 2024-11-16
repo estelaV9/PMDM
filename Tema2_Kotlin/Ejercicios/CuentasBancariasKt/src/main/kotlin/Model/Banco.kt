@@ -17,4 +17,8 @@ class Banco {
         _listaCuentas.add(cuenta)
         return true
     } // FUNCION PARA ABRIR UNA CUENTA
+
+    fun listadoCuentas():List<CuentaBancaria>{
+        return _listaCuentas.toList()
+    }
 }
