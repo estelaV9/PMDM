@@ -1,6 +1,6 @@
 package Model
 
-abstract class Actividad(
+open abstract class Actividad(
     protected var nombre: String, // NOMBRE DE LA ACTIVIDAD A REALIZAR
     protected var completada: Boolean // SABER SI LA ACTIVIDAD SE HA COMPLETADO
 ) {
@@ -15,7 +15,7 @@ abstract class Actividad(
         println("La actividad '$nombre' ha sido marcada como completada.")
     } // ESTABLECE A TRUE EL ATRIBUTO COMPLETADA
 
-    fun mostrarDetalle():String{
+    open fun mostrarDetalle():String{
         return "Model.Actividad: $nombre | Completada: $completada"
     } // GENERA UN STRING CON LOS VALORES DE LOS ATRIBUTOS
 }
