@@ -1,6 +1,8 @@
 package Model
 
+import android.content.Context
+
 interface Recordatorio {
-    fun programarRecordatorio():Unit
-    fun cancelarRecordatorio():Unit
+    fun programarRecordatorio(context: Context):Unit
+    fun cancelarRecordatorio(context: Context):Unit
 }
