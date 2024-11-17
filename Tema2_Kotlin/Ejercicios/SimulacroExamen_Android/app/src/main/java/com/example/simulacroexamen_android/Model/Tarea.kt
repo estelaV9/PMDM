@@ -14,7 +14,7 @@ class Tarea(
     private var urgencia: Urgencia // VARIABLE TIPO ENUM
 ) : Actividad(nombre, completada), Recordatorio {
 
-    override fun mostrarDetalle():String{
+    override fun mostrarDetalle(): String {
         return "La tarea '$nombre'. " +
                 "Completada: $completada. " +
                 "Fecha limite: $fecha_limite. " +
@@ -31,9 +31,9 @@ class Tarea(
     } // DEFINIR UNA NOTIFICACION QUE SE MUESTRE EN
 
     override fun cancelarRecordatorio(context: Context) {
-        if(notificacion == null){
+        if (notificacion == null) {
             context.mensaje("No se puedo cancelar recordatorio ya que notificacion es nulo")
-        } else if(notificacion?.activo == true){
+        } else if (notificacion?.activo == true) {
             notificacion = null // SE CANCELA LA NOTIFICACION
             context.mensaje("Se ha cancelado el recordatorio correctamente")
         }
@@ -58,5 +58,12 @@ class Tarea(
         var fecha_hora_notificacion: LocalDate, // MOMENTO DONDE SE PROGRAMARA LA NOTIFICACION
         var activo: Boolean // MARCA SI LA NOTIFICACION ES ACTIVA
     ) {
+        fun mostrar_notificacion(context: Context) {
+            if (fecha_hora_notificacion.equals(null)) {
+                context.mensaje("La notificacion NO esta establecida. Estado: $activo")
+            } else {
+                context.mensaje("La notificacion SI esta establecida. Estado: $activo")
+            } // SI ESTA ESTABLECIDA Y EL ESTADO EN EL QUE SE ENCUENTRA
+        } // FUNCION QUE MUESTRA LA NOTIFICACION
     }
 }
