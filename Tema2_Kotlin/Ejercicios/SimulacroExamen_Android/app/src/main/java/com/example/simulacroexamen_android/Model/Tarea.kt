@@ -10,7 +10,7 @@ class Tarea(
     completada: Boolean,
     private var fecha_limite: LocalDate?, // PUEDE ADMITIR VALORES NULOS
     var notificacion: Notificacion?, // VARIABLE TIPO NOTIFICACION, PUEDE NULOS
-    private var urgencia: Urgencia // VARIABLE TIPO ENUM
+    var urgencia: Urgencia // VARIABLE TIPO ENUM
 ) : Actividad(nombre, completada), Recordatorio {
 
     override fun mostrarDetalle(): String {
