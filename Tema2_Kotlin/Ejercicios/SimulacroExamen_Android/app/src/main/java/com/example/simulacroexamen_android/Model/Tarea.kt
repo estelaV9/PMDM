@@ -1,7 +1,6 @@
 package Model
 
 import android.content.Context
-import android.widget.Toast
 import com.example.simulacroexamen_android.Utilities.mensaje
 import java.time.LocalDate
 
@@ -10,7 +9,7 @@ class Tarea(
     nombre: String,
     completada: Boolean,
     private var fecha_limite: LocalDate?, // PUEDE ADMITIR VALORES NULOS
-    private var notificacion: Notificacion?, // VARIABLE TIPO NOTIFICACION, PUEDE NULOS
+    var notificacion: Notificacion?, // VARIABLE TIPO NOTIFICACION, PUEDE NULOS
     private var urgencia: Urgencia // VARIABLE TIPO ENUM
 ) : Actividad(nombre, completada), Recordatorio {
 
