@@ -1,8 +1,8 @@
 package Model
 
 open abstract class Actividad(
-    protected var nombre: String, // NOMBRE DE LA ACTIVIDAD A REALIZAR
-    protected var completada: Boolean // SABER SI LA ACTIVIDAD SE HA COMPLETADO
+    var nombre: String, // NOMBRE DE LA ACTIVIDAD A REALIZAR
+    var completada: Boolean // SABER SI LA ACTIVIDAD SE HA COMPLETADO
 ) {
 
     init {
