@@ -1,0 +1,99 @@
+SIMULACRO EXAMEN 1er PARCIAL - GESTIÓN DE PROYECTOS
+Este examen tiene como objetivo desarrollar una aplicación en Kotlin que permita gestionar un sistema de proyectos.
+Un proyecto puede tener tareas, asignar recursos (como empleados) y definir hitos importantes.
+Se requiere el uso de POO, interfaces, funciones de extensión y lambdas para manejar las operaciones.
+
+Ejercicio 1: POO en Kotlin.
+Diseña las clases necesarias para implementar la gestión de proyectos, según los siguientes requisitos:
+
+1. Clase Abstracta Proyecto:
+    Atributos:
+        nombre: String - Nombre del proyecto.
+        estado: Boolean - Estado de la ejecución del proyecto. Inicialmente será false (en progreso).
+    Métodos:
+        marcarComoFinalizado() - Cambia el estado del proyecto a true (finalizado).
+        mostrarResumen() - Devuelve un String con los detalles del proyecto, incluyendo nombre y estado.
+
+2. Interfaz Planificacion:
+    Métodos:
+        establecerFechas(): Establece fechas de inicio y fin para el proyecto.
+        modificarFechaFin(nuevaFecha: String): Modifica la fecha de finalización del proyecto.
+
+3. Clase Tarea:
+Hereda de Proyecto e implementa la interfaz Planificacion.
+    Atributos:
+        descripcion: String - Descripción de la tarea.
+        fechaLimite: String? - Fecha límite para completar la tarea (puede ser nula).
+        responsable: Empleado? - Empleado asignado a la tarea.
+    Métodos:
+        establecerFechas(): Implementación de la interfaz, donde se asignan fechas de inicio y fin para la tarea.
+        modificarFechaFin(): Modifica la fecha de finalización de la tarea.
+        mostrarResumen(): Sobrescribe el método mostrarResumen() de Proyecto para mostrar información detallada de la tarea.
+
+4. Clase Hito:
+Hereda de Proyecto e implementa Planificacion.
+    Atributos:
+        descripcion: String - Descripción del hito.
+        fechaAlcanzado: String? - Fecha en que el hito fue alcanzado (puede ser nula).
+    Métodos:
+        establecerFechas(): Establece las fechas de inicio y fin del hito.
+        modificarFechaFin(): Modifica la fecha de finalización del hito.
+        mostrarResumen(): Sobrescribe el método mostrarResumen() de Proyecto para mostrar información del hito.
+
+5. Clase Empleado:
+Data class con los siguientes atributos:
+    nombre: String - Nombre del empleado.
+    puesto: String - Puesto del empleado.
+    Métodos:
+        mostrarEmpleado() - Devuelve un String con la información del empleado.
+
+
+
+Ejercicio 2: Funciones de extensión y lambdas
+1. Función de extensión para filtrar proyectos:
+Define una función de extensión para ArrayList<Proyecto> que reciba un lambda como parámetro.
+El lambda debe aceptar un proyecto y devolver un Boolean que determine si el proyecto debe ser
+incluido en el resultado. La función debe devolver un ArrayList<Proyecto>.
+
+Prueba esta función de extensión con las siguientes expresiones lambda:
+    Filtrar los proyectos que están finalizados.
+    Filtrar las tareas que tienen un empleado asignado.
+    Filtrar los hitos cuyo nombre contiene la palabra "Entrega".
+
+2. Función de extensión sobre ArrayList<Tarea>:
+Define una función de extensión sobre ArrayList<Tarea> que reciba un lambda con un parámetro
+tarea y devuelva un Boolean. Prueba con las siguientes expresiones lambda:
+    Filtrar las tareas con una fecha límite establecida.
+    Filtrar las tareas que son urgentes, es decir, cuya fecha límite es hoy o antes.
+
+3. Función de extensión sobre ArrayList<Empleado>:
+Define una función de extensión sobre ArrayList<Empleado> que reciba un lambda con un parámetro
+empleado y devuelva un String. Prueba con las siguientes expresiones lambda:
+    Obtener el nombre completo de los empleados cuyo puesto sea "Desarrollador".
+    Obtener el número total de empleados que trabajen en proyectos que están finalizados.
+
+
+
+Ejercicio 3: Funcionalidad de la aplicación
+Crea una lista de proyectos, que contenga instancias de las clases Tarea, Hito y Proyecto.
+
+    Función de asignación de empleados a tareas: Define una función que permita asignar un empleado a una
+    tarea, pero solo si la tarea tiene una fecha límite definida.
+
+    Función de verificación de solapamiento de tareas: Crea una función que permita verificar si dos
+    tareas se solapan en el tiempo (es decir, si tienen fechas de inicio y fin que se cruzan).
+    La función debe devolver true si las tareas se solapan, y false en caso contrario.
+
+
+
+Ejercicio 4: Interfaz gráfica
+Interfaz gráfica para la creación de proyectos:
+Diseña una interfaz gráfica utilizando componentes como RadioButton, EditText, Button, y Spinner (si es necesario).
+
+Permite a los usuarios elegir si desean crear un Proyecto, Tarea o Hito.
+Basado en la selección, muestra los campos adecuados para ingresar la información específica del
+proyecto (por ejemplo, nombre, fecha límite, descripción, responsable, etc.).
+Al pulsar el botón para agregar el proyecto, valida los datos ingresados y agrega el proyecto a la lista correspondiente.
+
+Interfaz para asignar empleados a tareas:
+Permite seleccionar un empleado de una lista desplegable (Spinner) y asignarlo a una tarea de la lista.
