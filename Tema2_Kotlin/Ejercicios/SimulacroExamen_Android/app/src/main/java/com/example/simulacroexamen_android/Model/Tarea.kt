@@ -9,16 +9,16 @@ class Tarea(
     nombre: String,
     completada: Boolean,
     private var fecha_limite: LocalDate?, // PUEDE ADMITIR VALORES NULOS
-    var notificacion: Notificacion?, // VARIABLE TIPO NOTIFICACION, PUEDE NULOS
+    var notificacion: Notificacion? = null, // VARIABLE TIPO NOTIFICACION, PUEDE NULOS
     var urgencia: Urgencia // VARIABLE TIPO ENUM
 ) : Actividad(nombre, completada), Recordatorio {
 
-    override fun mostrarDetalle(): String {
-        return "La tarea '$nombre'. " +
+    override fun mostrarDetalle() {
+        println("La tarea '$nombre'. " +
                 "Completada: $completada. " +
                 "Fecha limite: $fecha_limite. " +
                 "Notificacion: Activo - ${notificacion?.activo} | FechaHora - ${notificacion?.fecha_hora_notificacion}." +
-                "Urgencia: $urgencia"
+                "Urgencia: $urgencia")
     } // SOBREESCRITURA GENERANDO UN STRING CON EL DETALLE COMPLETO DE UNA TAREA
 
     override fun programarRecordatorio(context: Context) {

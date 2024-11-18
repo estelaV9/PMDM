@@ -6,11 +6,11 @@ import android.content.Context
 import java.time.LocalDate
 
 class Cita(
-    nombre: String,
-    completada: Boolean,
+    override var nombre: String,
+    override var completada: Boolean,
     var Fecha_hora: LocalDate, // DE LA CITA
     var lugar: String, // DIRECCION O LUGAR DE LA CITA
-    var personas: ArrayList<Persona>? // DE LAS PERSONAS CON LAS QUE SE HA QUEDADO
+    var personas: MutableList<Persona>? = mutableListOf() // DE LAS PERSONAS CON LAS QUE SE HA QUEDADO
 ) : Actividad(nombre, completada), Recordatorio {
 
     fun agreagarPersonaCita(persona: Persona): Boolean {
@@ -24,16 +24,18 @@ class Cita(
         return true
     } // AGREGA UNA PERSONA A LA CITA
 
-    override fun mostrarDetalle(): String {
-        return "Cita: $nombre | Completada: $completada" +
-                "Fecha y hora $Fecha_hora | Lugar: $lugar | personas: ${personas?.joinToString()}"
+    override fun mostrarDetalle() {
+        super.mostrarDetalle()
+        println("Fecha y Hora: $Fecha_hora")
+        println("Lugar: $lugar")
+        println("Personas invitadas: ${personas?.joinToString { it.nombre }}")
     } // DEVUELVE UN STRING CON EL DETALLE COMPLETO DE UNA CITA
 
     override fun programarRecordatorio(context: Context) {
-        TODO("Not yet implemented")
+        println("Recordatorio programado para la cita '$nombre' en $Fecha_hora en $lugar")
     }
 
     override fun cancelarRecordatorio(context: Context) {
-        TODO("Not yet implemented")
+        println("Recordatorio cancelado para la cita '$nombre'")
     }
 }
