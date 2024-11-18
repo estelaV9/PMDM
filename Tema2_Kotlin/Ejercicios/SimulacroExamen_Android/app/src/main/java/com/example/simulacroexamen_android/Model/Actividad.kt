@@ -1,13 +1,10 @@
 package Model
 
-open abstract class Actividad(
+abstract class Actividad(
     var nombre: String, // NOMBRE DE LA ACTIVIDAD A REALIZAR
-    var completada: Boolean // SABER SI LA ACTIVIDAD SE HA COMPLETADO
+    // SABER SI LA ACTIVIDAD SE HA COMPLETADO
+    var completada: Boolean = false // INICIALMENTE LA ACTIVIDAD ESTARA EN FALSE
 ) {
-
-    init {
-        completada = false // INICIALMENTE LA ACTIVIDAD ESTARA EN FALSE
-    }
 
     // METODOS
     fun marcarComoCompletada() {
