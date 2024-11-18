@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimulacroExamen_Android"
         tools:targetApi="31">
+        <activity android:name=".TareaActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
