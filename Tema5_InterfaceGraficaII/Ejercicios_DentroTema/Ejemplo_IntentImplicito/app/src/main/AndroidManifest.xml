@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- INDICA QUE LA APLICACIÓN REQUIERE LA CAPACIDAD DE TELEFONÍA, PERO NO ES OBLIGATORIO
+         ESTA CARACTERÍSTICA HACE SABER QUE EL DISPOSITIVO DEBE SER CAPAZ DE REALIZAR LLAMADAS TELEFÓNICAS,
+         PERO SE PUEDE EJECUTAR EN DISPOSITIVOS QUE NO TIENEN TELEFONÍA (android:required="false") -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- REQUIERE UN PERMISO ESPECIAL DEL USUARIO PARA REALIZAR LLAMADAS TELEFÓNICAS
+         ESTA LÍNEA SOLICITA EL PERMISO "CALL_PHONE" PARA QUE LA APLICACIÓN PUEDA INICIAR UNA LLAMADA
+         ESTE PERMISO DEBE SER OTORGADO POR EL USUARIO Y SE SOLICITA EN TIEMPO DE EJECUCIÓN -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,5 +34,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
