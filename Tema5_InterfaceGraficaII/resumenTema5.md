@@ -173,8 +173,26 @@ override fun onDestroy() {
   
 
 >[!NOTE]
-> <a href="">Ejercicio</a> sobre el ciclo de vida.
+> <a href="https://github.com/estelaV9/PMDM/tree/master/Tema5_InterfaceGraficaII/Ejercicios_DentroTema/EjemploCicloVida">Ejercicio</a> sobre el ciclo de vida.
 > Se manejan sus estados mediante los métodos `onCreate()`, onStart(), `onResume()`, `onPause()`, `onStop()`, y `onDestroy()` y se incluyen métodos para guardar el estado de la actividad y manejar la interacción con otros componentes (botones y vistas).
+>
+> Manejo de interacciones:
+> - **Botón para navegar entr actividades**:
+> ```kotlin
+>  boton_segundaactividad.setOnClickListener {
+>    val mi_intencion = Intent(this, SegundaActividad::class.java)
+>    startActivity(mi_intencion)
+> }
+> ```
+> 
+> - **Guardar el estado de la interacción**: Se guara y se restaura el valor del contador y el estado de un `CheckBox` usando `onSaveInstanceState` y `onRestoreInstanceState`:
+> ```kotlin
+> if (estado != null) {
+>    this.botonpulsado = estado.getBoolean("estado")
+>    this.valor = estado.getInt("contador")
+>    this.texto.text = this.valor.toString()
+> }
+> ```
 
 
 
