@@ -1,11 +1,15 @@
 package com.example.ejemplo_intentimplicito
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.PackageManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -43,12 +47,44 @@ class MainActivity : AppCompatActivity() {
 
             // ENLACE A LA DOCUMENTACIÓN DE PERMISOS:
             // https://developer.android.com/training/permissions/requesting?hl=es-419
-
-            startActivity(intentLlamar)  // INICIAMOS LA ACTIVIDAD CON EL INTENT PARA REALIZAR LA LLAMADA
         }
 
-        // COMPROBAR SI TENEMOS PERMISO
-        // SINO TENEMOS EL PERMISO, LARZAR UN DIALOG PARA SOLICITAR ESE PERMISO
-        // PODER RESPONDER SI EL PERMISO SE CONCEDE O NO SE CONCEDE -> IMPLEMENTACION DE UN METODO
+        /** LOS PERMISOS SE DEFINEN COMO CONSTANTES EN CODIGO DESDE LA CLASE Manifest.permission.<PERMISO QUE SEA>
+        COMPROBAR SI TENEMOS PERMISO -> FUNCION ContextCompat.checkSelfPermission
+        SINO TENEMOS EL PERMISO, LARZAR UN DIALOG PARA SOLICITAR ESE PERMISO -> Funcion requestPermissions
+        PODER RESPONDER SI EL PERMISO SE CONCEDE O NO SE CONCEDE -> IMPLEMENTACION FUNCION onRequestPermissionsResult **/
+
+        // VERIFICAMOS SI EL PERMISO HA SIDO CONCEDIDO
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CALL_PHONE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // SI NO SE TIENE EL PERMISO, SOLICITAMOS EL PERMISO AL USUARIO, EL CODIGO DE RESPUESTA (1) PERMITA SABER
+            // SI EL PERMISO SE HA CONCEDIDO O NO
+            requestPermissions(arrayOf(Manifest.permission.CALL_PHONE), 1)
+        } else {
+            // SI YA TIENE EL PERMISO, SE PUEDE REALIZAR LA LLAMADA
+            val newIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:650531432"))
+            startActivity(newIntent) // INICIAMOS LA ACTIVIDAD PARA MARCAR EL NUMERO
+        }
+    }
+
+    // METODO QUE SE EJECUTA CUANTO EL SUUARIO RESPONDE A LA SOLICITUD DE PERMISO
+    override fun onRequestPermissionsResult(
+        requestCode: Int, // EL CODIGO DE LA SOLICITUD DE PERMISO
+        permissions: Array<out String>, // ARRAY DE LOS PERMISOS SOLICITADOS
+        grantResults: IntArray // RESULTADOS DE LA SOLICITUD (SI EL PERMISO FUE CONCEDIDO O NO)
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 1) {  // VERIFICAMOS EL CÓDIGO DE RESPUESTA
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // SI EL PERMISO FUE CONCEDIDO, INICIAMOS LA LLAMADA
+                startActivity(intentLlamar)  // INICIAMOS EL INTENT PARA REALIZAR LA LLAMADA
+            } else {
+                // SI EL PERMISO NO SE CONCEDIÓ, PODEMOS MOSTRAR UN MENSAJE DE ADVERTENCIA
+                // PARA INFORMAR AL USUARIO QUE LA LLAMADA NO SE PUEDE REALIZAR
+            }
+        }
     }
 }
