@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Intenciones</string>
-    <string name="pulsa_para_ver_mi_github">Pulsa para ver mi GitHub</string>
-    <string name="compartir">Compartir</string>
+    <string name="app_name">Intents Demo</string>
+    <string name="app_title">Intents Implicitos</string>
+    <string name="open_web_page">Abrir Página Web</string>
+    <string name="call_phone">Llamar por Teléfono</string>
+    <string name="share_text">Compartir Texto</string>
+    <string name="open_map">Abrir Mapa</string>
+    <string name="take_photo">Tomar Foto</string>
 </resources>

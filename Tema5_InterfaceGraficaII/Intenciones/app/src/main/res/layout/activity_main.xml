@@ -2,33 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purpleBG"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/githubBtt"
-        android:layout_width="200dp"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:text="@string/pulsa_para_ver_mi_github"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/app_title"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
 
     <Button
-        android:id="@+id/compartirBtt"
-        android:layout_width="200dp"
+        android:id="@+id/openWebPageBtt"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="@string/compartir"
-        android:textSize="23sp"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/open_web_page"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/githubBtt" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/callPhoneBtt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/call_phone"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/openWebPageBtt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/shareTextBtt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/share_text"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/callPhoneBtt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/openMapBtt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/open_map"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/shareTextBtt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/takePhotoBtt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/take_photo"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/openMapBtt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
