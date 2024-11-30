@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Intenciones</string>
     <string name="pulsa_para_ver_mi_github">Pulsa para ver mi GitHub</string>
+    <string name="compartir">Compartir</string>
 </resources>

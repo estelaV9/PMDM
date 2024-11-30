@@ -12,12 +12,23 @@
         android:id="@+id/githubBtt"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
         android:text="@string/pulsa_para_ver_mi_github"
         android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/compartirBtt"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/compartir"
+        android:textSize="23sp"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/githubBtt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
