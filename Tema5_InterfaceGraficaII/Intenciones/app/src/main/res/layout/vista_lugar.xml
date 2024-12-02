@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:onClick="verMapa"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:contentDescription="logo de la dirección"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:src="@android:drawable/ic_menu_myplaces" />
+
+</LinearLayout>
