@@ -4,15 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.ejemplo_intentexplicita.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     // NOS CREA TANTAS CLASES COMO TANTAS CLASES DE ACTIVIDAD HAYA
     // DE ESTA MANERA, ACCEDE A LOS COMPONENTES DEL LAYOUT DE UNA FORMA MAS DIRECTA
     // Y NO TENER QUE DECLARA TANTOS OBJETOS COMO COMPONENTES HAYA EN EL LAYOUT
-    lateinit var mibinding: ActivityMainBinding
+    private lateinit var mibinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         mibinding.irActBBtt.setOnClickListener {
             // CUANDO PULSEMOS EL BOTON, ABRIREMOS LA ACTIVIDAD B, PARA ELLO CREAMOS UN INTENT EXPLICITO
             // LE PASAMOS EL CONTEXTO Y REFERENCIAMOS LA ACTIVIDAD B
-            var miIntent = Intent(this, ActivityB::class.java)
+            val miIntent = Intent(this, ActivityB::class.java)
 
             // CREAR EL BUNDLE
-            var miBundle = Bundle()
+            val miBundle = Bundle()
             // RELLENO EL BUNDLE
             miBundle.putString("datos1", mibinding.editText.text.toString())
             miBundle.putInt("dato2", 4)
