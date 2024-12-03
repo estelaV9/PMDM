@@ -33,7 +33,15 @@ class MainActivity : AppCompatActivity() {
             // LE PASAMOS EL CONTEXTO Y REFERENCIAMOS LA ACTIVIDAD B
             var miIntent = Intent(this, ActivityB::class.java)
 
-            // UNA VEZ REFERENCIADA, ABRIMOS LA ACTIVIDAD B
+            // CREAR EL BUNDLE
+            var miBundle = Bundle()
+            // RELLENO EL BUNDLE
+            miBundle.putString("datos1", mibinding.editText.text.toString())
+            miBundle.putInt("dato2", 4)
+            // VINCULO EL BUNDLE AL INTENT
+            miIntent.putExtras(miBundle)
+
+            // ABRIR LA ACTIVIDAD B
             startActivity(miIntent)
         }
     } // METODO PARA INICIALIZAR
