@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
     tools:context=".ActivityB">
+
     <Button
         android:id="@+id/finalizarActB_Btt"
         android:layout_width="wrap_content"
