@@ -1,8 +1,11 @@
 package com.example.ejemplo_intentexplicita
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ejemplo_intentexplicita.databinding.ActivityMainBinding
 
@@ -11,6 +14,15 @@ class MainActivity : AppCompatActivity() {
     // DE ESTA MANERA, ACCEDE A LOS COMPONENTES DEL LAYOUT DE UNA FORMA MAS DIRECTA
     // Y NO TENER QUE DECLARA TANTOS OBJETOS COMO COMPONENTES HAYA EN EL LAYOUT
     private lateinit var mibinding: ActivityMainBinding
+    private var miLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { objeto: ActivityResult ->
+            if (objeto.resultCode == Activity.RESULT_OK) {
+                mibinding.mostrarActividadBTF.text =
+                    if (objeto.data != null && objeto.data!!.extras != null) objeto.data!!.extras!!.getString(
+                        "mensaje2"
+                    ) else "Nada"
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +52,12 @@ class MainActivity : AppCompatActivity() {
             miIntent.putExtras(miBundle)
 
             // ABRIR LA ACTIVIDAD B
-            startActivity(miIntent)
+            //startActivity(miIntent)
+            // TAMBIEN ESTA ESTA FORMA PERO PUEDE GENERAR PROBLEMAS Y ESTA OBSOLETO
+            // startActivityForResult(miIntent)
+
+            // INICIO LA ACTIVIDAD B PARA QUE ME DEVUELVA DATOS
+            miLauncher.launch(miIntent)
         }
     } // METODO PARA INICIALIZAR
 }
