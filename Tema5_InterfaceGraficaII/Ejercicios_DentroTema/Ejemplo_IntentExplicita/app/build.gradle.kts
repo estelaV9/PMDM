@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.ejemplo_intentexplicita"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ejemplo_intentexplicita"
