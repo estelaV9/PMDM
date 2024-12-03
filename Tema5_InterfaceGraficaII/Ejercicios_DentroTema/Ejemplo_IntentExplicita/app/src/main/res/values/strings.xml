@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ejemplo_IntentExplicita</string>
+    <string name="abrir_actividad_b">Abrir Actividad B</string>
+    <string name="finalizar_actividad_b">Finalizar Actividad B</string>
 </resources>
