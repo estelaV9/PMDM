@@ -1,29 +1,41 @@
 package com.example.ejemplo_intentexplicita
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ejemplo_intentexplicita.databinding.ActivityBBinding
-import com.example.ejemplo_intentexplicita.databinding.ActivityMainBinding
 
 class ActivityB : AppCompatActivity() {
-    lateinit var mibinding: ActivityBBinding;
+    private lateinit var mibinding: ActivityBBinding;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         inicializarComponentes() // LLAMAR AL METODO PARA INICIALIZAR COMPONENTES
     }
 
-    private fun inicializarComponentes(){
+    @SuppressLint("SetTextI18n")
+    private fun inicializarComponentes() {
         // SE INSTANCIA EL OBJETO binding
         mibinding = ActivityBBinding.inflate(layoutInflater)
 
         // ESTABLECE EL LAYOUT A MI ACTIVIDAD
         setContentView(mibinding.root) // EL ROOT ES LA PROPIEDAD QUE ME PERMITE ACCEDER A LA RAIZ DEL LAYOUT
 
+        // OBTENEMOS LOS DATOS DEL INTENT QUE SIRVIO PARA ABRIR ESTA ACTIVIDAD
+        val miIntent = intent
+        val miBundle = miIntent.extras // OBTENER EL BUNDLE VINCULADO AL INTENT
+
+        // ACCEDEMOS A LOS DATOS DEL BUNDLE
+        if (miBundle != null) {
+            // SETTEAR EL DATO DEL EDIT TEXT Y EL DATO ENTERO
+            mibinding.mostrarBundleTV.text = miBundle.getString("datos1") + " - " +
+                    miBundle.getInt("datos2")
+        } // SI LOS DATOS DEL BUNDLE NO ES NULO, MOSTRAR EL CONTENIDO DEL BUNDLE
+
         // LISTENER AL BOTON
         mibinding.finalizarActBBtt.setOnClickListener {
-            finish()
+            finish() // FINALIZAR ACTIVIDAD
         }
     } // METODO PARA INICIALIZAR
 }
