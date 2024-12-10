@@ -7,13 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/botonNavegador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Navegador"
+        app:layout_constraintBottom_toTopOf="@+id/botonCalendario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/botonCalendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evento Calendario"
+        app:layout_constraintBottom_toTopOf="@+id/botonLlamada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonNavegador" />
+
+    <Button
+        android:id="@+id/botonLlamada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Llamada"
+        app:layout_constraintBottom_toTopOf="@+id/botonEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonCalendario" />
+
+    <Button
+        android:id="@+id/botonEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonLlamada" />
 </androidx.constraintlayout.widget.ConstraintLayout>
