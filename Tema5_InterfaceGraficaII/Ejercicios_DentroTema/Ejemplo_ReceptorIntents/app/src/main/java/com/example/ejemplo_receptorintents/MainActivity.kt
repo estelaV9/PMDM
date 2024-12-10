@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ejemplo_receptorintents.databinding.ActivityMainBinding
+import com.example.ejemploreceptorintents.AbrirNavegador
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         mibinding.botonNavegador.setOnClickListener {
             // CREAMOS UNA INTENT PARA NAVEGAR A UNA WEB
-            val miIntent = Intent(Intent.ACTION_VIEW)
+            val miIntent = Intent(this, AbrirNavegador::class.java)
             miIntent.data = Uri.parse("https://www.google.com")
 
             // VERIFICAMOS SI EXISTE UNA ACTIVIDAD QUE PUEDA RESPONDER A ESTA ACCIÓN
@@ -46,7 +47,8 @@ class MainActivity : AppCompatActivity() {
 
         mibinding.botonLlamada.setOnClickListener {
             // CREAMOS UNA INTENT PARA ABRIR EL DIALER
-            var miIntent = Intent(Intent.ACTION_DIAL)
+            // var miIntent = Intent(Intent.ACTION_DIAL)
+            var miIntent = Intent(Intent.ACTION_VIEW)
             miIntent.data = Uri.parse("tel:685424232")
             val chooser = Intent.createChooser(miIntent, "SELECCIONA UNA APLICACIÓN")
 
