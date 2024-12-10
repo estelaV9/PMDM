@@ -16,7 +16,7 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 
 class MainActivity : AppCompatActivity() {
-    lateinit var mibinding: ActivityMainBinding
+    private lateinit var mibinding: ActivityMainBinding
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,26 +26,24 @@ class MainActivity : AppCompatActivity() {
         mibinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mibinding.root)
 
-        // ESTABLEZCO UNA ESCUCHA PARA LOS MÁRGENES DEL SISTEMA
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+        } // ESTABLEZCO UNA ESCUCHA PARA LOS MÁRGENES DEL SISTEMA
 
-        // ESCUCHADOR BOTÓN NAVEGADOR
         mibinding.botonNavegador.setOnClickListener {
             // CREAMOS UNA INTENT PARA NAVEGAR A UNA WEB
-            var miIntent = Intent(Intent.ACTION_VIEW)
+            val miIntent = Intent(Intent.ACTION_VIEW)
             miIntent.data = Uri.parse("https://www.google.com")
 
             // VERIFICAMOS SI EXISTE UNA ACTIVIDAD QUE PUEDA RESPONDER A ESTA ACCIÓN
             if (miIntent.resolveActivity(packageManager) != null) {
                 startActivity(miIntent)
             }
-        }
+        } // ESCUCHADOR BOTÓN NAVEGADOR
 
-        // ESCUCHADOR BOTÓN LLAMADA (ABRIR EL DIALER)
+
         mibinding.botonLlamada.setOnClickListener {
             // CREAMOS UNA INTENT PARA ABRIR EL DIALER
             var miIntent = Intent(Intent.ACTION_DIAL)
@@ -56,9 +54,9 @@ class MainActivity : AppCompatActivity() {
             if (miIntent.resolveActivity(packageManager) != null) {
                 startActivity(miIntent)
             }
-        }
+        } // ESCUCHADOR BOTÓN LLAMADA (ABRIR EL DIALER)
 
-        // ESCUCHADOR BOTÓN ENVIAR EMAIL
+
         mibinding.botonEmail.setOnClickListener {
             // CREAMOS UNA INTENT PARA ENVIAR UN EMAIL
             val miIntent = Intent(Intent.ACTION_SENDTO)
@@ -72,9 +70,9 @@ class MainActivity : AppCompatActivity() {
             if (miIntent.resolveActivity(packageManager) != null) {
                 startActivity(miIntent)
             }
-        }
+        } // ESCUCHADOR BOTÓN ENVIAR EMAIL
 
-        // ESCUCHADOR BOTÓN AGREGAR EVENTO AL CALENDARIO
+
         mibinding.botonCalendario.setOnClickListener {
             // CREAMOS UNA INTENT PARA INSERTAR UN NUEVO EVENTO EN EL CALENDARIO
             var miIntent = Intent(Intent.ACTION_INSERT)
@@ -98,6 +96,6 @@ class MainActivity : AppCompatActivity() {
             if (miIntent.resolveActivity(packageManager) != null) {
                 startActivity(miIntent)
             }
-        }
+        } // ESCUCHADOR BOTÓN AGREGAR EVENTO AL CALENDARIO
     }
 }
