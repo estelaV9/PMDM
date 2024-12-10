@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,53 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ejemplo_ReceptorIntents"
         tools:targetApi="31">
+        <activity
+            android:name=".HacerLllamada"
+            android:exported="true">
+            <intent-filter android:icon="@drawable/baseline_call_24" android:label="Llamada">
+                <action android:name="android.intent.action.DIAL"></action>
+                <data android:scheme="tel"></data>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Enviar_email"
+            android:exported="true">
+            <intent-filter android:icon="@drawable/baseline_email_24" android:label="Email">
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AgregarEventoCalendario"
+            android:exported="true" >
+            <intent-filter android:icon="@drawable/baseline_date_range_24" android:label="Calendario">
+                <action android:name="android.intent.action.INSERT"></action>
+                <data android:mimeType="vnd.android.cursor.dir/event" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AbrirNavegador"
+            android:exported="true"
+            ><!-- Muy importante definir el permiso INTERNET para que la aplicación
+          la actividad pueda responder a esta acción -->
+            <intent-filter android:icon="@drawable/baseline_web_24" android:label="Navegador">
+                <action android:name="android.intent.action.VIEW" />
+
+                <!-- Include the host attribute if you want your app to respond
+                                    only to URLs with your app's domain. -->
+                <data android:scheme="http" android:host="www.google.com">
+
+                </data>
+                <data android:scheme="https" android:host="www.google.com"></data>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
