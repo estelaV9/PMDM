@@ -9,4 +9,8 @@
     <string name="enviar_sms">Enviar SMS</string>
     <string name="las_credenciales_no_coinciden">Las credenciales no coinciden</string>
     <string name="introducir_url">Introducir URL</string>
+    <string name="introduce_el_numero_de_telefono">Introduce el numero de telefono</string>
+    <string name="introduce_el_sms_a_mandar">Introduce el SMS a mandar</string>
+    <string name="introduzca_el_numero_para_el_sms">Introduzca el numero para el sms</string>
+    <string name="back"><![CDATA[<-]]></string>
 </resources>

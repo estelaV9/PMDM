@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="alertTV" type="id" />
+    <item name="enviarBtt" type="id" />
+    <item name="backBtt" type="id" />
 </resources>
