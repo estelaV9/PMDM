@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ejer3Pg45_Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="entrar_al_sistema">Entrar al sistema</string>
+    <string name="login">LOGIN</string>
 </resources>
