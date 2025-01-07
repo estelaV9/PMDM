@@ -4,4 +4,8 @@
     <string name="password">Password</string>
     <string name="entrar_al_sistema">Entrar al sistema</string>
     <string name="login">LOGIN</string>
+    <string name="navegar">Navegar</string>
+    <string name="llamar">Llamar</string>
+    <string name="enviar_sms">Enviar SMS</string>
+    <string name="las_credenciales_no_coinciden">Las credenciales no coinciden</string>
 </resources>
