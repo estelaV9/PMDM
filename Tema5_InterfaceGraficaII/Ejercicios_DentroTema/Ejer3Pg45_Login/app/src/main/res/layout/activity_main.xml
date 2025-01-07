@@ -35,26 +35,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="@string/username"
+            android:hint="@string/username"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18"
-            />
+            app:layout_constraintVertical_bias="0.18" />
 
         <EditText
             android:id="@+id/passwordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:text="@string/password"
+            android:hint="@string/password"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameUserET"
-            app:layout_constraintVertical_bias="0.05"
-            />
+            app:layout_constraintVertical_bias="0.05" />
 
 
         <Button
@@ -72,4 +69,18 @@
             app:layout_constraintTop_toBottomOf="@id/passwordET" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@id/alertTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/las_credenciales_no_coinciden"
+        android:textColor="#bc5e58"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerLY" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
