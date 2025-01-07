@@ -8,4 +8,5 @@
     <string name="llamar">Llamar</string>
     <string name="enviar_sms">Enviar SMS</string>
     <string name="las_credenciales_no_coinciden">Las credenciales no coinciden</string>
+    <string name="introducir_url">Introducir URL</string>
 </resources>
