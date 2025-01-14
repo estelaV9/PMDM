@@ -7,12 +7,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import com.example.miprimerfragment.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var miBinding: ActivityMainBinding
+    var cargaFragmento_A = true // EL FRAGMENTO A ESTA CARGADO
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        // ESTABLEZCO MI LAYOUT A LA ACTIVIDAD
+        miBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(miBinding.root)
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -41,8 +50,27 @@ class MainActivity : AppCompatActivity() {
             // INVOCAR EL METODO -> REORDENA LA PILA DE FRAGMENTOS PARA OPTIMIZAR LA CARGA DE
             // FRAGMENTOS DENTRO DE MI ACTIVIDAD
             setReorderingAllowed(true)
-            add<Fragmento_A>(R.id.fragmentContainerView)
+            add<Fragmento_B>(R.id.fragmentContainerView)
         }
 
+        // OBTENER UNA REFERENCIA DEL FragmentContainerView PARA AÑADIRLE LA ACCCION onClickListener
+        miBinding.fragmentContainerView.setOnClickListener{
+            // REEMPLAZAR EL FRAGMENTO DEL fragmentContainerView
+            if (this.cargaFragmento_A) {
+                // SIGNIFICA QUE ESTA CARGADO EL FRAGMENTO A Y POOR LO TANTO LO REMPLAZO POR EL FRAGMENTO B
+                supportFragmentManager.commit {
+                    replace<Fragmento_B>(R.id.fragmentContainerView)
+                    addToBackStack("fragmento_b") // VA AÑADIR EN LA FILA EL FRAGMENTO QUE HAYA ACUTALMENTE EN EL CONTENEDOR
+                }
+            } else {
+                // SI ESTA CARGADO EL FRAGMENTO B LO REMPLAZO POR EL FRAGMENTO A
+                supportFragmentManager.commit {
+                    replace<Fragmento_A>(R.id.fragmentContainerView)
+                    addToBackStack("fragmento_a")
+                }
+            }
+            // CAMBIAMOS EL VALOR
+            this.cargaFragmento_A = !cargaFragmento_A
+        }
     }
 }
