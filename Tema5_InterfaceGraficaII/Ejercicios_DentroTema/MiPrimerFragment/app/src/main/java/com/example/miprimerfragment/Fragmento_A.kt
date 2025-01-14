@@ -26,20 +26,23 @@ class Fragmento_A : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        /*arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-        }
+        }*/
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? { // DEVUELVE UNA VISTA
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento__a, container, false)
+        // NOS PERMITE OBTENER LA REFERENCIA PARA CARGAR O INSTANCIAR EL LAYOUT DEL FRAGMENTO
+        return inflater.inflate(R.layout.fragment_fragmento__a, container, false) // TIENE QUE SER FALSE
     }
 
+    // BLOQUE ESTATICO
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -53,10 +56,10 @@ class Fragmento_A : Fragment() {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             Fragmento_A().apply {
-                arguments = Bundle().apply {
+                /*arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
-                }
+                }*/
             }
     }
 }
