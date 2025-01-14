@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -61,12 +62,14 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.commit {
                     replace<Fragmento_B>(R.id.fragmentContainerView)
                     addToBackStack("fragmento_b") // VA AÑADIR EN LA FILA EL FRAGMENTO QUE HAYA ACUTALMENTE EN EL CONTENEDOR
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                 }
             } else {
                 // SI ESTA CARGADO EL FRAGMENTO B LO REMPLAZO POR EL FRAGMENTO A
                 supportFragmentManager.commit {
                     replace<Fragmento_A>(R.id.fragmentContainerView)
                     addToBackStack("fragmento_a")
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 }
             }
             // CAMBIAMOS EL VALOR
