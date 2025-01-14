@@ -3,6 +3,7 @@ package com.example.miprimerfragment
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentTransaction
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         miBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(miBinding.root)
 
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -41,9 +41,11 @@ class MainActivity : AppCompatActivity() {
 
         // HACER COMMIT PORQUE SI NO LA ACCION NO SE REALIZA
         miFragmentoTransaction.commit()
-
         // CON ESTOS TRES PASOS YA HEMOS AÑADIDO EL FRAGMENTO A LA ACTIVIDAD **/
 
+
+        // CREANDO UN BUNDLE Y RELLENANDOLE DE INFORMACION
+        val miBundle = bundleOf(Fragmento_A.LOGIN to "Pepito", Fragmento_A.PASSWORD to "pepitopass")
 
         /** FORMA 2 MAS OPTIMA **/
         // CARGAR EL Fragmento_A CON LA FORMA MAS OPTIMIZADA
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             // INVOCAR EL METODO -> REORDENA LA PILA DE FRAGMENTOS PARA OPTIMIZAR LA CARGA DE
             // FRAGMENTOS DENTRO DE MI ACTIVIDAD
             setReorderingAllowed(true)
-            add<Fragmento_B>(R.id.fragmentContainerView)
+            add<Fragmento_A>(R.id.fragmentContainerView, args = miBundle) // PASAMOS EL BUNDLE
         }
 
         // OBTENER UNA REFERENCIA DEL FragmentContainerView PARA AÑADIRLE LA ACCCION onClickListener
