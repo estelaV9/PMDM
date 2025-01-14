@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        /** AÑADIR EL FRAGMENTO DESDE CODIGO **/
+        /** AÑADIR EL FRAGMENTO DESDE CODIGO -> FORMA 1 (no se hace)
         // CARGAR EL FRAGMENTO A:
         // OBTENGO UNA REFERENCIA DE UN FragmentTransaction
         val miFragmentoTransaction = supportFragmentManager.beginTransaction()
@@ -30,7 +32,17 @@ class MainActivity : AppCompatActivity() {
         // HACER COMMIT PORQUE SI NO LA ACCION NO SE REALIZA
         miFragmentoTransaction.commit()
 
-        // CON ESTOS TRES PASOS YA HEMOS AÑADIDO EL FRAGMENTO A LA ACTIVIDAD
+        // CON ESTOS TRES PASOS YA HEMOS AÑADIDO EL FRAGMENTO A LA ACTIVIDAD **/
+
+
+        /** FORMA 2 MAS OPTIMA **/
+        // CARGAR EL Fragmento_A CON LA FORMA MAS OPTIMIZADA
+        supportFragmentManager.commit {
+            // INVOCAR EL METODO -> REORDENA LA PILA DE FRAGMENTOS PARA OPTIMIZAR LA CARGA DE
+            // FRAGMENTOS DENTRO DE MI ACTIVIDAD
+            setReorderingAllowed(true)
+            add<Fragmento_A>(R.id.fragmentContainerView)
+        }
 
     }
 }
