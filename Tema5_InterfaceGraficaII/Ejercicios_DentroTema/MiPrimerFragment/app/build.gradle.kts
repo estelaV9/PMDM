@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.miprimerfragment"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.miprimerfragment"
@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-
+    // AÑADIR ESA LIBRERIA
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
