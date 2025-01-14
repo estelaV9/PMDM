@@ -5,14 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 
 // CREAR UN FRAGMENTO: com.exmaple.miprimerfragmet -> new -> fragment -> Fragemnt (blank)
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-/*private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"*/
+
 
 /**
  * A simple [Fragment] subclass.
@@ -21,14 +21,20 @@ private const val ARG_PARAM2 = "param2"*/
  */
 class Fragmento_A : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var login: String? = null
+    private var password: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        // ARGUMENTS ES UNA PROPIEDAD DE FRAGMENT QUE PUEDE TENER INFORMACION QUE SE LE PASE
+        // COMO ES UN BUNDLE
+        arguments?.let {
+            login = it.getString(LOGIN)
+            password = it.getString(PASSWORD)
+        }
+        /*if(arguments != null){
+            login = arguments.getString(ARG_login)
+            password = arguments.getString(ARG_password)
         }*/
     }
 
@@ -39,26 +45,27 @@ class Fragmento_A : Fragment() {
     ): View? { // DEVUELVE UNA VISTA
         // Inflate the layout for this fragment
         // NOS PERMITE OBTENER LA REFERENCIA PARA CARGAR O INSTANCIAR EL LAYOUT DEL FRAGMENTO
-        return inflater.inflate(R.layout.fragment_fragmento__a, container, false) // TIENE QUE SER FALSE
+
+        val v = inflater.inflate(R.layout.fragment_fragmento__a, container, false) // TIENE QUE SER FALSE
+        // VINCULAMOS LOS DATOS
+        v.findViewById<TextView>(R.id.loginTV).text = this.login
+        v.findViewById<TextView>(R.id.passwordTV).text = this.password
+        return v
     }
 
     // BLOQUE ESTATICO
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Fragmento_A.
-         */
+        // ESTABLECEMOS LAS VARIABLES EN EL BLOQUE ESTATICO
+        // SON LAS CLAVES, NO LOS VALORES -> SE LE PASARA EL VALOR DESDE OTRO LADO
+        const val LOGIN = "login"
+        const val PASSWORD = "password"
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(login: String, password: String) =
             Fragmento_A().apply {
                 /*arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_login, login)
+                    putString(ARG_password, password)
                 }*/
             }
     }
