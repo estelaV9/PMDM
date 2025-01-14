@@ -16,5 +16,21 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        /** AÑADIR EL FRAGMENTO DESDE CODIGO **/
+        // CARGAR EL FRAGMENTO A:
+        // OBTENGO UNA REFERENCIA DE UN FragmentTransaction
+        val miFragmentoTransaction = supportFragmentManager.beginTransaction()
+
+        // AÑADIR EL ACTIVITY UNA INSTANCIA DEL Fragmento_A
+        // SE INVOCA AL METODO onCreateView DEL FRAGMENT Y SE LE PASA EL CONTENEDOR COMO PARAMETRO
+        // Y UNA INSTANCIA DEL FRAGMENTO Y PODEMOS AÑADIRLE UNA ETIQUETA PARA LOCALIZAR FRAGMENTOS
+        miFragmentoTransaction.add(R.id.fragmentContainerView, Fragmento_A(), "fragmentoA")
+
+        // HACER COMMIT PORQUE SI NO LA ACCION NO SE REALIZA
+        miFragmentoTransaction.commit()
+
+        // CON ESTOS TRES PASOS YA HEMOS AÑADIDO EL FRAGMENTO A LA ACTIVIDAD
+
     }
 }

@@ -10,9 +10,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="108dp"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
+
+    <!-- DEFINIR EL CONTENEDOR DEL FRAGMENTO Y CARGAR EL CONTENEDOR EN EL FRAGMENTO -->
+    <!-- QUITAR EL ANDROID NAME PARA QUE NO SE EJECUTE ESTATICAMENTE
+        android:name="com.example.miprimerfragment.Fragmento_A"
+        AHORA NO APARECE EL VERDE PORQUE NO ESTAMOS CARGANDO EL FRAGMENTO -> hacerlo desde codigo-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
