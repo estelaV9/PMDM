@@ -2,4 +2,5 @@
     <string name="app_name">MiPrimerFragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hola, este es el fragmento A, VERDE</string>
+    <string name="hola_este_es_el_fragmento_b_rojo">Hola, este es el fragmento B, ROJO</string>
 </resources>
