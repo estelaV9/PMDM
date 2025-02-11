@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ITEM DEFINE CADA OPCION DEL MENU
+    -	ShowAsAction: Indica cómo aparecerá el item en la barra de la aplicación
+        o	Ifroom: Si hay espacio, aparece
+        o	Always: Siempre aparece
+    -	ActionViewClass: Clase a la que se vincula ese icono
+    app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.widget.SearchView"
+    -->
+    <item
+        android:id="@+id/action_option1"
+        android:title="Opción 1" />
+
+    <item
+        android:id="@+id/action_option2"
+        android:title="Opción 2" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="Acerca de..." />
+
+    <item
+        android:id="@+id/action_exit"
+        android:title="Salir" />
+</menu>
