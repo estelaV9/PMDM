@@ -1,6 +1,7 @@
 package com.example.repasorecyclerview
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -25,9 +26,16 @@ class MainActivity : AppCompatActivity() {
         //initRecyclerView()
         initFragment()
 
+        // PILLAMOS EL STRING DE QUE SE HA AÑADIDO BIEN
+        var bundle = getIntent().getExtras();
+        var superHero = bundle?.getString("superhero")
+        if(superHero != null){
+            Toast.makeText(this, superHero.toString(), Toast.LENGTH_SHORT).show()
+            initFragment()
+        } // SI NO ES NULO SE MUESTRA EL PERSONAJE CREADO
     }
 
-    private fun initFragment(){
+    private fun initFragment() {
         // SE CARGA EL FRAGMENTO POR DEFECTO
         loadFragment(RecyclerFragment())
 
