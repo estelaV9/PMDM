@@ -15,6 +15,9 @@
         android:theme="@style/Theme.RepasoRecyclerView"
         tools:targetApi="31">
         <activity
+            android:name=".FormularioCharacter"
+            android:exported="false" />
+        <activity
             android:name=".fragment.recycler_fragment"
             android:exported="false" />
         <activity
