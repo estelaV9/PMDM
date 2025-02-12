@@ -2,7 +2,7 @@ package com.example.repasorecyclerview
 
 class SuperHeroProvider {
     companion object {
-        val superHeroList = listOf(
+        val superHeroList = mutableListOf(
             SuperHero("Iron Man", "Marvel", "Tony Stark", "https://i.pinimg.com/736x/b3/9b/34/b39b34240da7b3fe68953ad476459e96.jpg"),
             SuperHero("Spider-Man", "Marvel", "Peter Parker", "https://example.com/spiderman.jpg"),
             SuperHero(
